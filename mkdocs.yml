@@ -1,0 +1,188 @@
+site_name: CTF学习笔记
+site_url: http://note.shenghuo2.top/
+site_author: shenghuo2
+copyright: Made by &copy; 2023 <a href="https://github.com/shenghuo2" target="_blank" rel="noopener">shenghuo2</a>
+theme: 
+    name: material
+    language: zh
+    search_index_only: true
+    palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue grey
+      toggle:
+        icon: material//weather-sunny
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      primary: black
+      scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+    features:
+    #- navigation.instant # 点击内部链接时，不用全部刷新页面
+    - navigation.tracking # 在url中使用标题定位锚点
+    - navigation.tabs # 顶部显示导航顶层nav（也就是第一个节点）
+    - navigation.tabs.sticky # 滚动是隐藏顶部nav，需要配合navigation.tabs使用
+    - navigation.sections # nav节点缩进
+    - navigation.expand # 不折叠左侧nav节点
+    - navigation.indexes # 指定节点index pages ，跟instant不兼容
+    #- toc.integrate # 右侧生产目录
+    #- toc.integrate #导航集成
+    - navigation.top # 一键回顶部
+    - header.autohide
+    - search.share # 搜索分享
+    - search.suggest # 搜索建议
+    - search.highlight #搜索高亮
+    favicon: images/qlnu_sec_icon.png
+    logo: images/qlnu_sec_icon.png
+    font:
+        text: Noto Sans
+        code: Source Code Pro
+
+
+plugins:
+  - search:
+      jieba_dict: user_dict.txt
+
+  - heti:
+      disable_serve: false
+  - git-revision-date-localized:
+      type: datetime
+      timezone: Asia/Shanghai
+      locale: zh
+      enable_creation_date: true
+# 图标
+icon:
+    admonition:
+      note: octicons/tag-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/squirrel-16
+      success: octicons/check-16
+      question: octicons/question-16
+      warning: octicons/alert-16
+      failure: octicons/x-circle-16
+      danger: octicons/zap-16
+      bug: octicons/bug-16
+      example: octicons/beaker-16
+      quote: octicons/quote-16
+
+# 扩展
+markdown_extensions:
+  - admonition
+  - abbr
+  - attr_list
+  - def_list
+  - tables
+  - md_in_html
+  - meta
+  - pymdownx.inlinehilite
+  - pymdownx.caret #下划线
+  - pymdownx.keys
+  - pymdownx.mark #文本高亮
+  - pymdownx.tilde #删除线
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.snippets
+  - pymdownx.magiclink
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.arithmatex:
+      generic: true
+
+
+# # 自定义css
+# extra_css: 
+#    - 'https://cdn.staticaly.com/gh/codeslive/cdn@main/css/imageszoom.css' #图片放大css
+#   #- '//cdn.staticaly.com/gh/codeslive/images-pages@main/cdn/css/custom.css'
+#   #- '//cdn.staticaly.com/gh/codeslive/images-pages@main/cdn/css/simplelightbox.min.css' #图片放大css
+
+# # 自定义js
+extra_javascript: 
+#   - 'https://cdn.staticaly.com/gh/codeslive/cdn@main/js/busuanzi.pure.mini.js' # 网站访问统计
+  - 'https://cdn.statically.io/gh/stevewithington/imagezoomjs/master/dist/imagezoom.min.js' # 图片放大js
+  #- '//cdn.staticaly.com/gh/codeslive/cdn@main/js/jquery-3.2.1.min.js' 
+  #- '//cdn.staticaly.com/gh/codeslive/cdn@main/js/simplelightbox.min.js'  #图片放大js
+  #- '//cdn.staticaly.com/gh/codeslive/cdn@main/js/custom.js'
+  - js/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+
+# 设置
+extra:
+    social:
+        -   icon: fontawesome/brands/github
+            link: https://github.com/shenghuo2
+            name: github
+        -   icon: fontawesome/brands/slack
+            link: http://blog.shenghuo2.top/
+            name: myblog
+        -   icon: fontawesome/solid/paper-plane
+            link: 1308357113@qq.com
+            name: 邮箱地址
+    analytics:
+        provider: google
+        property: G-KJ9DLS74TR
+
+# 文档区
+nav:
+    - 文档介绍: 'index.md'
+
+    - MISC学习:
+        - '学习方法':
+            - 如何去学 : 'MISC/learn.md'
+            - 题型概览 : 'MISC/题型.md'
+            - BUU-misc第一页WP : 'MISC/BUU-misc第一页.md'
+    - Python:
+        - '学习方式':
+            - 'python/index.md'
+            - 为什么要学Python: 'python/index.md'
+            - 学习前的准备: 'python/install.md'
+            - 如何学习: 'python/How to Learn.md'
+            - 来做点练习题吧: 'python/practice.md'
+    - WEB:
+        - '从零开始的Web之路':
+            - 基础篇: 'WEB/从零开始的Web之路-基础篇.md'
+    - PWN:
+            - PWN方向寒假学习计划: 'PWN/pwn方向寒假学习计划.md'
+    - '现代密码学':
+        - 'RSA基础知识':
+            - 索引: '01RSA基础篇/index.md'
+            - P00 大纲及参考网页: '01RSA基础篇/P00 大纲及参考网页.md'
+            - P01.python安装及pycharm配置 : '01RSA基础篇/P01.python安装及pycharm配置.md'
+            - P02.gmpy2及相关库安装 : '01RSA基础篇/P02.gmpy2及相关库安装.md'
+            - P03.RSA算法简介及原理 : '01RSA基础篇/P03.RSA算法简介及原理.md'
+            - P04.RSA基础题目及脚本 : '01RSA基础篇/P04.RSA基础题目及脚本.md'
+            - P05.基于N分解的题目 : '01RSA基础篇/P05.基于N分解的题目.md'
+            - P06.RSA密钥生成与读取 : '01RSA基础篇/P06.RSA密钥生成与读取.md'
+            - P07.共模攻击 : '01RSA基础篇/P07.共模攻击.md'
+            - P08.wiener(维纳)攻击 : '01RSA基础篇/P08.wiener(维纳)攻击.md'
+            - P09.低加密指数攻击 : '01RSA基础篇/P09.低加密指数攻击.md'
+            - P10.低加密指数广播攻击 : '01RSA基础篇/P10.低加密指数广播攻击.md'
+            - P11.共享素数-N不互素 : '01RSA基础篇/P11.共享素数-N不互素.md'
+            - P12.dp泄露 : '01RSA基础篇/P12.dp泄露.md'
+            - P13. dp,dq : '01RSA基础篇/P13. dp,dq.md'
+            - P14.n是p的r次方 : '01RSA基础篇/P14.n是p的r次方.md'
+            - P15.已知e _d n 求p q : '01RSA基础篇/P15.已知e _d n 求p q.md'
+            - P16.N分解三个素数 : '01RSA基础篇/P16.N分解三个素数.md'
+            - P17.e和phi_n不互素 : '01RSA基础篇/P17.e和phi_n不互素.md'
+            - P18.RSA常用解密代码块（网上收集） : '01RSA基础篇/P18.RSA常用解密代码块（网上收集）.md'
+            - P19.Franklin-Reiter攻击脚本 : '01RSA基础篇/P19.Franklin-Reiter攻击脚本.md'
+            - P99 零散知识点 : '01RSA基础篇/P99 零散知识点.md'
+        - 'RSA稍微进阶知识':
+            - 前言: '02RSA/index.md'
+            - 一些知识的记录: '02RSA/knowledge_record.md'
+            - 一些题的记录: '02RSA/ti_record.md'
