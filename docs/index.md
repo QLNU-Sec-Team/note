@@ -25,7 +25,7 @@
 * 要学Python
 * 补充ing...
 
-[点我跳转到Misc](./MISC/learn/){ .md-button .md-button--primary }
+[点我跳转到Misc](./MISC/learn.md){ .md-button .md-button--primary }
 
 ## **python学习**
 
@@ -39,7 +39,7 @@ https://www.bilibili.com/video/BV1hf4y1u7CH
 
 讲的不深，不过可以让你入门
 
-[点我跳转到Python](./python/){ .md-button .md-button--primary }
+[点我跳转到Python](./python/index.md){ .md-button .md-button--primary }
 
 ## 现代密码学
 
@@ -49,4 +49,4 @@ https://www.bilibili.com/video/BV1hf4y1u7CH
 
 我在这边放了一些资料给大家，可以自行学习
 
-[点我去看RSA基础题型](./01RSA基础篇/){ .md-button .md-button--primary }
+[点我去看RSA基础题型](./01RSA基础篇/index.md){ .md-button .md-button--primary }
