@@ -2,6 +2,9 @@
 
 !!! tip
     本项目计划重构, 有来填坑的吗
+    添加插件：
+        - heti
+        - git-revision-date-localized
 
 
 !!! note end inline
@@ -14,8 +17,6 @@
 
 <img src="https://file.shenghuo2.top/typecho/202212302248516.png" alt="image-20221230224814443" style="zoom:85%;" />
 
-
-test change
 
 ## **MISC**
 
