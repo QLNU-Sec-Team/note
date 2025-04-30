@@ -1,7 +1,9 @@
-site_name: CTF学习笔记
-site_url: http://note.shenghuo2.top/
-site_author: shenghuo2
-copyright: Made by &copy; 2023 <a href="https://github.com/shenghuo2" target="_blank" rel="noopener">shenghuo2</a>
+site_name: QLNU-Sec 学习笔记
+site_url: http://note.qlnu-sec.cn/
+site_author: QLNU-Sec
+repo_name: QLNU-Sec-Team/note
+repo_url: https://github.com/QLNU-Sec-Team/note/
+copyright: Made by &copy; 2023 <a href="https://github.com/QLNU-Sec-Team" target="_blank" rel="noopener">shenghuo2</a>
 theme: 
     name: material
     language: zh
