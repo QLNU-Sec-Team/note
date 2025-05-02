@@ -3,3 +3,6 @@ mkdocs-material
 mkdocs-statistics-plugin
 mkdocs-git-revision-date-localized-plugin==1.4.5
 pymdown-extensions==10.15
+mkdocs-git-authors-plugin==0.9.5
+mkdocs-rss-plugin==1.17.1
+mkdocs-statistics-plugin==0.1.4

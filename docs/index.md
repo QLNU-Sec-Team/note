@@ -1,14 +1,14 @@
+---
+statistics: True
+---
+
+
 # 学习笔记
 
 !!! tip
     本项目计划重构, 有来填坑的吗
-    
-    新添加插件：
 
-    - heti
-    - git-revision-date-localized
-
-    并已发布到 GitHub 仓库使用gh action自动化部署
+    目前共有 {{ pages }} 个页面，{{ words }} 个字，{{ codes }} 行代码，{{ images }} 张图片
 
 
 !!! note end inline
