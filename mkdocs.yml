@@ -3,6 +3,7 @@ site_url: http://note.qlnu-sec.cn/
 site_author: QLNU-Sec-Team
 repo_name: QLNU-Sec-Team/note
 repo_url: https://github.com/QLNU-Sec-Team/note/
+edit_uri: tree/main/docs
 copyright: Made by &copy; 2023 <a href="https://github.com/QLNU-Sec-Team" target="_blank" rel="noopener">QLNU-Sec-Team</a>
 theme: 
     name: material
@@ -44,19 +45,20 @@ theme:
 
 
 plugins:
-  - search
-
-  - heti:
-      disable_serve: false
-  - git-revision-date-localized:
-      type: datetime
-      timezone: Asia/Shanghai
-      locale: zh
-      enable_creation_date: true
-#   - neoteroi.contribs
-  - rss
-  - git-authors
-  - statistics
+    - search
+    - heti
+        #   disable_serve: false
+    - git-revision-date-localized:
+        type: datetime
+        timezone: Asia/Shanghai
+        locale: zh
+        enable_creation_date: true
+    #   - neoteroi.contribs
+    - rss:
+        feeds_filenames:
+            rss_created: rss.xml
+    - git-authors
+    - statistics
 
 # 扩展
 markdown_extensions:
@@ -94,8 +96,8 @@ markdown_extensions:
 
 
 # # 自定义css
-extra_css: 
-    - css/neoteroi-mkdocs.css
+# extra_css: 
+#     - css/neoteroi-mkdocs.css
 #    - 'https://cdn.staticaly.com/gh/codeslive/cdn@main/css/imageszoom.css' #图片放大css
 #   #- '//cdn.staticaly.com/gh/codeslive/images-pages@main/cdn/css/custom.css'
 #   #- '//cdn.staticaly.com/gh/codeslive/images-pages@main/cdn/css/simplelightbox.min.css' #图片放大css
@@ -116,17 +118,14 @@ extra_javascript:
 extra:
     social:
         -   icon: fontawesome/brands/github
-            link: https://github.com/shenghuo2
+            link: https://github.com/QLNU-Sec-Team
             name: github
-        -   icon: fontawesome/brands/slack
-            link: http://blog.shenghuo2.top/
-            name: myblog
-        -   icon: fontawesome/solid/paper-plane
-            link: 1308357113@qq.com
-            name: 邮箱地址
+        -   icon: fontawesome/solid/rss
+            link: /rss.xml
+            name: RSS
     analytics:
         provider: google
-        property: G-KJ9DLS74TR
+        property: G-2734SL9W6Y
 
 # 文档区
 nav:
