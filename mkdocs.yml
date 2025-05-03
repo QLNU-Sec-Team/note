@@ -37,6 +37,10 @@ theme:
     - search.share # 搜索分享
     - search.suggest # 搜索建议
     - search.highlight #搜索高亮
+    - content.action.edit
+    - content.action.view
+    icon:
+        edit: material/pencil
     favicon: images/qlnu_sec_icon.png
     logo: images/qlnu_sec_icon.png
     font:
