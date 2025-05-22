@@ -152,6 +152,7 @@ nav:
         - '从零开始的Web之路':
             - 基础篇: 'WEB/从零开始的Web之路-基础篇.md'
             - PHP篇: 'WEB/从零开始的Web之路-PHP篇.md'
+            - SQL篇: 'WEB/从零开始的Web之路-SQL篇.md'
     - PWN:
             - PWN方向寒假学习计划: 'PWN/pwn方向寒假学习计划.md'
     - '现代密码学':
