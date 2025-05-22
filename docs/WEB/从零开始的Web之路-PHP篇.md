@@ -3,7 +3,7 @@ PHP相关题目一般是CTF竞赛中Web类题目考察最多的，PHP语言具�
 ### 一、浮点数精度问题
 ### 理论知识
 在用PHP进行浮点数的运算中,经常会出现一些和预期结果不一样的值，这是由于浮点数的精度有限。尽管取决于系统，PHP 通常使用 IEEE 754 双精度格式，则由于取整而导致的最大相对误差为 1.11e-16。非基本数学运算可能会给出更大误差，并且要考虑到进行复合运算时的误差传递。
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/22941704/1667477134064-1caf3cd8-9890-4a93-8014-d7ee12d56889.png#clientId=ua93d0166-f3e5-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=ua0c46fbd&margin=%5Bobject%20Object%5D&name=image.png&originHeight=354&originWidth=645&originalType=url&ratio=1&rotation=0&showTitle=false&size=269045&status=done&style=none&taskId=u23b0a048-a54f-463b-a508-a0f1e23fa5f&title=)
+![image.png](../images/web/php篇/ca0f46fec198f29e06d33c6e620ae25d.png)
 以十进制能够精确表示的有理数如 0.1 或 0.7，无论有多少尾数都不能被内部所使用的二进制精确表示，因此不能在不丢失一点点精度的情况下转换为二进制的格式。这就会造成混乱的结果：例如，floor((0.1+0.7)*10) 通常会返回 7 而不是预期中的 8，因为该结果内部的表示其实是类似 7.9999999999999991118…。
 ### 例子
 #### 题目代码
@@ -97,8 +97,8 @@ a=240610708
 #### 1. 变量的松散比较问题
 php比较相等性的运算符有两种，一种是严格比较 ===，另一种是松散比较 ==。
 PHP 会根据变量的值，自动把变量转换为正确的数据类型。
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/22941704/1667477134197-08663759-fe02-4ded-b295-c0b27f70ada6.png#clientId=ua93d0166-f3e5-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=ud0e2955e&margin=%5Bobject%20Object%5D&name=image.png&originHeight=454&originWidth=1027&originalType=url&ratio=1&rotation=0&showTitle=false&size=491220&status=done&style=none&taskId=uc2798905-0739-4f95-9e32-5235f8632e4&title=)
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/22941704/1667477134209-9fac049e-32ea-4400-b5ef-92cec4591ade.png#clientId=ua93d0166-f3e5-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=u612400b2&margin=%5Bobject%20Object%5D&name=image.png&originHeight=458&originWidth=1025&originalType=url&ratio=1&rotation=0&showTitle=false&size=462809&status=done&style=none&taskId=u25c0698b-5d6e-4249-bdae-6bd2dbe8323&title=)
+![image.png](../images/web/php篇/bde7ab4b86edbe1f42fa315c6551d44a.png)
+![image.png](../images/web/php篇/bc915bf0455cd2d63ee959f0cf90ef37.png)
 #### 2. 数组的松散问题
 ```php
 <?php
@@ -110,7 +110,7 @@ if(!strcmp($c[1],$a) && $c[1]!==$a){
 ```
 可以发现，这个分支通过strcmp函数比较，要求两者相等，且==要求两者不相等才能getflag。
 这里的strcmp函数实际上是将两个变量转换成ascii然后做数学减法，返回一个int的差值。
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/22941704/1667477133981-063c5879-de2f-45e0-9e07-af36ab8e5e16.png#clientId=ua93d0166-f3e5-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=udab4fd78&margin=%5Bobject%20Object%5D&name=image.png&originHeight=295&originWidth=368&originalType=url&ratio=1&rotation=0&showTitle=false&size=69439&status=done&style=none&taskId=uf53ea2ca-65f9-4f85-a759-35e50ed8ddd&title=)
+![image.png](../images/web/php篇/d0cc111b097a1429acf4119e72015af7.png)
 #### 3. 语句条件的松散判断问题
 PHP的switch()使用了松散比较。
 $which会被自动动intval()，如果每个case()都没有break，就会一直执行到包含的语句。
@@ -132,12 +132,12 @@ break;
 } 
 ?> 
 ```
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/22941704/1667477133936-978b4a89-f449-4135-afb7-d6bc866ecacb.png#clientId=ua93d0166-f3e5-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=ufa2c7d5f&margin=%5Bobject%20Object%5D&name=image.png&originHeight=115&originWidth=309&originalType=url&ratio=1&rotation=0&showTitle=false&size=23561&status=done&style=none&taskId=ufb4e33be-50cc-4afc-8132-cd2a9de140a&title=)
+![image.png](../images/web/php篇/691f8daff10613ba6679c2c35047fe0f.png)
 #### 4. 函数的松散判断问题
 `var_dump(in_array("abc", $array)); `
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/22941704/1667477134820-76d19a7b-476e-4f9f-8e15-39e49cf4ff04.png#clientId=ua93d0166-f3e5-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=u4996780f&margin=%5Bobject%20Object%5D&name=image.png&originHeight=418&originWidth=1184&originalType=url&ratio=1&rotation=0&showTitle=false&size=194134&status=done&style=none&taskId=u9a27ddde-cff6-4740-afcc-037a12bccc8&title=)
+![image.png](../images/web/php篇/b3deb5b98589b882569444ffdfe5ba5a.png)
 `in_array()`是PHP当中经常使用的函数，用于检查数组中是否存在某个值。默认是使用松散模式遍历数组，进行比较。松散模式，存在一定的安全问题。
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/22941704/1667477135239-260cf7ae-75c8-4466-bfaa-eaa6b1862113.png#clientId=ua93d0166-f3e5-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=u1fdc2a59&margin=%5Bobject%20Object%5D&name=image.png&originHeight=311&originWidth=488&originalType=url&ratio=1&rotation=0&showTitle=false&size=135764&status=done&style=none&taskId=ufe0e3c2d-c4b0-4578-b69c-b30058ddcd9&title=)
+![image.png](../images/web/php篇/1ed5bf29eb89ad86f0ecfb2515369cf7.png)
 ## 四、加密函数问题
 ### 理论知识
 `md5()`和`sha1()`对一个数组进行加密将返回 `NULL`。
@@ -463,10 +463,10 @@ $filename='sky';
 var_dump(in_array($filename, $whitelist));
 ?>
 ```
-[![image.png](https://cdn.nlark.com/yuque/0/2022/png/22941704/1667477135982-05fcb338-82ad-46f1-8dd2-da19c275dce2.png#clientId=ua93d0166-f3e5-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=ud9231c02&margin=%5Bobject%20Object%5D&name=image.png&originHeight=496&originWidth=1100&originalType=url&ratio=1&rotation=0&showTitle=false&size=72382&status=done&style=none&taskId=ua3d8de17-4703-4841-9b1a-dd3af5f37e4&title=)](http://mweb-zeal.oss-cn-qingdao.aliyuncs.com/2022/05/24/t018abb8965f13840d0.png)
+[![image.png](../images/web/php篇/3d51cee8a82106f40117ea8a550af651.png)](http://mweb-zeal.oss-cn-qingdao.aliyuncs.com/2022/05/24/t018abb8965f13840d0.png)
 此时运行结果为false
 但是如果我们将filename改为1sky
-[![image.png](https://cdn.nlark.com/yuque/0/2022/png/22941704/1667477136003-d341cd3f-b15f-4fcc-a11a-e45a0565d0ff.png#clientId=ua93d0166-f3e5-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=u38bfe2ed&margin=%5Bobject%20Object%5D&name=image.png&originHeight=470&originWidth=1102&originalType=url&ratio=1&rotation=0&showTitle=false&size=71702&status=done&style=none&taskId=u9d1b73d6-b5af-4e95-97f0-f9f1e122e89&title=)](http://mweb-zeal.oss-cn-qingdao.aliyuncs.com/2022/05/24/t01424511a642ee1ff2.png)成功利用弱比较，而绕过了这里的检测
+[![image.png](../images/web/php篇/e509c3c9725e22ca2b708f6ff3fe7ce3.png)](http://mweb-zeal.oss-cn-qingdao.aliyuncs.com/2022/05/24/t01424511a642ee1ff2.png)成功利用弱比较，而绕过了这里的检测
 #### 典型案例
 上面的实例已说明了问题，其实这个问题是存在于上次文件的检查的
 在php-security-calendar-2017-Wish List中
@@ -499,8 +499,8 @@ $challenge = new Challenge($_FILES['solution']);
 可能这比较鸡肋，但在后续对文件的处理中，前一步产生了非预期，可能会直接影响后一步的操作
 #### 漏洞修复
 将宽松比较设为true即可
-[![image.png](https://cdn.nlark.com/yuque/0/2022/png/22941704/1667477136497-57bb47c7-aafa-4ea5-bae0-6a11368024f3.png#clientId=ua93d0166-f3e5-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=uc7d14c61&margin=%5Bobject%20Object%5D&name=image.png&originHeight=600&originWidth=1250&originalType=url&ratio=1&rotation=0&showTitle=false&size=99795&status=done&style=none&taskId=uf057204e-80af-4f61-80d1-8e164fbb53b&title=)](http://mweb-zeal.oss-cn-qingdao.aliyuncs.com/2022/05/24/t0115f0ad8431fa62fe.png)可以看到，搜索的时候，直接要求前两个参数均为array
-[![image.png](https://cdn.nlark.com/yuque/0/2022/png/22941704/1667477136505-d58c4b19-f5fc-4ffe-ba95-3b7a51ab2785.png#clientId=ua93d0166-f3e5-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=ue5ee6b2e&margin=%5Bobject%20Object%5D&name=image.png&originHeight=860&originWidth=1246&originalType=url&ratio=1&rotation=0&showTitle=false&size=117400&status=done&style=none&taskId=u3b034be7-9278-489b-b73d-cb40f57ae2c&title=)](http://mweb-zeal.oss-cn-qingdao.aliyuncs.com/2022/05/24/t01dfb3947529464dfa.png)此时已经不存在弱比较问题
+[![image.png](../images/web/php篇/a9c2cea11e5a73b9eea3a4ade996aecf.png)](http://mweb-zeal.oss-cn-qingdao.aliyuncs.com/2022/05/24/t0115f0ad8431fa62fe.png)可以看到，搜索的时候，直接要求前两个参数均为array
+[![image.png](../images/web/php篇/e8add0efa567484804facc119a81624a.png)](http://mweb-zeal.oss-cn-qingdao.aliyuncs.com/2022/05/24/t01dfb3947529464dfa.png)此时已经不存在弱比较问题
 ### filter_var()函数
 #### 相关知识
 (PHP 5 >= 5.2.0, PHP 7)
@@ -508,7 +508,7 @@ filter_var — 使用特定的过滤器过滤一个变量
 mixed filter_var ( mixed $variable [, int $filter = FILTER_DEFAULT [, mixed $options ]] )  虽然官方说这是过滤器，但是如果用这个函数进行过滤，并且相信他的结果，是非常愚蠢的
 #### 漏洞问题
 比较常用的当属FILTER_VALIDATE_URL了吧，但是它存在非常多的过滤bypass
-[![image.png](https://cdn.nlark.com/yuque/0/2022/png/22941704/1667477137412-8a305d52-8408-4ff8-93d7-cc6754943912.png#clientId=ua93d0166-f3e5-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=uf81e3508&margin=%5Bobject%20Object%5D&name=image.png&originHeight=466&originWidth=1088&originalType=url&ratio=1&rotation=0&showTitle=false&size=74429&status=done&style=none&taskId=uae6a477c-9957-4f4d-b1c0-7fb2cc6ec64&title=)](http://mweb-zeal.oss-cn-qingdao.aliyuncs.com/2022/05/24/t01b08e5038dc6881ae.png)本应该用于check url是否合法的函数，就这样放过了可能导致SSRF的url
+[![image.png](../images/web/php篇/51c1b6162e7f27e515583f468c43ec15.png)](http://mweb-zeal.oss-cn-qingdao.aliyuncs.com/2022/05/24/t01b08e5038dc6881ae.png)本应该用于check url是否合法的函数，就这样放过了可能导致SSRF的url
 类似的bypass还有：
 `0://evil.com:80$skysec.top:80/ 0://evil.com:80;skysec.top:80/  `
 详细SSRF漏洞触发可参考这篇文章：
@@ -645,7 +645,7 @@ string htmlentities ( string $string [, int $flags = ENT_COMPAT | ENT_HTML401 [,
 ### 漏洞问题
 从上述知识来看，该函数应该是用来预防XSS，进行转义的了
 但是不幸的是
-[![image.png](https://cdn.nlark.com/yuque/0/2022/png/22941704/1667477137491-2a2277d1-5ebc-4e1a-b407-309a6c6fdc85.png#clientId=ua93d0166-f3e5-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=u07a0de5e&margin=%5Bobject%20Object%5D&name=image.png&originHeight=980&originWidth=1634&originalType=url&ratio=1&rotation=0&showTitle=false&size=277457&status=done&style=none&taskId=u5d912fe8-bf28-49c3-ae1d-379dadf95ef&title=)](http://mweb-zeal.oss-cn-qingdao.aliyuncs.com/2022/05/24/t01421c6fd9c0b0fde3.png)该函数默认使用的是ENT_COMPAT
+[![image.png](../images/web/php篇/ce22bf7de3d1f227e1d8cc596e842306.png)](http://mweb-zeal.oss-cn-qingdao.aliyuncs.com/2022/05/24/t01421c6fd9c0b0fde3.png)该函数默认使用的是ENT_COMPAT
 即不会转义单引号，那么就可能产生非常严重的问题，例如如下案例
 ### 典型案例
 ```php
@@ -684,9 +684,9 @@ int openssl_verify ( string $data , string $signature , mixed $pub_key_id [, mix
 ### 漏洞问题
 这个函数看起来是用于验证签名正确性的，怎么会产生漏洞呢？
 我们注意到它的返回值情况
-[![image.png](https://cdn.nlark.com/yuque/0/2022/png/22941704/1667477137356-17471838-35d6-4798-be1b-041c0649e456.png#clientId=ua93d0166-f3e5-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=u1a86a4e7&margin=%5Bobject%20Object%5D&name=image.png&originHeight=222&originWidth=960&originalType=url&ratio=1&rotation=0&showTitle=false&size=31708&status=done&style=none&taskId=ue4b15b3f-44ea-4a16-95cb-689c5eac382&title=)](http://mweb-zeal.oss-cn-qingdao.aliyuncs.com/2022/05/24/t0192bd3b09104db6b1.png)其中，内部发送错误会返回-1
+[![image.png](../images/web/php篇/669e02cc1441748f48d5151f5c8486b9.png)](http://mweb-zeal.oss-cn-qingdao.aliyuncs.com/2022/05/24/t0192bd3b09104db6b1.png)其中，内部发送错误会返回-1
 我们知道if判断中，-1和1同样都可以被当做true
-[![image.png](https://cdn.nlark.com/yuque/0/2022/png/22941704/1667477137573-4eed5d51-ae74-47eb-9a91-7c1ae2d07e60.png#clientId=ua93d0166-f3e5-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=ud0ffbcd9&margin=%5Bobject%20Object%5D&name=image.png&originHeight=660&originWidth=726&originalType=url&ratio=1&rotation=0&showTitle=false&size=61601&status=done&style=none&taskId=u5f1a942d-940f-48e7-b46e-31af01e090b&title=)](http://mweb-zeal.oss-cn-qingdao.aliyuncs.com/2022/05/24/t018a24735d6d00f170.png)那么假设存在这样的情况
+[![image.png](../images/web/php篇/221c4383622a97b0ea4904fb9beea307.png)](http://mweb-zeal.oss-cn-qingdao.aliyuncs.com/2022/05/24/t018a24735d6d00f170.png)那么假设存在这样的情况
 `if(openssl_verify())`
 那么它出现错误的时候，则同样可以经过check进入后续程序
 如何触发错误呢？
@@ -711,7 +711,7 @@ class JWT {
 ### 漏洞修复
 if判断中使用
 if(openssl_verify()===1)  
-[![image.png](https://cdn.nlark.com/yuque/0/2022/png/22941704/1667477137914-4f42d543-fa9a-419f-917d-b2f49500354f.png#clientId=ua93d0166-f3e5-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=u064741e2&margin=%5Bobject%20Object%5D&name=image.png&originHeight=622&originWidth=736&originalType=url&ratio=1&rotation=0&showTitle=false&size=57811&status=done&style=none&taskId=ufd0c2f4a-5458-41a8-96d8-3cc6daf70b8&title=)](http://mweb-zeal.oss-cn-qingdao.aliyuncs.com/2022/05/24/t01372e5a180c19f3b1.png)
+[![image.png](../images/web/php篇/6c41b4f5a938da6da9a84e33d82604c3.png)](http://mweb-zeal.oss-cn-qingdao.aliyuncs.com/2022/05/24/t01372e5a180c19f3b1.png)
 ## intval()缺陷
 intval函数用于获取变量的整数值。通过使用指定的进制 base 转换（默认是十进制），返回变量 var 的 integer 数值。 intval() 不能用于 object，否则会产生 E_NOTICE 错误并返回 1。
 本来想写在php函数缺陷内的，但是这个函数，往往在进行比较时使用。
