@@ -32,11 +32,12 @@ theme:
     - navigation.indexes # 指定节点index pages ，跟instant不兼容
     #- toc.integrate # 右侧生产目录
     #- toc.integrate #导航集成
-    - navigation.top # 一键回顶部
+    - navigation.top # 一键回顶部x
     - header.autohide
     - search.share # 搜索分享
     - search.suggest # 搜索建议
     - search.highlight #搜索高亮
+    - content.tabs # 折叠文本
     - content.action.edit
     - content.action.view
     icon:
@@ -150,6 +151,7 @@ nav:
     - WEB:
         - '从零开始的Web之路':
             - 基础篇: 'WEB/从零开始的Web之路-基础篇.md'
+            - PHP篇: 'WEB/从零开始的Web之路-PHP篇.md'
     - PWN:
             - PWN方向寒假学习计划: 'PWN/pwn方向寒假学习计划.md'
     - '现代密码学':
