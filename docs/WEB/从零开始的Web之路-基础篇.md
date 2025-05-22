@@ -435,15 +435,15 @@ Vary: WEB服务器用该头部的内容告诉 Cache 服务器，在什么条件�
 ### 1、下载Python2和Python3的安装包(或者叫解释器)
 下载地址：[https://www.python.org/downloads/windows/](https://www.python.org/downloads/windows/)
 根据自己需要的版本下载即可，安装包都比较小。
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/22941704/1667987900810-c4c16e03-ac73-4212-ae19-3140ba7e8403.png#clientId=uc4c7c51b-e896-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=KHKsg&margin=%5Bobject%20Object%5D&name=image.png&originHeight=2090&originWidth=3456&originalType=url&ratio=1&rotation=0&showTitle=false&size=640270&status=done&style=none&taskId=u2418c492-4214-45b9-b102-16b10ce7afe&title=)
+![image.png](../images/web/基础篇/894139284c6b370f96df69544d71c6c0.png)
 下载后，直接安装即可。
 安装过程注意安装路径，默认是安装到C盘，可以根据需要进行更改安装路径。
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/22941704/1667987900606-f6222d67-08c7-4fa9-a06c-9396dd1852ca.png#clientId=uc4c7c51b-e896-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=BTK6V&margin=%5Bobject%20Object%5D&name=image.png&originHeight=272&originWidth=1293&originalType=url&ratio=1&rotation=0&showTitle=false&size=34913&status=done&style=none&taskId=u261805bd-ed6c-495c-bb19-290d3373ffc&title=)
+![image.png](../images/web/基础篇/f2876bd6a5e701434a7d100539f13aa7.png)
 ### 2、设置环境变量
 由于我们安装了两个版本的Python，因此为了方便系统能够准确识别到指定的Python版本，所以我们需要设置环境变量。
 将Python安装路径及其安装路径下的Scripts设置到Path变量里。
 这里设置Scripts文件夹的目的是为了方便识别pip。
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/22941704/1667987900517-42cf9800-3692-4ae4-8779-8c8c10c0479d.png#clientId=uc4c7c51b-e896-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=lnu3P&margin=%5Bobject%20Object%5D&name=image.png&originHeight=353&originWidth=1201&originalType=url&ratio=1&rotation=0&showTitle=false&size=43640&status=done&style=none&taskId=uf1bc7b66-1773-42cb-a228-dae54e9e88a&title=) 
+![image.png](../images/web/基础篇/cef97c22c3d453a17e8a180c09ef90b8.png) 
 ### 3、修改Python编译器的名字
 为了能够准确定位Python2和Python3，我们需要将默认的Python编辑器的名称进行修改。
 **NO.1. **修改Python2安装目录下：python.exe修改为python2.exe，pythonw.exe修改为pythonw2.exe
@@ -460,23 +460,23 @@ python环境在安装包的时候需要使用到包管理工具——pip，而pi
 web的十大漏洞当中有很多漏洞在github上都能找到大师傅制作出来供学习用的靶场，这里针对一些可能出现的问题供大家参考
 首先大家需要了解LAMP和LNMP，也就是linux，apache/nginx，mysql，php
 这里Linux环境的实现需要用到虚拟机，也就是VMware，大家使用社团给的kali镜像，自行百度一下安装教程配置即可
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/22941704/1670728188672-33f2cd44-b174-4a56-bd0b-004a4e42c402.png#clientId=ufeb3e999-f58d-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=901&id=udaa712de&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1351&originWidth=2160&originalType=binary&ratio=1&rotation=0&showTitle=false&size=493408&status=done&style=none&taskId=ude5259c9-828d-4015-9dc1-fdad21b5487&title=&width=1440)
+![image.png](../images/web/基础篇/5d83150ed02af830acf601fe74b4ad3c.png)
 mysql是数据库的一种，对于专业开发人员可以使用navicat去管理数据库，这里仅作了解，对于环境搭建，使用PHPstudy即可满足我们全部的需求
 phpstudy集成了php，mysql和apache、nginx两个web中间件（不知道什么是中间件的自己去百度），需要使用时按需求随时启停即可
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/22941704/1670728101927-96a6e0d7-25f9-4730-ae56-7c30975e2773.png#clientId=ufeb3e999-f58d-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=630&id=ub422b90f&margin=%5Bobject%20Object%5D&name=image.png&originHeight=945&originWidth=1200&originalType=binary&ratio=1&rotation=0&showTitle=false&size=113570&status=done&style=none&taskId=ub825c629-6e8e-4c63-b20e-dc391dfb18b&title=&width=800)
+![image.png](../images/web/基础篇/77d782b23349a094f3a7e62bfd3b23f8.png)
 那么如何搭建一个新环境呢
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/22941704/1670728557152-f035162d-a9da-4c34-ba20-31e5bb503031.png#clientId=ufeb3e999-f58d-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=630&id=u51e8922a&margin=%5Bobject%20Object%5D&name=image.png&originHeight=945&originWidth=1200&originalType=binary&ratio=1&rotation=0&showTitle=false&size=113984&status=done&style=none&taskId=u1538d13d-8f7b-4b5f-be9d-5a6103274e0&title=&width=800)
+![image.png](../images/web/基础篇/9e4c17662e56a0122d72f93422f8726e.png)
 phpstudy的目录下默认有一个WWW目录，下有一个localhost，即本地网站
 想要创建新网站，遵照图中的几个步骤即可
 域名设置起来除了不要有中文和符号之外非常自由，其实质就是在根目录下创建一个可以访问目录下资源的文件夹，这一点很好理解
 端口设置为默认即可，若想改变端口，记得避开其他服务占用的端口，phpstudy提供了端口检测的功能，能够方便地测试和查看端口是否被占用，避免冲突
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/22941704/1670940234774-607921c0-b864-4235-815d-1e6c593a9648.png#clientId=ua17198eb-70a7-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=630&id=u431719d3&margin=%5Bobject%20Object%5D&name=image.png&originHeight=945&originWidth=1200&originalType=binary&ratio=1&rotation=0&showTitle=false&size=75061&status=done&style=none&taskId=u20103def-02bd-4123-83df-1090dc1a9ef&title=&width=800)
+![image.png](../images/web/基础篇/7c2c9cdc4ea7c2a6cf5f17c1fa3433f4.png)
 根目录可以自定义，默认会设定为软件安装路径的WWW目录下，比如我这里的目录是D:/phpstudy_pro/WWW/，设在E盘F盘也都是可以的（就是别放C盘）
 建议不同漏洞的靶场
 至于php版本问题，是一个非常值得说的点，这里暂不展开说，在后面的漏洞学习当中还会分别提到，在网站使用过程中，也可以对版本进行修改
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/22941704/1670942055295-e56231e8-1b1e-4c97-be19-5f64342a9857.png#clientId=ubb6928da-eb0d-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=198&id=ub9c6a179&margin=%5Bobject%20Object%5D&name=image.png&originHeight=297&originWidth=334&originalType=binary&ratio=1&rotation=0&showTitle=false&size=18794&status=done&style=none&taskId=udb58d283-55ff-4cd1-a44d-c5e3231a95b&title=&width=222.66666666666666)
+![image.png](../images/web/基础篇/db6a2e520fefcef284812aa972b1fc9f.png)
 除了php版本，其他软件的版本管理可以在下面找到
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/22941704/1670942094171-fbf840d7-c572-44b0-92f3-e19029915980.png#clientId=ubb6928da-eb0d-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=630&id=u15e641ee&margin=%5Bobject%20Object%5D&name=image.png&originHeight=945&originWidth=1200&originalType=binary&ratio=1&rotation=0&showTitle=false&size=136065&status=done&style=none&taskId=ue8028d4d-ce45-4514-bbeb-783599262c3&title=&width=800)
+![image.png](../images/web/基础篇/ec03a7dac3b2c3e959aaf1cc7a70fc01.png)
 需要注意的是，无论更改了哪一项服务的版本，都需要重新启动才能生效
 一些情况下还需要修改php的配置文件，每个版本对应一个ini文件，用txt打开即可
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/22941704/1670942237079-60e99f5b-3c59-4866-92b5-a1fef4bda887.png#clientId=ubb6928da-eb0d-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=630&id=u14e8cca4&margin=%5Bobject%20Object%5D&name=image.png&originHeight=945&originWidth=1200&originalType=binary&ratio=1&rotation=0&showTitle=false&size=79355&status=done&style=none&taskId=u9b359638-dde1-42bc-b560-0a21c10d01f&title=&width=800)
+![image.png](../images/web/基础篇/e43b3b137a1e89fa0f6ab8147fd282c4.png)
