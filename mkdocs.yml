@@ -150,9 +150,14 @@ nav:
             - 来做点练习题吧: 'python/practice.md'
     - WEB:
         - '从零开始的Web之路':
-            - 基础篇: 'WEB/从零开始的Web之路-基础篇.md'
-            - PHP篇: 'WEB/从零开始的Web之路-PHP篇.md'
-            - SQL篇: 'WEB/从零开始的Web之路-SQL篇.md'
+            - 基础篇✅: 'WEB/从零开始的Web之路-基础篇.md'
+            - PHP篇✅: 'WEB/从零开始的Web之路-PHP篇.md'
+            - SQL篇✅: 'WEB/从零开始的Web之路-SQL篇.md'
+            - XSS篇: 'WEB/从零开始的Web之路-XSS篇.md'
+            - SSTI篇: 'WEB/从零开始的Web之路-SSTI篇.md'
+            - 文件上传篇✅: 'WEB/从零开始的Web之路-文件上传篇.md'
+            - 文件包含篇: 'WEB/从零开始的Web之路-文件包含篇.md'
+            - 反序列化篇: 'WEB/从零开始的Web之路-反序列化篇.md'
     - PWN:
             - PWN方向寒假学习计划: 'PWN/pwn方向寒假学习计划.md'
     - '现代密码学':
@@ -183,3 +188,9 @@ nav:
             - 前言: '02RSA/index.md'
             - 一些知识的记录: '02RSA/knowledge_record.md'
             - 一些题的记录: '02RSA/ti_record.md'
+    - 内网渗透:
+        
+        - '内网渗透学习总结': 'NWST/内网渗透学习总结.md'
+         
+
+    
