@@ -10,7 +10,6 @@ statistics: True
 
     目前共有 {{ pages }} 个页面，{{ words }} 个字，{{ codes }} 行代码，{{ images }} 张图片
 
-
 !!! note end inline
     这张图放在前面，基础真的很重要，不要想一步登天
     <img src="https://file.shenghuo2.top/typecho/202301032111969.png" alt="image-20230103211148593" style="zoom:50%;" />
@@ -45,7 +44,7 @@ https://www.bilibili.com/video/BV1hf4y1u7CH
 
 [点我跳转到Python](./python/index.md){ .md-button .md-button--primary }
 
-## 现代密码学
+## **现代密码学**
 
 下次校赛还会出这种密码题，因为希望有人学
 
@@ -54,3 +53,11 @@ https://www.bilibili.com/video/BV1hf4y1u7CH
 我在这边放了一些资料给大家，可以自行学习
 
 [点我去看RSA基础题型](./01RSA基础篇/index.md){ .md-button .md-button--primary }
+
+## **Web方向**
+
+入门最快的方向，同时又是最杂的方向，决定了他的用途很广泛
+
+建议是都要对owasp top 10漏洞有一定的了解
+
+[跳转Web](./WEB/从零开始的Web之路-基础篇.md){ .md-button .md-button--primary }
