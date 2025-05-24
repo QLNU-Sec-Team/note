@@ -1,4 +1,8 @@
 # SQL注入
+
+!!! note
+    目前只有关于mysql的注入，期待补充
+
 📎[sqli-labs-master.zip](https://www.yuque.com/attachments/yuque/0/2022/zip/22941704/1667991587463-94414de8-d1cb-4b9c-ae76-19a6ea12b64b.zip)
 ### 关于靶场搭建
 1. php版本问题
@@ -274,7 +278,7 @@
     加载恶意`udf.so/udf.dll`也可以用来执行系统命令
     ```mysql
     1';CREATE FUNCTION sys_eval RETURNS STRING SONAME 'udf.so'; -- # 创建系统命令sys_eval
-     ```
+    ```
 
 9. mysql_fake_sever
     后续其他补充其他知识点后补充
