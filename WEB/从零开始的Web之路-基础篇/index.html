@@ -1,0 +1,2513 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="QLNU-Sec-Team" name="author"/>
+<link href="http://note.qlnu-sec.cn/WEB/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84Web%E4%B9%8B%E8%B7%AF-%E5%9F%BA%E7%A1%80%E7%AF%87/" rel="canonical"/>
+<link href="../../python/practice/" rel="prev"/>
+<link href="../%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84Web%E4%B9%8B%E8%B7%AF-PHP%E7%AF%87/" rel="next"/>
+<link href="../../feed_rss_created.xml" rel="alternate" title="RSS 订阅" type="application/rss+xml"/>
+<link href="../../feed_rss_updated.xml" rel="alternate" title="已更新内容的 RSS 订阅" type="application/rss+xml"/>
+<link href="../../images/qlnu_sec_icon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.14" name="generator"/>
+<title>基础篇✅ - QLNU-Sec 学习笔记</title>
+<link href="../../assets/stylesheets/main.342714a4.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Noto Sans";--md-code-font:"Source Code Pro"}</style>
+<link href="../../css/heti.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-2734SL9W6Y"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-2734SL9W6Y",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-2734SL9W6Y",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+<script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="blue-grey" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#_1">
+          跳转至
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="页眉" class="md-header__inner md-grid">
+<a aria-label="QLNU-Sec 学习笔记" class="md-header__button md-logo" data-md-component="logo" href="../.." title="QLNU-Sec 学习笔记">
+<img alt="logo" src="../../images/qlnu_sec_icon.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            QLNU-Sec 学习笔记
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              基础篇✅
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="blue-grey" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="搜索" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="搜索" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="查找" class="md-search__options">
+<a aria-label="分享" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="分享">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+</a>
+<button aria-label="清空当前内容" class="md-search__icon md-icon" tabindex="-1" title="清空当前内容" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/QLNU-Sec-Team/note/" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+</div>
+<div class="md-source__repository">
+    QLNU-Sec-Team/note
+  </div>
+</a>
+</div>
+</nav>
+<nav aria-label="标签" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+  
+    
+  
+  文档介绍
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../MISC/learn/">
+          
+  
+  
+    
+  
+  MISC学习
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../python/">
+          
+  
+  
+    
+  
+  Python
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="./">
+          
+  
+  
+    
+  
+  WEB
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../PWN/pwn%E6%96%B9%E5%90%91%E5%AF%92%E5%81%87%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/">
+          
+  
+  
+    
+  
+  PWN
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/">
+          
+  
+  
+    
+  
+  现代密码学
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../NWST/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/">
+          
+  
+  
+    
+  
+  内网渗透
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航栏" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="QLNU-Sec 学习笔记" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="QLNU-Sec 学习笔记">
+<img alt="logo" src="../../images/qlnu_sec_icon.png"/>
+</a>
+    QLNU-Sec 学习笔记
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/QLNU-Sec-Team/note/" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+</div>
+<div class="md-source__repository">
+    QLNU-Sec-Team/note
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    文档介绍
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    MISC学习
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            MISC学习
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+<span class="md-ellipsis">
+    学习方法
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_1">
+<span class="md-nav__icon md-icon"></span>
+            学习方法
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MISC/learn/">
+<span class="md-ellipsis">
+    如何去学
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MISC/%E9%A2%98%E5%9E%8B/">
+<span class="md-ellipsis">
+    题型概览
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MISC/BUU-misc%E7%AC%AC%E4%B8%80%E9%A1%B5/">
+<span class="md-ellipsis">
+    BUU-misc第一页WP
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Python
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3_1" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../python/">
+<span class="md-ellipsis">
+    学习方式
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_1">
+<span class="md-nav__icon md-icon"></span>
+            学习方式
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../python/install/">
+<span class="md-ellipsis">
+    学习前的准备
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../python/How%20to%20Learn/">
+<span class="md-ellipsis">
+    如何学习
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../python/practice/">
+<span class="md-ellipsis">
+    来做点练习题吧
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+<span class="md-ellipsis">
+    WEB
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            WEB
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="">
+<span class="md-ellipsis">
+    从零开始的Web之路
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_4_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_1">
+<span class="md-nav__icon md-icon"></span>
+            从零开始的Web之路
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    基础篇✅
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    基础篇✅
+    
+  </span>
+</a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-is-web">
+<span class="md-ellipsis">
+      What is Web
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#web">
+<span class="md-ellipsis">
+      一、WEB安全是什么
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#web_1">
+<span class="md-ellipsis">
+      二、如何入门WEB安全
+    </span>
+</a>
+<nav aria-label="二、如何入门WEB安全" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      三、书籍推荐
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      方便我们使用的软件
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      前置知识
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1http">
+<span class="md-ellipsis">
+      1.http状态码
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+<span class="md-ellipsis">
+      2.正则表达式
+    </span>
+</a>
+<nav aria-label="2.正则表达式" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      表达式全集
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+<span class="md-ellipsis">
+      常用正则表达式
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3http">
+<span class="md-ellipsis">
+      3.常见的HTTP头部信息
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4url">
+<span class="md-ellipsis">
+      4.url编码集
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5windowspython23">
+<span class="md-ellipsis">
+      5.windows系统python2，3版本共存问题
+    </span>
+</a>
+<nav aria-label="5.windows系统python2，3版本共存问题" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1python2python3">
+<span class="md-ellipsis">
+      1、下载Python2和Python3的安装包(或者叫解释器)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2_1">
+<span class="md-ellipsis">
+      2、设置环境变量
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3python">
+<span class="md-ellipsis">
+      3、修改Python编译器的名字
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4pip">
+<span class="md-ellipsis">
+      4、设置pip
+    </span>
+</a>
+<nav aria-label="4、设置pip" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#python2">
+<span class="md-ellipsis">
+      python2：
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#python3">
+<span class="md-ellipsis">
+      python3:
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6">
+<span class="md-ellipsis">
+      6.关于靶场环境搭建
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84Web%E4%B9%8B%E8%B7%AF-PHP%E7%AF%87/">
+<span class="md-ellipsis">
+    PHP篇✅
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84Web%E4%B9%8B%E8%B7%AF-SQL%E7%AF%87/">
+<span class="md-ellipsis">
+    SQL篇✅
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84Web%E4%B9%8B%E8%B7%AF-XSS%E7%AF%87/">
+<span class="md-ellipsis">
+    XSS篇
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84Web%E4%B9%8B%E8%B7%AF-SSTI%E7%AF%87/">
+<span class="md-ellipsis">
+    SSTI篇✅
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84Web%E4%B9%8B%E8%B7%AF-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%AF%87/">
+<span class="md-ellipsis">
+    文件上传篇✅
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84Web%E4%B9%8B%E8%B7%AF-%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E7%AF%87/">
+<span class="md-ellipsis">
+    文件包含篇✅
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84Web%E4%B9%8B%E8%B7%AF-%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E7%AF%87/">
+<span class="md-ellipsis">
+    反序列化篇✅
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-ellipsis">
+    PWN
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            PWN
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../PWN/pwn%E6%96%B9%E5%90%91%E5%AF%92%E5%81%87%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/">
+<span class="md-ellipsis">
+    PWN方向寒假学习计划
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-ellipsis">
+    现代密码学
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            现代密码学
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_6_1" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/">
+<span class="md-ellipsis">
+    RSA基础知识
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_6_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_1">
+<span class="md-nav__icon md-icon"></span>
+            RSA基础知识
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P00%20%E5%A4%A7%E7%BA%B2%E5%8F%8A%E5%8F%82%E8%80%83%E7%BD%91%E9%A1%B5/">
+<span class="md-ellipsis">
+    P00 大纲及参考网页
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P01.python%E5%AE%89%E8%A3%85%E5%8F%8Apycharm%E9%85%8D%E7%BD%AE/">
+<span class="md-ellipsis">
+    P01.python安装及pycharm配置
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P02.gmpy2%E5%8F%8A%E7%9B%B8%E5%85%B3%E5%BA%93%E5%AE%89%E8%A3%85/">
+<span class="md-ellipsis">
+    P02.gmpy2及相关库安装
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P03.RSA%E7%AE%97%E6%B3%95%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%8E%9F%E7%90%86/">
+<span class="md-ellipsis">
+    P03.RSA算法简介及原理
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P04.RSA%E5%9F%BA%E7%A1%80%E9%A2%98%E7%9B%AE%E5%8F%8A%E8%84%9A%E6%9C%AC/">
+<span class="md-ellipsis">
+    P04.RSA基础题目及脚本
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P05.%E5%9F%BA%E4%BA%8EN%E5%88%86%E8%A7%A3%E7%9A%84%E9%A2%98%E7%9B%AE/">
+<span class="md-ellipsis">
+    P05.基于N分解的题目
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P06.RSA%E5%AF%86%E9%92%A5%E7%94%9F%E6%88%90%E4%B8%8E%E8%AF%BB%E5%8F%96/">
+<span class="md-ellipsis">
+    P06.RSA密钥生成与读取
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P07.%E5%85%B1%E6%A8%A1%E6%94%BB%E5%87%BB/">
+<span class="md-ellipsis">
+    P07.共模攻击
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P08.wiener%28%E7%BB%B4%E7%BA%B3%29%E6%94%BB%E5%87%BB/">
+<span class="md-ellipsis">
+    P08.wiener(维纳)攻击
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P09.%E4%BD%8E%E5%8A%A0%E5%AF%86%E6%8C%87%E6%95%B0%E6%94%BB%E5%87%BB/">
+<span class="md-ellipsis">
+    P09.低加密指数攻击
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P10.%E4%BD%8E%E5%8A%A0%E5%AF%86%E6%8C%87%E6%95%B0%E5%B9%BF%E6%92%AD%E6%94%BB%E5%87%BB/">
+<span class="md-ellipsis">
+    P10.低加密指数广播攻击
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P11.%E5%85%B1%E4%BA%AB%E7%B4%A0%E6%95%B0-N%E4%B8%8D%E4%BA%92%E7%B4%A0/">
+<span class="md-ellipsis">
+    P11.共享素数-N不互素
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P12.dp%E6%B3%84%E9%9C%B2/">
+<span class="md-ellipsis">
+    P12.dp泄露
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P13.%20dp%2Cdq/">
+<span class="md-ellipsis">
+    P13. dp,dq
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P14.n%E6%98%AFp%E7%9A%84r%E6%AC%A1%E6%96%B9/">
+<span class="md-ellipsis">
+    P14.n是p的r次方
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P15.%E5%B7%B2%E7%9F%A5e%20_d%20n%20%E6%B1%82p%20q/">
+<span class="md-ellipsis">
+    P15.已知e _d n 求p q
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P16.N%E5%88%86%E8%A7%A3%E4%B8%89%E4%B8%AA%E7%B4%A0%E6%95%B0/">
+<span class="md-ellipsis">
+    P16.N分解三个素数
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P17.e%E5%92%8Cphi_n%E4%B8%8D%E4%BA%92%E7%B4%A0/">
+<span class="md-ellipsis">
+    P17.e和phi_n不互素
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P18.RSA%E5%B8%B8%E7%94%A8%E8%A7%A3%E5%AF%86%E4%BB%A3%E7%A0%81%E5%9D%97%EF%BC%88%E7%BD%91%E4%B8%8A%E6%94%B6%E9%9B%86%EF%BC%89/">
+<span class="md-ellipsis">
+    P18.RSA常用解密代码块（网上收集）
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P19.Franklin-Reiter%E6%94%BB%E5%87%BB%E8%84%9A%E6%9C%AC/">
+<span class="md-ellipsis">
+    P19.Franklin-Reiter攻击脚本
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P99%20%E9%9B%B6%E6%95%A3%E7%9F%A5%E8%AF%86%E7%82%B9/">
+<span class="md-ellipsis">
+    P99 零散知识点
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_6_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../02RSA/">
+<span class="md-ellipsis">
+    RSA稍微进阶知识
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_6_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_2">
+<span class="md-nav__icon md-icon"></span>
+            RSA稍微进阶知识
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../02RSA/knowledge_record/">
+<span class="md-ellipsis">
+    一些知识的记录
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../02RSA/ti_record/">
+<span class="md-ellipsis">
+    一些题的记录
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-ellipsis">
+    内网渗透
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            内网渗透
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../NWST/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/">
+<span class="md-ellipsis">
+    内网渗透学习总结
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-is-web">
+<span class="md-ellipsis">
+      What is Web
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#web">
+<span class="md-ellipsis">
+      一、WEB安全是什么
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#web_1">
+<span class="md-ellipsis">
+      二、如何入门WEB安全
+    </span>
+</a>
+<nav aria-label="二、如何入门WEB安全" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      三、书籍推荐
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      方便我们使用的软件
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      前置知识
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1http">
+<span class="md-ellipsis">
+      1.http状态码
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+<span class="md-ellipsis">
+      2.正则表达式
+    </span>
+</a>
+<nav aria-label="2.正则表达式" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      表达式全集
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+<span class="md-ellipsis">
+      常用正则表达式
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3http">
+<span class="md-ellipsis">
+      3.常见的HTTP头部信息
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4url">
+<span class="md-ellipsis">
+      4.url编码集
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5windowspython23">
+<span class="md-ellipsis">
+      5.windows系统python2，3版本共存问题
+    </span>
+</a>
+<nav aria-label="5.windows系统python2，3版本共存问题" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1python2python3">
+<span class="md-ellipsis">
+      1、下载Python2和Python3的安装包(或者叫解释器)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2_1">
+<span class="md-ellipsis">
+      2、设置环境变量
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3python">
+<span class="md-ellipsis">
+      3、修改Python编译器的名字
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4pip">
+<span class="md-ellipsis">
+      4、设置pip
+    </span>
+</a>
+<nav aria-label="4、设置pip" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#python2">
+<span class="md-ellipsis">
+      python2：
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#python3">
+<span class="md-ellipsis">
+      python3:
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6">
+<span class="md-ellipsis">
+      6.关于靶场环境搭建
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/QLNU-Sec-Team/note/tree/main/docs/WEB/从零开始的Web之路-基础篇.md" title="编辑此页">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://github.com/QLNU-Sec-Team/note/tree/main/docs/WEB/从零开始的Web之路-基础篇.md" title="查看本页的源代码">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg>
+</a>
+<h1 id="_1">写在前面</h1>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约<span class="heti-skip"><span class="heti-spacing"> </span>2850<span class="heti-spacing"> </span></span>个字 <span class="twemoji"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"></path></svg></span> <span>56<span class="heti-spacing"> </span></span>行代码 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"></path></svg></span> <span>10<span class="heti-spacing"> </span></span>张图片 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间<span class="heti-skip"><span class="heti-spacing"> </span>10<span class="heti-spacing"> </span></span>分钟</p>
+</div>
+<p>本人刚入门时的基础比小白还小白，学习路上逛了不少博客
+各个平台上的博客无非抄来抄去，我把我认为有用的内容整合了一下
+大自然的搬运工罢了</p>
+<h2 id="what-is-web">What is Web</h2>
+<p><strong><span>what is web<span class="heti-spacing"> </span></span>的内容借鉴自<span class="heti-skip"><span class="heti-spacing"> </span>Landasika<span class="heti-spacing"> </span></span>师傅写的文章，有删改</strong></p>
+<h2 id="web">一、<span>WEB<span class="heti-spacing"> </span></span>安全是什么</h2>
+<p><span>web<span class="heti-spacing"> </span></span>也就是俗称的<span class="heti-skip"><span class="heti-spacing"> </span>web<span class="heti-spacing"> </span></span>安全，也就是大家打开浏览器的那一刻。就开始和<span class="heti-skip"><span class="heti-spacing"> </span>web<span class="heti-spacing"> </span></span>打交道了。我们是学网络安全的，<span>web<span class="heti-spacing"> </span></span>安全是网络中最经典的应用之一。
+Web安全就是要提供证据表明，在面对敌意和恶意输入的时候，web系统应用仍然能够充分地满足它的需求
+2005年06月，CardSystems，黑客恶意侵入了它的电脑系统，窃取了4000万张信用卡的资料。
+2011年12月，国内最大的开发者社区CSDN被黑客在互联网上公布了600万注册用户的数据；黑客随后陆续公布了网易、人人、天涯、猫扑等多家大型网站的数据信息。</p>
+<h2 id="web_1">二、如何入门<span class="heti-skip"><span class="heti-spacing"> </span>WEB<span class="heti-spacing"> </span></span>安全</h2>
+<p>可以参考这篇文章：<a href="https://zhuanlan.zhihu.com/p/409570216">https://zhuanlan.zhihu.com/p/409570216</a>
+常见Web安全漏洞大致可以分为：信息泄露、弱口令爆破、命令执行、文件包含、php特性、文件上传、sql注入、反序列化、代码审计、XSS、jwt、SSRF、CSRF
+先深入理解这些漏洞背后的原理和知识，然后运用于实战化（CTF模拟）
+推荐新手刷题平台：<a href="https://ctf.show/">ctf.show</a>，<a href="https://buuoj.cn/">https://buuoj.cn/</a></p>
+<p><strong>有些童鞋会问，从哪里开始呢？</strong>
+大家莫慌，先从一个搭建一个网页，理解运行机理开始吧！
+<strong>本地服务器的搭建：利用<span class="heti-skip"><span class="heti-spacing"> </span>phpstudy<span class="heti-spacing"> </span></span>搭建一个<span><span class="heti-spacing"> </span>wamp</span></strong></p>
+<ul>
+<li>参考链接：<a href="https://blog.csdn.net/weixin_43837883/article/details/114021104">https://blog.csdn.net/weixin_43837883/article/details/114021104</a></li>
+</ul>
+<p>最终实现，其实并不需要你实现安装一个<span class="heti-skip"><span class="heti-spacing"> </span>wordpress<span class="heti-spacing"> </span></span>博客。在网页所在的根目录找到<span class="heti-skip"><span class="heti-spacing"> </span>index.html<span class="heti-spacing"> </span></span>即可。
+之后可以学习一下web前端html的语言构造
+以及了解js是什么（在学习XSS漏洞的时候了解即可）
+然后学习一下php的语言
+（不需要那么精通，只需要知道有什么出题的点，能看懂代码就好）
+然后就可以开始学习一些漏洞，可以从最简单的php特性开始。
+在本篇中，我把php的一些特性放在了前置知识的位置，大家可以随学随看</p>
+<h3 id="_2">三、书籍推荐</h3>
+<ul>
+<li>学<span class="heti-skip"><span class="heti-spacing"> </span>web<span class="heti-spacing"> </span></span>入门推荐是《<span>web<span class="heti-spacing"> </span></span>安全深度剖析》虽然内容有些老，但是对新手入门很友好。</li>
+<li>《<span>web<span class="heti-spacing"> </span></span>前端黑客技术揭秘》偏向于前端黑客知识，都是些理论话的东西</li>
+<li>还有是徐焱的《<span>web<span class="heti-spacing"> </span></span>安全攻防》这本书偏向于<span class="heti-skip"><span class="heti-spacing"> </span>web<span class="heti-spacing"> </span></span>渗透实战，手把手教你如何搭建环境。还有配套的源代码，可以边搞实战技巧边玩代码审计。</li>
+<li>再然后就是道哥的《白帽子讲<span class="heti-skip"><span class="heti-spacing"> </span>web<span class="heti-spacing"> </span></span>安全》了，萌新读这个可能会有点困难，但是这本书不可不读，里面的思想方法值得学习。</li>
+<li>中后期就是偏向于编程和脚本了，搞<span class="heti-skip"><span class="heti-spacing"> </span>web<span class="heti-spacing"> </span></span>首先就是要学好<span><span class="heti-spacing"> </span>PHP</span>，然后可以学<span><span class="heti-spacing"> </span>python</span>（<span>CTF<span class="heti-spacing"> </span></span>题目很多是要写脚本的）学好编程并能写一些简单的工具是<span class="heti-skip"><span class="heti-spacing"> </span>web<span class="heti-spacing"> </span></span>渗透的分水岭</li>
+</ul>
+<h3 id="_3">方便我们使用的软件</h3>
+<ul>
+<li>notepad++（力荐）</li>
+<li>Sublime text（多系统兼容</li>
+<li>utools</li>
+<li>Typora</li>
+</ul>
+<h2 id="_4">前置知识</h2>
+<p>不是看完前置知识才能学习漏洞，这里仅作整理，边看边学
+这份大纲会带你过一遍学习web所需的一些主要的基础知识，但是难免有疏漏的地方，大家学习的时候遇到不明白的问题多多百度，百度解决不了的随时问学长学姐，周报求质不求量，学到东西才是最重要的
+补充：已经从“百度时代”进入“ai时代”了，ai可以解决大多数的问题</p>
+<h2 id="1http"><span>1.http<span class="heti-spacing"> </span></span>状态码</h2>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a> <span class="mi">1</span><span class="n">开头的http状态码</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">表示临时响应并需要请求者继续执行操作的状态代码</span><span class="err">。</span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="mi">100</span>   <span class="err">（</span><span class="n">继续</span><span class="err">）</span> <span class="n">请求者应当继续提出请求</span><span class="err">。</span> <span class="n">服务器返回此代码表示已收到请求的第一部分</span><span class="err">，</span><span class="n">正在等待其余部分</span><span class="err">。</span>  
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="mi">101</span>   <span class="err">（</span><span class="n">切换协议</span><span class="err">）</span> <span class="n">请求者已要求服务器切换协议</span><span class="err">，</span><span class="n">服务器已确认并准备切换</span><span class="err">。</span>
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="err">—————————————————————————————————————————————————————————————————————————————————————————</span>
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="mi">2</span><span class="n">开头的http状态码</span>
+<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="n">表示请求成功</span>
+<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a>
+<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="mi">200</span>     <span class="n">成功处理了请求</span><span class="err">，</span><span class="n">一般情况下都是返回此状态码</span><span class="err">；</span> 
+<a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="mi">201</span>     <span class="n">请求成功并且服务器创建了新的资源</span><span class="err">。</span> 
+<a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="mi">202</span>     <span class="n">接受请求但没创建资源</span><span class="err">；</span> 
+<a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="mi">203</span>     <span class="n">返回另一资源的请求</span><span class="err">；</span> 
+<a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="mi">204</span>     <span class="n">服务器成功处理了请求</span><span class="err">，</span><span class="n">但没有返回任何内容</span><span class="err">；</span>
+<a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="mi">205</span>     <span class="n">服务器成功处理了请求</span><span class="err">，</span><span class="n">但没有返回任何内容</span><span class="err">；</span>
+<a href="#__codelineno-0-16" id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="mi">206</span>     <span class="n">处理部分请求</span><span class="err">；</span>
+<a href="#__codelineno-0-17" id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="err">—————————————————————————————————————————————————————————————————————————————————————————</span>
+<a href="#__codelineno-0-18" id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="mi">3</span><span class="n">xx</span> <span class="err">（</span><span class="n">重定向</span><span class="err">）</span> 
+<a href="#__codelineno-0-19" id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="n">重定向代码</span><span class="err">，</span><span class="n">也是常见的代码</span>
+<a href="#__codelineno-0-20" id="__codelineno-0-20" name="__codelineno-0-20"></a>
+<a href="#__codelineno-0-21" id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="mi">300</span>   <span class="err">（</span><span class="n">多种选择</span><span class="err">）</span>  <span class="n">针对请求</span><span class="err">，</span><span class="n">服务器可执行多种操作</span><span class="err">。</span> <span class="n">服务器可根据请求者</span> <span class="p">(</span><span class="n">user</span> <span class="n">agent</span><span class="p">)</span> <span class="n">选择一项操作</span><span class="err">，</span><span class="n">或提供操作列表供请求者选择</span><span class="err">。</span> 
+<a href="#__codelineno-0-22" id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="mi">301</span>   <span class="err">（</span><span class="n">永久移动</span><span class="err">）</span>  <span class="n">请求的网页已永久移动到新位置</span><span class="err">。</span> <span class="n">服务器返回此响应</span><span class="err">（</span><span class="n">对</span> <span class="n">GET</span> <span class="n">或</span> <span class="n">HEAD</span> <span class="n">请求的响应</span><span class="err">）</span><span class="n">时</span><span class="err">，</span><span class="n">会自动将请求者转到新位置</span><span class="err">。</span> 
+<a href="#__codelineno-0-23" id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="mi">302</span>   <span class="err">（</span><span class="n">临时移动</span><span class="err">）</span>  <span class="n">服务器目前从不同位置的网页响应请求</span><span class="err">，</span><span class="n">但请求者应继续使用原有位置来进行以后的请求</span><span class="err">。</span> 
+<a href="#__codelineno-0-24" id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="mi">303</span>   <span class="err">（</span><span class="n">查看其他位置</span><span class="err">）</span> <span class="n">请求者应当对不同的位置使用单独的</span> <span class="n">GET</span> <span class="n">请求来检索响应时</span><span class="err">，</span><span class="n">服务器返回此代码</span><span class="err">。</span> 
+<a href="#__codelineno-0-25" id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="mi">304</span>   <span class="err">（</span><span class="n">未修改</span><span class="err">）</span> <span class="n">自从上次请求后</span><span class="err">，</span><span class="n">请求的网页未修改过</span><span class="err">。</span> <span class="n">服务器返回此响应时</span><span class="err">，</span><span class="n">不会返回网页内容</span><span class="err">。</span> 
+<a href="#__codelineno-0-26" id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="mi">305</span>   <span class="err">（</span><span class="n">使用代理</span><span class="err">）</span> <span class="n">请求者只能使用代理访问请求的网页</span><span class="err">。</span> <span class="n">如果服务器返回此响应</span><span class="err">，</span><span class="n">还表示请求者应使用代理</span><span class="err">。</span> 
+<a href="#__codelineno-0-27" id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="mi">307</span>   <span class="err">（</span><span class="n">临时重定向</span><span class="err">）</span>  <span class="n">服务器目前从不同位置的网页响应请求</span><span class="err">，</span><span class="n">但请求者应继续使用原有位置来进行以后的请求</span><span class="err">。</span>
+<a href="#__codelineno-0-28" id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="err">—————————————————————————————————————————————————————————————————————————————————————————</span>
+<a href="#__codelineno-0-29" id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="mi">4</span><span class="n">开头的http状态码表示请求出错</span>
+<a href="#__codelineno-0-30" id="__codelineno-0-30" name="__codelineno-0-30"></a>
+<a href="#__codelineno-0-31" id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="mi">400</span>    <span class="n">服务器不理解请求的语法</span><span class="err">。</span> 
+<a href="#__codelineno-0-32" id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="mi">401</span>   <span class="n">请求要求身份验证</span><span class="err">。</span> <span class="n">对于需要登录的网页</span><span class="err">，</span><span class="n">服务器可能返回此响应</span><span class="err">。</span> 
+<a href="#__codelineno-0-33" id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="mi">403</span>   <span class="n">服务器拒绝请求</span><span class="err">。</span> 
+<a href="#__codelineno-0-34" id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="mi">404</span>   <span class="n">服务器找不到请求的网页</span><span class="err">。</span> 
+<a href="#__codelineno-0-35" id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="mi">405</span>   <span class="n">禁用请求中指定的方法</span><span class="err">。</span> 
+<a href="#__codelineno-0-36" id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="mi">406</span>   <span class="n">无法使用请求的内容特性响应请求的网页</span><span class="err">。</span> 
+<a href="#__codelineno-0-37" id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="mi">407</span>   <span class="n">此状态代码与</span> <span class="mi">401</span><span class="n">类似</span><span class="err">，</span><span class="n">但指定请求者应当授权使用代理</span><span class="err">。</span> 
+<a href="#__codelineno-0-38" id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="mi">408</span>   <span class="n">服务器等候请求时发生超时</span><span class="err">。</span> 
+<a href="#__codelineno-0-39" id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="mi">409</span>   <span class="n">服务器在完成请求时发生冲突</span><span class="err">。</span> <span class="n">服务器必须在响应中包含有关冲突的信息</span><span class="err">。</span> 
+<a href="#__codelineno-0-40" id="__codelineno-0-40" name="__codelineno-0-40"></a><span class="mi">410</span>   <span class="n">如果请求的资源已永久删除</span><span class="err">，</span><span class="n">服务器就会返回此响应</span><span class="err">。</span> 
+<a href="#__codelineno-0-41" id="__codelineno-0-41" name="__codelineno-0-41"></a><span class="mi">411</span>   <span class="n">服务器不接受不含有效内容长度标头字段的请求</span><span class="err">。</span> 
+<a href="#__codelineno-0-42" id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="mi">412</span>   <span class="n">服务器未满足请求者在请求中设置的其中一个前提条件</span><span class="err">。</span> 
+<a href="#__codelineno-0-43" id="__codelineno-0-43" name="__codelineno-0-43"></a><span class="mi">413</span>   <span class="n">服务器无法处理请求</span><span class="err">，</span><span class="n">因为请求实体过大</span><span class="err">，</span><span class="n">超出服务器的处理能力</span><span class="err">。</span> 
+<a href="#__codelineno-0-44" id="__codelineno-0-44" name="__codelineno-0-44"></a><span class="mi">414</span>   <span class="n">请求的</span> <span class="n">URI</span><span class="err">（</span><span class="n">通常为网址</span><span class="err">）</span><span class="n">过长</span><span class="err">，</span><span class="n">服务器无法处理</span><span class="err">。</span> 
+<a href="#__codelineno-0-45" id="__codelineno-0-45" name="__codelineno-0-45"></a><span class="mi">415</span>   <span class="n">请求的格式不受请求页面的支持</span><span class="err">。</span> 
+<a href="#__codelineno-0-46" id="__codelineno-0-46" name="__codelineno-0-46"></a><span class="mi">416</span>   <span class="n">如果页面无法提供请求的范围</span><span class="err">，</span><span class="n">则服务器会返回此状态代码</span><span class="err">。</span> 
+<a href="#__codelineno-0-47" id="__codelineno-0-47" name="__codelineno-0-47"></a><span class="mi">417</span>   <span class="n">服务器未满足</span><span class="err">”</span><span class="n">期望</span><span class="err">”</span><span class="n">请求标头字段的要求</span><span class="err">。</span>
+<a href="#__codelineno-0-48" id="__codelineno-0-48" name="__codelineno-0-48"></a><span class="err">—————————————————————————————————————————————————————————————————————————————————————————</span>
+<a href="#__codelineno-0-49" id="__codelineno-0-49" name="__codelineno-0-49"></a><span class="mi">5</span><span class="n">开头状态码并不常见</span><span class="err">，</span><span class="n">但是我们应该知道</span>
+<a href="#__codelineno-0-50" id="__codelineno-0-50" name="__codelineno-0-50"></a>
+<a href="#__codelineno-0-51" id="__codelineno-0-51" name="__codelineno-0-51"></a><span class="mi">500</span>   <span class="err">（</span><span class="n">服务器内部错误</span><span class="err">）</span>  <span class="n">服务器遇到错误</span><span class="err">，</span><span class="n">无法完成请求</span><span class="err">。</span> 
+<a href="#__codelineno-0-52" id="__codelineno-0-52" name="__codelineno-0-52"></a><span class="mi">501</span>   <span class="err">（</span><span class="n">尚未实施</span><span class="err">）</span> <span class="n">服务器不具备完成请求的功能</span><span class="err">。</span> <span class="n">例如</span><span class="err">，</span><span class="n">服务器无法识别请求方法时可能会返回此代码</span><span class="err">。</span> 
+<a href="#__codelineno-0-53" id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="mi">502</span>   <span class="err">（</span><span class="n">错误网关</span><span class="err">）</span> <span class="n">服务器作为网关或代理</span><span class="err">，</span><span class="n">从上游服务器收到无效响应</span><span class="err">。</span> 
+<a href="#__codelineno-0-54" id="__codelineno-0-54" name="__codelineno-0-54"></a><span class="mi">503</span>   <span class="err">（</span><span class="n">服务不可用</span><span class="err">）</span> <span class="n">服务器目前无法使用</span><span class="err">（</span><span class="n">由于超载或停机维护</span><span class="err">）。</span> <span class="n">通常</span><span class="err">，</span><span class="n">这只是暂时状态</span><span class="err">。</span> 
+<a href="#__codelineno-0-55" id="__codelineno-0-55" name="__codelineno-0-55"></a><span class="mi">504</span>   <span class="err">（</span><span class="n">网关超时</span><span class="err">）</span>  <span class="n">服务器作为网关或代理</span><span class="err">，</span><span class="n">但是没有及时从上游服务器收到请求</span><span class="err">。</span> 
+<a href="#__codelineno-0-56" id="__codelineno-0-56" name="__codelineno-0-56"></a><span class="mi">505</span>   <span class="err">（</span><span class="n">HTTP</span> <span class="n">版本不受支持</span><span class="err">）</span> <span class="n">服务器不支持请求中所用的</span> <span class="n">HTTP</span> <span class="n">协议版本</span><span class="err">。</span>  
+</code></pre></div>
+<h2 id="2"><span>2.<span class="heti-spacing"> </span></span>正则表达式</h2>
+<p><a href="https://ihateregex.io/">https://ihateregex.io/</a>
+<a href="https://tool.oschina.net/regex">https://tool.oschina.net/regex</a></p>
+<h3 id="_5">表达式全集</h3>
+<p><strong>内容较长，展开查看</strong></p>
+<details>
+<summary>点击展开<span class="heti-skip"><span class="heti-spacing"> </span>/<span class="heti-spacing"> </span></span>收起</summary>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\</td>
+<td>将下一个字符标记为一个特殊字符、或一个原义字符、或一个向后引用、或一个八进制转义符。例如<heti-adjacent class="heti-adjacent-quarter">，</heti-adjacent>“n”匹配字符“n”而“\n”匹配一个换行符。串行“\\”匹配“\”而“\(”则匹配“(”。</td>
+</tr>
+<tr>
+<td>^</td>
+<td>匹配输入字符串的开始位置。如果设置了<span class="heti-skip"><span class="heti-spacing"> </span>RegExp<span class="heti-spacing"> </span></span>对象的<span class="heti-skip"><span class="heti-spacing"> </span>Multiline<span class="heti-spacing"> </span></span>属性，<span>^<span class="heti-spacing"> </span></span>也匹配“\n”或“\r”之后的位置。</td>
+</tr>
+<tr>
+<td>$</td>
+<td>匹配输入字符串的结束位置。如果设置了<span class="heti-skip"><span class="heti-spacing"> </span>RegExp<span class="heti-spacing"> </span></span>对象的<span class="heti-skip"><span class="heti-spacing"> </span>Multiline<span class="heti-spacing"> </span></span>属性，<span>$<span class="heti-spacing"> </span></span>也匹配“\n”或“\r”之前的位置。</td>
+</tr>
+<tr>
+<td>*</td>
+<td>匹配前面的子表达式零次或多次。例如，zo<em>能匹配“z”以及“zoo”。</em>等价于<span><span class="heti-spacing"> </span>{0,}</span>。</td>
+</tr>
+<tr>
+<td>+</td>
+<td>匹配前面的子表达式一次或多次。例如<heti-adjacent class="heti-adjacent-quarter">，</heti-adjacent>“zo+”能匹配“zo”以及“zoo”，但不能匹配“z”。<span>+<span class="heti-spacing"> </span></span>等价于<span><span class="heti-spacing"> </span>{1,}</span>。</td>
+</tr>
+<tr>
+<td>?</td>
+<td>匹配前面的子表达式零次或一次。例如<heti-adjacent class="heti-adjacent-quarter">，</heti-adjacent>“do(es)?”可以匹配“does”或“does”中的“do”。<span>?<span class="heti-spacing"> </span></span>等价于<span><span class="heti-spacing"> </span>{0,1}</span>。</td>
+</tr>
+<tr>
+<td>{<em>n</em>}</td>
+<td><span>_n_<span class="heti-spacing"> </span></span>是一个非负整数。匹配确定的<span class="heti-skip"><span class="heti-spacing"> </span>_n_<span class="heti-spacing"> </span></span>次。例如<heti-adjacent class="heti-adjacent-quarter">，</heti-adjacent>“o{2}”不能匹配“Bob”中的“o”，但是能匹配“food”中的两个<span><span class="heti-spacing"> </span>o</span>。</td>
+</tr>
+<tr>
+<td>{<em>n</em>,}</td>
+<td><span>_n_<span class="heti-spacing"> </span></span>是一个非负整数。至少匹配<span class="heti-skip"><span class="heti-spacing"> </span>_n_<span class="heti-spacing"> </span></span>次。例如<heti-adjacent class="heti-adjacent-quarter">，</heti-adjacent>“o{2,}”不能匹配“Bob”中的“o”，但能匹配“foooood”中的所有<span><span class="heti-spacing"> </span>o</span><heti-adjacent class="heti-adjacent-quarter">。</heti-adjacent>“o{1,}”等价于“o+”<heti-adjacent class="heti-adjacent-quarter">。</heti-adjacent>“o{0,}”则等价于“o*”。</td>
+</tr>
+<tr>
+<td>{<em>n</em>,<em>m</em>}</td>
+<td><em><span>m_<span class="heti-spacing"> </span></span>和<span class="heti-skip"><span class="heti-spacing"> </span>_n_<span class="heti-spacing"> </span></span>均为非负整数，其中<span><span class="heti-spacing"> </span>_n</span></em>&lt;=<em>m</em>。最少匹配<span class="heti-skip"><span class="heti-spacing"> </span>_n_<span class="heti-spacing"> </span></span>次且最多匹配<span class="heti-skip"><span class="heti-spacing"> </span>_m_<span class="heti-spacing"> </span></span>次。例如<heti-adjacent class="heti-adjacent-quarter">，</heti-adjacent>“o{1,3}”将匹配“fooooood”中的前三个<span><span class="heti-spacing"> </span>o</span><heti-adjacent class="heti-adjacent-quarter">。</heti-adjacent>“o{0,1}”等价于“o?”。请注意在逗号和两个数之间不能有空格。</td>
+</tr>
+<tr>
+<td>?</td>
+<td>当该字符紧跟在任何一个其他限制符（*,+,?，{<em>n</em>}，{<em>n</em>,}，{<em>n</em>,<em>m</em>}）后面时，匹配模式是非贪婪的。非贪婪模式尽可能少的匹配所搜索的字符串，而默认的贪婪模式则尽可能多的匹配所搜索的字符串。例如，对于字符串“oooo”<heti-adjacent class="heti-adjacent-quarter">，</heti-adjacent>“o+?”将匹配单个“o”，而“o+”将匹配所有“o”。</td>
+</tr>
+<tr>
+<td>.</td>
+<td>匹配除“\<em>n</em>”之外的任何单个字符。要匹配包括“\<em>n</em>”在内的任何字符，请使用像“(.|\n)”的模式。</td>
+</tr>
+<tr>
+<td>(pattern)</td>
+<td>匹配<span class="heti-skip"><span class="heti-spacing"> </span>pattern<span class="heti-spacing"> </span></span>并获取这一匹配。所获取的匹配可以从产生的<span class="heti-skip"><span class="heti-spacing"> </span>Matches<span class="heti-spacing"> </span></span>集合得到，在<span class="heti-skip"><span class="heti-spacing"> </span>VBScript<span class="heti-spacing"> </span></span>中使用<span class="heti-skip"><span class="heti-spacing"> </span>SubMatches<span class="heti-spacing"> </span></span>集合，在<span class="heti-skip"><span class="heti-spacing"> </span>JScript<span class="heti-spacing"> </span></span>中则使用<span class="heti-skip"><span class="heti-spacing"> </span><span class="arithmatex">\(0…\)</span>9<span class="heti-spacing"> </span></span>属性。要匹配圆括号字符，请使用“\(”或“\)”。</td>
+</tr>
+<tr>
+<td>(?:pattern)</td>
+<td>匹配<span class="heti-skip"><span class="heti-spacing"> </span>pattern<span class="heti-spacing"> </span></span>但不获取匹配结果，也就是说这是一个非获取匹配，不进行存储供以后使用。这在使用或字符“(|)”来组合一个模式的各个部分是很有用。例如“industr(?:y|ies)”就是一个比“industry|industries”更简略的表达式。</td>
+</tr>
+<tr>
+<td>(?=pattern)</td>
+<td>正向肯定预查，在任何匹配<span class="heti-skip"><span class="heti-spacing"> </span>pattern<span class="heti-spacing"> </span></span>的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如<heti-adjacent class="heti-adjacent-quarter">，</heti-adjacent>“Windows(?=95|98|NT|2000)”能匹配“Windows2000”中的“Windows”，但不能匹配“Windows3.1”中的“Windows”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。</td>
+</tr>
+<tr>
+<td>(?!pattern)</td>
+<td>正向否定预查，在任何不匹配<span class="heti-skip"><span class="heti-spacing"> </span>pattern<span class="heti-spacing"> </span></span>的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如“Windows(?!95|98|NT|2000)”能匹配“Windows3.1”中的“Windows”，但不能匹配“Windows2000”中的“Windows”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始</td>
+</tr>
+<tr>
+<td>(?&lt;=pattern)</td>
+<td>反向肯定预查，与正向肯定预查类拟，只是方向相反。例如<heti-adjacent class="heti-adjacent-quarter">，</heti-adjacent>“(?&lt;=95|98|NT|2000)Windows”能匹配“2000Windows”中的“Windows”，但不能匹配“3.1Windows”中的“Windows”。</td>
+</tr>
+<tr>
+<td>(?&lt;!pattern)</td>
+<td>反向否定预查，与正向否定预查类拟，只是方向相反。例如“(?&lt;!95|98|NT|2000)Windows”能匹配“3.1Windows”中的“Windows”，但不能匹配“2000Windows”中的“Windows”。</td>
+</tr>
+<tr>
+<td>x|y</td>
+<td>匹配<span class="heti-skip"><span class="heti-spacing"> </span>x<span class="heti-spacing"> </span></span>或<span><span class="heti-spacing"> </span>y</span>。例如<heti-adjacent class="heti-adjacent-quarter">，</heti-adjacent>“z|food”能匹配“z”或“food”<heti-adjacent class="heti-adjacent-quarter">。</heti-adjacent>“(z|f)ood”则匹配“zood”或“food”。</td>
+</tr>
+<tr>
+<td>[xyz]</td>
+<td>字符集合。匹配所包含的任意一个字符。例如<heti-adjacent class="heti-adjacent-quarter">，</heti-adjacent>“[abc]”可以匹配“plain”中的“a”。</td>
+</tr>
+<tr>
+<td>[^xyz]</td>
+<td>负值字符集合。匹配未包含的任意字符。例如<heti-adjacent class="heti-adjacent-quarter">，</heti-adjacent>“[^abc]”可以匹配“plain”中的“p”。</td>
+</tr>
+<tr>
+<td>[a-z]</td>
+<td>字符范围。匹配指定范围内的任意字符。例如<heti-adjacent class="heti-adjacent-quarter">，</heti-adjacent>“[a-z]”可以匹配“a”到“z”范围内的任意小写字母字符。</td>
+</tr>
+<tr>
+<td>[^a-z]</td>
+<td>负值字符范围。匹配任何不在指定范围内的任意字符。例如<heti-adjacent class="heti-adjacent-quarter">，</heti-adjacent>“[^a-z]”可以匹配任何不在“a”到“z”范围内的任意字符。</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>匹配一个单词边界，也就是指单词和空格间的位置。例如<heti-adjacent class="heti-adjacent-quarter">，</heti-adjacent>“er\b”可以匹配“never”中的“er”，但不能匹配“verb”中的“er”。</td>
+</tr>
+<tr>
+<td>\B</td>
+<td>匹配非单词边界<heti-adjacent class="heti-adjacent-quarter">。</heti-adjacent>“er\B”能匹配“verb”中的“er”，但不能匹配“never”中的“er”。</td>
+</tr>
+<tr>
+<td>\cx</td>
+<td>匹配由<span class="heti-skip"><span class="heti-spacing"> </span>x<span class="heti-spacing"> </span></span>指明的控制字符。例如，<span>\cM<span class="heti-spacing"> </span></span>匹配一个<span class="heti-skip"><span class="heti-spacing"> </span>Control-M<span class="heti-spacing"> </span></span>或回车符。<span>x<span class="heti-spacing"> </span></span>的值必须为<span class="heti-skip"><span class="heti-spacing"> </span>A-Z<span class="heti-spacing"> </span></span>或<span class="heti-skip"><span class="heti-spacing"> </span>a-z<span class="heti-spacing"> </span></span>之一。否则，将<span class="heti-skip"><span class="heti-spacing"> </span>c<span class="heti-spacing"> </span></span>视为一个原义的“c”字符。</td>
+</tr>
+<tr>
+<td>\d</td>
+<td>匹配一个数字字符。等价于<span><span class="heti-spacing"> </span>[0-9]</span>。</td>
+</tr>
+<tr>
+<td>\D</td>
+<td>匹配一个非数字字符。等价于<span><span class="heti-spacing"> </span>[^0-9]</span>。</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>匹配一个换页符。等价于<span class="heti-skip"><span class="heti-spacing"> </span>\x0c<span class="heti-spacing"> </span></span>和<span><span class="heti-spacing"> </span>\cL</span>。</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>匹配一个换行符。等价于<span class="heti-skip"><span class="heti-spacing"> </span>\x0a<span class="heti-spacing"> </span></span>和<span><span class="heti-spacing"> </span>\cJ</span>。</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>匹配一个回车符。等价于<span class="heti-skip"><span class="heti-spacing"> </span>\x0d<span class="heti-spacing"> </span></span>和<span><span class="heti-spacing"> </span>\cM</span>。</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>匹配任何空白字符，包括空格、制表符、换页符等等。等价于<span><span class="heti-spacing"> </span>[ \f\n\r\t\v]</span>。</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>匹配任何非空白字符。等价于<span><span class="heti-spacing"> </span>[^ \f\n\r\t\v]</span>。</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>匹配一个制表符。等价于<span class="heti-skip"><span class="heti-spacing"> </span>\x09<span class="heti-spacing"> </span></span>和<span><span class="heti-spacing"> </span>\cI</span>。</td>
+</tr>
+<tr>
+<td>\v</td>
+<td>匹配一个垂直制表符。等价于<span class="heti-skip"><span class="heti-spacing"> </span>\x0b<span class="heti-spacing"> </span></span>和<span><span class="heti-spacing"> </span>\cK</span>。</td>
+</tr>
+<tr>
+<td>\w</td>
+<td>匹配包括下划线的任何单词字符。等价于“[A-Za-z0-9_]”。</td>
+</tr>
+<tr>
+<td>\W</td>
+<td>匹配任何非单词字符。等价于“[^A-Za-z0-9_]”。</td>
+</tr>
+<tr>
+<td>\x_n_</td>
+<td>匹配<span><span class="heti-spacing"> </span>_n_</span>，其中<span class="heti-skip"><span class="heti-spacing"> </span>_n_<span class="heti-spacing"> </span></span>为十六进制转义值。十六进制转义值必须为确定的两个数字长。例如<heti-adjacent class="heti-adjacent-quarter">，</heti-adjacent>“\x41”匹配“A”<heti-adjacent class="heti-adjacent-quarter">。</heti-adjacent>“\x041”则等价于“\x04&amp;1”。正则表达式中可以使用<span class="heti-skip"><span class="heti-spacing"> </span>ASCII<span class="heti-spacing"> </span></span>编码。.</td>
+</tr>
+<tr>
+<td>\<em>num</em></td>
+<td>匹配<span><span class="heti-spacing"> </span>_num_</span>，其中<span class="heti-skip"><span class="heti-spacing"> </span>_num_<span class="heti-spacing"> </span></span>是一个正整数。对所获取的匹配的引用。例如<heti-adjacent class="heti-adjacent-quarter">，</heti-adjacent>“(.)\1”匹配两个连续的相同字符。</td>
+</tr>
+<tr>
+<td>\<em>n</em></td>
+<td>标识一个八进制转义值或一个向后引用。如果<span class="heti-skip"><span class="heti-spacing"> </span>\_n_<span class="heti-spacing"> </span></span>之前至少<span class="heti-skip"><span class="heti-spacing"> </span>_n_<span class="heti-spacing"> </span></span>个获取的子表达式，则<span class="heti-skip"><span class="heti-spacing"> </span>_n_<span class="heti-spacing"> </span></span>为向后引用。否则，如果<span class="heti-skip"><span class="heti-spacing"> </span>_n_<span class="heti-spacing"> </span></span>为八进制数字（0-7<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，则<span class="heti-skip"><span class="heti-spacing"> </span>_n_<span class="heti-spacing"> </span></span>为一个八进制转义值。</td>
+</tr>
+<tr>
+<td>\<em>nm</em></td>
+<td>标识一个八进制转义值或一个向后引用。如果<span><span class="heti-spacing"> </span>\</span><em><span>nm_<span class="heti-spacing"> </span></span>之前至少有<span class="heti-skip"><span class="heti-spacing"> </span>_nm_<span class="heti-spacing"> </span></span>个获得子表达式，则<span class="heti-skip"><span class="heti-spacing"> </span>_nm_<span class="heti-spacing"> </span></span>为向后引用。如果<span class="heti-skip"><span class="heti-spacing"> </span>\_nm_<span class="heti-spacing"> </span></span>之前至少有<span class="heti-skip"><span class="heti-spacing"> </span>_n_<span class="heti-spacing"> </span></span>个获取，则<span class="heti-skip"><span class="heti-spacing"> </span>_n_<span class="heti-spacing"> </span></span>为一个后跟文字<span class="heti-skip"><span class="heti-spacing"> </span>_m_<span class="heti-spacing"> </span></span>的向后引用。如果前面的条件都不满足，若<span class="heti-skip"><span class="heti-spacing"> </span>_n_<span class="heti-spacing"> </span></span>和<span class="heti-skip"><span class="heti-spacing"> </span>_m_<span class="heti-spacing"> </span></span>均为八进制数字（0-7<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，则<span class="heti-skip"><span class="heti-spacing"> </span>\_nm_<span class="heti-spacing"> </span></span>将匹配八进制转义值<span><span class="heti-spacing"> </span>_nm</span></em>。</td>
+</tr>
+<tr>
+<td>\<em>nml</em></td>
+<td>如果<span class="heti-skip"><span class="heti-spacing"> </span>_n_<span class="heti-spacing"> </span></span>为八进制数字（0-3<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，且<span class="heti-skip"><span class="heti-spacing"> </span>_m<span class="heti-spacing"> </span></span>和<span class="heti-skip"><span class="heti-spacing"> </span>l_<span class="heti-spacing"> </span></span>均为八进制数字（0-7<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，则匹配八进制转义值<span><span class="heti-spacing"> </span>_nm_l</span>。</td>
+</tr>
+<tr>
+<td>\u_n_</td>
+<td>匹配<span><span class="heti-spacing"> </span>_n_</span>，其中<span class="heti-skip"><span class="heti-spacing"> </span>_n_<span class="heti-spacing"> </span></span>是一个用四个十六进制数字表示的<span class="heti-skip"><span class="heti-spacing"> </span>Unicode<span class="heti-spacing"> </span></span>字符。例如，<span>\u00A9<span class="heti-spacing"> </span></span>匹配版权符号（©<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>。</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h3 id="_6">常用正则表达式</h3>
+<table>
+<thead>
+<tr>
+<th>用户名</th>
+<th>/^[a-z0-9_-]{3,16}$/</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>密码</td>
+<td>/^[a-z0-9_-]{6,18}$/</td>
+</tr>
+<tr>
+<td>十六进制值</td>
+<td>/^#?([a-f0-9]{6}|[a-f0-9]{3})$/</td>
+</tr>
+<tr>
+<td>电子邮箱</td>
+<td>/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/</td>
+</tr>
+<tr>
+<td><code>/^[a-z\\d]+(\\.[a-z\\d]+)*@([\\da-z](-[\\da-z])?)+(\\.{1,2}[a-z]+)+$/</code></td>
+<td></td>
+</tr>
+<tr>
+<td>URL</td>
+<td>/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]<em>)</em>\/?$/</td>
+</tr>
+<tr>
+<td><span>IP<span class="heti-spacing"> </span></span>地址</td>
+<td>/((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)/</td>
+</tr>
+<tr>
+<td>/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/</td>
+<td></td>
+</tr>
+<tr>
+<td><span>HTML<span class="heti-spacing"> </span></span>标签</td>
+<td>/<sup>&lt;([a-z]+)([</sup>&lt;]+)<em>(?:&gt;(.</em>)&lt;\/\1&gt;|\s+\/&gt;)$/</td>
+</tr>
+<tr>
+<td>删除代码<span class="heti-skip"><span class="heti-spacing"> </span>\\<span class="heti-spacing"> </span></span>注释</td>
+<td>(?&lt;!http:|\S)//.*$</td>
+</tr>
+<tr>
+<td><span>Unicode<span class="heti-spacing"> </span></span>编码中的汉字范围</td>
+<td>/^[\u2E80-\u9FFF]+$/</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3http"><span>3.<span class="heti-spacing"> </span></span>常见的<span class="heti-skip"><span class="heti-spacing"> </span>HTTP<span class="heti-spacing"> </span></span>头部信息</h2>
+<p><span>Accept:<span class="heti-spacing"> </span></span>允许哪些媒体类型
+Accept-Charset: 允许哪些字符集
+Accept-Encoding: 允许哪些编码
+Accept-Language: 允许哪些语言
+Cache-Control: 缓存策略，如no-cache，详见官方文档
+Connection: 连接选项，例如是否允许代理。
+Host: 请求的主机
+If-None-Match: 判断请求实体的Etag是否包含在If-None-Match中，如果包含，则返回304，使用缓存，见Etag
+If-Modified-Since: 判断修改时间是否一致，如果一致，则使用缓存
+If-Match: 与If-None-Match相反
+If-Unmodified-Since: 与If-Modified-Since相反
+Referer: 表明这个请求发起的源头
+User-Agent: 这个大家相信应该很熟悉了，就是经常用来做浏览器检测的userAgent。
+Cache-Control: 缓存策略，如max-age:100，详见官方文档
+Connection: 连接选项，例如是否允许代理
+Content-Encoding: 返回内容的编码，如gzip
+Content-Language: 返回内容的语言
+Content-Length: 返回内容的字节长度
+Content-Type: 返回内容的媒体类型，如text/html
+Data: 返回时间
+Etag: entity tag，实体标签，给每个实体生成一个单独的值，用于客户端缓存，与If-None-Match配合使用
+Expires: 设置缓存过期时间，Cache-Control也会相应变化
+Last-Modified: 最近修改时间，用于客户端缓存，与If-Modified-Since配合使用
+Pragma: 似乎和Cache-Control差不多，用于旧的浏览器
+Server: 服务器信息。
+Vary: WEB服务器用该头部的内容告诉 Cache 服务器，在什么条件下才能用本响应所返回的对象响应后续的请求。假如源WEB服务器在接到第一个请求消息时，其响应消息的头部为：Content-Encoding: gzip; Vary: Content-Encoding那么 Cache 服务器会分析后续请求消息的头部，检查其 Accept-Encoding，是否跟先前响应的 Vary 头部值一致，即是否使用相同的内容编码方法，这样就可以防止 Cache 服务器用自己 Cache 里面压缩后的实体响应给不具备解压能力的浏览器</p>
+<h2 id="4url"><span>4.url<span class="heti-spacing"> </span></span>编码集</h2>
+<p><strong>内容较长，展开查看</strong></p>
+<details>
+<summary>点击展开<span class="heti-skip"><span class="heti-spacing"> </span>/<span class="heti-spacing"> </span></span>收起</summary>
+<table>
+<thead>
+<tr>
+<th><span>ASCII<span class="heti-spacing"> </span></span>字符</th>
+<th><span>URL-<span class="heti-spacing"> </span></span>编码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>space</td>
+<td>%20</td>
+</tr>
+<tr>
+<td>!</td>
+<td>%21</td>
+</tr>
+<tr>
+<td>"</td>
+<td>%22</td>
+</tr>
+<tr>
+<td>#</td>
+<td>%23</td>
+</tr>
+<tr>
+<td>$</td>
+<td>%24</td>
+</tr>
+<tr>
+<td>%</td>
+<td>%25</td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>%26</td>
+</tr>
+<tr>
+<td>'</td>
+<td>%27</td>
+</tr>
+<tr>
+<td>(</td>
+<td>%28</td>
+</tr>
+<tr>
+<td>)</td>
+<td>%29</td>
+</tr>
+<tr>
+<td>*</td>
+<td>%2A</td>
+</tr>
+<tr>
+<td>+</td>
+<td>%2B</td>
+</tr>
+<tr>
+<td>,</td>
+<td>%2C</td>
+</tr>
+<tr>
+<td>-</td>
+<td>%2D</td>
+</tr>
+<tr>
+<td>.</td>
+<td>%2E</td>
+</tr>
+<tr>
+<td>/</td>
+<td>%2F</td>
+</tr>
+<tr>
+<td>0</td>
+<td>%30</td>
+</tr>
+<tr>
+<td>1</td>
+<td>%31</td>
+</tr>
+<tr>
+<td>2</td>
+<td>%32</td>
+</tr>
+<tr>
+<td>3</td>
+<td>%33</td>
+</tr>
+<tr>
+<td>4</td>
+<td>%34</td>
+</tr>
+<tr>
+<td>5</td>
+<td>%35</td>
+</tr>
+<tr>
+<td>6</td>
+<td>%36</td>
+</tr>
+<tr>
+<td>7</td>
+<td>%37</td>
+</tr>
+<tr>
+<td>8</td>
+<td>%38</td>
+</tr>
+<tr>
+<td>9</td>
+<td>%39</td>
+</tr>
+<tr>
+<td>:</td>
+<td>%3A</td>
+</tr>
+<tr>
+<td>;</td>
+<td>%3B</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>%3C</td>
+</tr>
+<tr>
+<td>=</td>
+<td>%3D</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>%3E</td>
+</tr>
+<tr>
+<td>?</td>
+<td>%3F</td>
+</tr>
+<tr>
+<td>@</td>
+<td>%40</td>
+</tr>
+<tr>
+<td>A</td>
+<td>%41</td>
+</tr>
+<tr>
+<td>B</td>
+<td>%42</td>
+</tr>
+<tr>
+<td>C</td>
+<td>%43</td>
+</tr>
+<tr>
+<td>D</td>
+<td>%44</td>
+</tr>
+<tr>
+<td>E</td>
+<td>%45</td>
+</tr>
+<tr>
+<td>F</td>
+<td>%46</td>
+</tr>
+<tr>
+<td>G</td>
+<td>%47</td>
+</tr>
+<tr>
+<td>H</td>
+<td>%48</td>
+</tr>
+<tr>
+<td>I</td>
+<td>%49</td>
+</tr>
+<tr>
+<td>J</td>
+<td>%4A</td>
+</tr>
+<tr>
+<td>K</td>
+<td>%4B</td>
+</tr>
+<tr>
+<td>L</td>
+<td>%4C</td>
+</tr>
+<tr>
+<td>M</td>
+<td>%4D</td>
+</tr>
+<tr>
+<td>N</td>
+<td>%4E</td>
+</tr>
+<tr>
+<td>O</td>
+<td>%4F</td>
+</tr>
+<tr>
+<td>P</td>
+<td>%50</td>
+</tr>
+<tr>
+<td>Q</td>
+<td>%51</td>
+</tr>
+<tr>
+<td>R</td>
+<td>%52</td>
+</tr>
+<tr>
+<td>S</td>
+<td>%53</td>
+</tr>
+<tr>
+<td>T</td>
+<td>%54</td>
+</tr>
+<tr>
+<td>U</td>
+<td>%55</td>
+</tr>
+<tr>
+<td>V</td>
+<td>%56</td>
+</tr>
+<tr>
+<td>W</td>
+<td>%57</td>
+</tr>
+<tr>
+<td>X</td>
+<td>%58</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>%59</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>%5A</td>
+</tr>
+<tr>
+<td>[</td>
+<td>%5B</td>
+</tr>
+<tr>
+<td>\</td>
+<td>%5C</td>
+</tr>
+<tr>
+<td>]</td>
+<td>%5D</td>
+</tr>
+<tr>
+<td>^</td>
+<td>%5E</td>
+</tr>
+<tr>
+<td>_</td>
+<td>%5F</td>
+</tr>
+<tr>
+<td>`</td>
+<td>%60</td>
+</tr>
+<tr>
+<td>a</td>
+<td>%61</td>
+</tr>
+<tr>
+<td>b</td>
+<td>%62</td>
+</tr>
+<tr>
+<td>c</td>
+<td>%63</td>
+</tr>
+<tr>
+<td>d</td>
+<td>%64</td>
+</tr>
+<tr>
+<td>e</td>
+<td>%65</td>
+</tr>
+<tr>
+<td>f</td>
+<td>%66</td>
+</tr>
+<tr>
+<td>g</td>
+<td>%67</td>
+</tr>
+<tr>
+<td>h</td>
+<td>%68</td>
+</tr>
+<tr>
+<td>i</td>
+<td>%69</td>
+</tr>
+<tr>
+<td>j</td>
+<td>%6A</td>
+</tr>
+<tr>
+<td>k</td>
+<td>%6B</td>
+</tr>
+<tr>
+<td>l</td>
+<td>%6C</td>
+</tr>
+<tr>
+<td>m</td>
+<td>%6D</td>
+</tr>
+<tr>
+<td>n</td>
+<td>%6E</td>
+</tr>
+<tr>
+<td>o</td>
+<td>%6F</td>
+</tr>
+<tr>
+<td>p</td>
+<td>%70</td>
+</tr>
+<tr>
+<td>q</td>
+<td>%71</td>
+</tr>
+<tr>
+<td>r</td>
+<td>%72</td>
+</tr>
+<tr>
+<td>s</td>
+<td>%73</td>
+</tr>
+<tr>
+<td>t</td>
+<td>%74</td>
+</tr>
+<tr>
+<td>u</td>
+<td>%75</td>
+</tr>
+<tr>
+<td>v</td>
+<td>%76</td>
+</tr>
+<tr>
+<td>w</td>
+<td>%77</td>
+</tr>
+<tr>
+<td>x</td>
+<td>%78</td>
+</tr>
+<tr>
+<td>y</td>
+<td>%79</td>
+</tr>
+<tr>
+<td>z</td>
+<td>%7A</td>
+</tr>
+<tr>
+<td>{</td>
+<td>%7B</td>
+</tr>
+<tr>
+<td>|</td>
+<td>%7C</td>
+</tr>
+<tr>
+<td>}</td>
+<td>%7D</td>
+</tr>
+<tr>
+<td>~</td>
+<td>%7E</td>
+</tr>
+<tr>
+<td></td>
+<td>%7F</td>
+</tr>
+<tr>
+<td>`</td>
+<td>%80</td>
+</tr>
+<tr>
+<td></td>
+<td>%81</td>
+</tr>
+<tr>
+<td>‚</td>
+<td>%82</td>
+</tr>
+<tr>
+<td>ƒ</td>
+<td>%83</td>
+</tr>
+<tr>
+<td>„</td>
+<td>%84</td>
+</tr>
+<tr>
+<td>…</td>
+<td>%85</td>
+</tr>
+<tr>
+<td>†</td>
+<td>%86</td>
+</tr>
+<tr>
+<td>‡</td>
+<td>%87</td>
+</tr>
+<tr>
+<td>ˆ</td>
+<td>%88</td>
+</tr>
+<tr>
+<td>‰</td>
+<td>%89</td>
+</tr>
+<tr>
+<td>Š</td>
+<td>%8A</td>
+</tr>
+<tr>
+<td>‹</td>
+<td>%8B</td>
+</tr>
+<tr>
+<td>Œ</td>
+<td>%8C</td>
+</tr>
+<tr>
+<td></td>
+<td>%8D</td>
+</tr>
+<tr>
+<td>Ž</td>
+<td>%8E</td>
+</tr>
+<tr>
+<td></td>
+<td>%8F</td>
+</tr>
+<tr>
+<td></td>
+<td>%90</td>
+</tr>
+<tr>
+<td>'</td>
+<td>%91</td>
+</tr>
+<tr>
+<td>'</td>
+<td>%92</td>
+</tr>
+<tr>
+<td>"</td>
+<td>%93</td>
+</tr>
+<tr>
+<td>"</td>
+<td>%94</td>
+</tr>
+<tr>
+<td>•</td>
+<td>%95</td>
+</tr>
+<tr>
+<td>–</td>
+<td>%96</td>
+</tr>
+<tr>
+<td>—</td>
+<td>%97</td>
+</tr>
+<tr>
+<td>˜</td>
+<td>%98</td>
+</tr>
+<tr>
+<td>™</td>
+<td>%99</td>
+</tr>
+<tr>
+<td>š</td>
+<td>%9A</td>
+</tr>
+<tr>
+<td>›</td>
+<td>%9B</td>
+</tr>
+<tr>
+<td>œ</td>
+<td>%9C</td>
+</tr>
+<tr>
+<td></td>
+<td>%9D</td>
+</tr>
+<tr>
+<td>ž</td>
+<td>%9E</td>
+</tr>
+<tr>
+<td>Ÿ</td>
+<td>%9F</td>
+</tr>
+<tr>
+<td></td>
+<td>%A0</td>
+</tr>
+<tr>
+<td>¡</td>
+<td>%A1</td>
+</tr>
+<tr>
+<td>¢</td>
+<td>%A2</td>
+</tr>
+<tr>
+<td>£</td>
+<td>%A3</td>
+</tr>
+<tr>
+<td>¤</td>
+<td>%A4</td>
+</tr>
+<tr>
+<td>¥</td>
+<td>%A5</td>
+</tr>
+<tr>
+<td>¦</td>
+<td>%A6</td>
+</tr>
+<tr>
+<td>§</td>
+<td>%A7</td>
+</tr>
+<tr>
+<td>¨</td>
+<td>%A8</td>
+</tr>
+<tr>
+<td>©</td>
+<td>%A9</td>
+</tr>
+<tr>
+<td>ª</td>
+<td>%AA</td>
+</tr>
+<tr>
+<td>«</td>
+<td>%AB</td>
+</tr>
+<tr>
+<td>¬</td>
+<td>%AC</td>
+</tr>
+<tr>
+<td></td>
+<td>%AD</td>
+</tr>
+<tr>
+<td>®</td>
+<td>%AE</td>
+</tr>
+<tr>
+<td>¯</td>
+<td>%AF</td>
+</tr>
+<tr>
+<td>°</td>
+<td>%B0</td>
+</tr>
+<tr>
+<td>±</td>
+<td>%B1</td>
+</tr>
+<tr>
+<td>²</td>
+<td>%B2</td>
+</tr>
+<tr>
+<td>³</td>
+<td>%B3</td>
+</tr>
+<tr>
+<td>´</td>
+<td>%B4</td>
+</tr>
+<tr>
+<td>µ</td>
+<td>%B5</td>
+</tr>
+<tr>
+<td>¶</td>
+<td>%B6</td>
+</tr>
+<tr>
+<td>·</td>
+<td>%B7</td>
+</tr>
+<tr>
+<td>¸</td>
+<td>%B8</td>
+</tr>
+<tr>
+<td>¹</td>
+<td>%B9</td>
+</tr>
+<tr>
+<td>º</td>
+<td>%BA</td>
+</tr>
+<tr>
+<td>»</td>
+<td>%BB</td>
+</tr>
+<tr>
+<td>¼</td>
+<td>%BC</td>
+</tr>
+<tr>
+<td>½</td>
+<td>%BD</td>
+</tr>
+<tr>
+<td>¾</td>
+<td>%BE</td>
+</tr>
+<tr>
+<td>¿</td>
+<td>%BF</td>
+</tr>
+<tr>
+<td>À</td>
+<td>%C0</td>
+</tr>
+<tr>
+<td>Á</td>
+<td>%C1</td>
+</tr>
+<tr>
+<td>Â</td>
+<td>%C2</td>
+</tr>
+<tr>
+<td>Ã</td>
+<td>%C3</td>
+</tr>
+<tr>
+<td>Ä</td>
+<td>%C4</td>
+</tr>
+<tr>
+<td>Å</td>
+<td>%C5</td>
+</tr>
+<tr>
+<td>Æ</td>
+<td>%C6</td>
+</tr>
+<tr>
+<td>Ç</td>
+<td>%C7</td>
+</tr>
+<tr>
+<td>È</td>
+<td>%C8</td>
+</tr>
+<tr>
+<td>É</td>
+<td>%C9</td>
+</tr>
+<tr>
+<td>Ê</td>
+<td>%CA</td>
+</tr>
+<tr>
+<td>Ë</td>
+<td>%CB</td>
+</tr>
+<tr>
+<td>Ì</td>
+<td>%CC</td>
+</tr>
+<tr>
+<td>Í</td>
+<td>%CD</td>
+</tr>
+<tr>
+<td>Î</td>
+<td>%CE</td>
+</tr>
+<tr>
+<td>Ï</td>
+<td>%CF</td>
+</tr>
+<tr>
+<td>Ð</td>
+<td>%D0</td>
+</tr>
+<tr>
+<td>Ñ</td>
+<td>%D1</td>
+</tr>
+<tr>
+<td>Ò</td>
+<td>%D2</td>
+</tr>
+<tr>
+<td>Ó</td>
+<td>%D3</td>
+</tr>
+<tr>
+<td>Ô</td>
+<td>%D4</td>
+</tr>
+<tr>
+<td>Õ</td>
+<td>%D5</td>
+</tr>
+<tr>
+<td>Ö</td>
+<td>%D6</td>
+</tr>
+<tr>
+<td>×</td>
+<td>%D7</td>
+</tr>
+<tr>
+<td>Ø</td>
+<td>%D8</td>
+</tr>
+<tr>
+<td>Ù</td>
+<td>%D9</td>
+</tr>
+<tr>
+<td>Ú</td>
+<td>%DA</td>
+</tr>
+<tr>
+<td>Û</td>
+<td>%DB</td>
+</tr>
+<tr>
+<td>Ü</td>
+<td>%DC</td>
+</tr>
+<tr>
+<td>Ý</td>
+<td>%DD</td>
+</tr>
+<tr>
+<td>Þ</td>
+<td>%DE</td>
+</tr>
+<tr>
+<td>ß</td>
+<td>%DF</td>
+</tr>
+<tr>
+<td>à</td>
+<td>%E0</td>
+</tr>
+<tr>
+<td>á</td>
+<td>%E1</td>
+</tr>
+<tr>
+<td>â</td>
+<td>%E2</td>
+</tr>
+<tr>
+<td>ã</td>
+<td>%E3</td>
+</tr>
+<tr>
+<td>ä</td>
+<td>%E4</td>
+</tr>
+<tr>
+<td>å</td>
+<td>%E5</td>
+</tr>
+<tr>
+<td>æ</td>
+<td>%E6</td>
+</tr>
+<tr>
+<td>ç</td>
+<td>%E7</td>
+</tr>
+<tr>
+<td>è</td>
+<td>%E8</td>
+</tr>
+<tr>
+<td>é</td>
+<td>%E9</td>
+</tr>
+<tr>
+<td>ê</td>
+<td>%EA</td>
+</tr>
+<tr>
+<td>ë</td>
+<td>%EB</td>
+</tr>
+<tr>
+<td>ì</td>
+<td>%EC</td>
+</tr>
+<tr>
+<td>í</td>
+<td>%ED</td>
+</tr>
+<tr>
+<td>î</td>
+<td>%EE</td>
+</tr>
+<tr>
+<td>ï</td>
+<td>%EF</td>
+</tr>
+<tr>
+<td>ð</td>
+<td>%F0</td>
+</tr>
+<tr>
+<td>ñ</td>
+<td>%F1</td>
+</tr>
+<tr>
+<td>ò</td>
+<td>%F2</td>
+</tr>
+<tr>
+<td>ó</td>
+<td>%F3</td>
+</tr>
+<tr>
+<td>ô</td>
+<td>%F4</td>
+</tr>
+<tr>
+<td>õ</td>
+<td>%F5</td>
+</tr>
+<tr>
+<td>ö</td>
+<td>%F6</td>
+</tr>
+<tr>
+<td>÷</td>
+<td>%F7</td>
+</tr>
+<tr>
+<td>ø</td>
+<td>%F8</td>
+</tr>
+<tr>
+<td>ù</td>
+<td>%F9</td>
+</tr>
+<tr>
+<td>ú</td>
+<td>%FA</td>
+</tr>
+<tr>
+<td>û</td>
+<td>%FB</td>
+</tr>
+<tr>
+<td>ü</td>
+<td>%FC</td>
+</tr>
+<tr>
+<td>ý</td>
+<td>%FD</td>
+</tr>
+<tr>
+<td>þ</td>
+<td>%FE</td>
+</tr>
+<tr>
+<td>ÿ</td>
+<td>%FF</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h2 id="5windowspython23"><span>5.windows<span class="heti-spacing"> </span></span>系统<span><span class="heti-spacing"> </span>python2</span>，<span>3<span class="heti-spacing"> </span></span>版本共存问题</h2>
+<p>编写<span class="heti-skip"><span class="heti-spacing"> </span>python<span class="heti-spacing"> </span></span>脚本是后期各方向解题的重要手段（如<span class="heti-skip"><span class="heti-spacing"> </span>sql<span class="heti-spacing"> </span></span>注入漏洞利用方式中的盲注极其耗费时间精力，纯人力几乎无法完成）但是部分工具对<span class="heti-skip"><span class="heti-spacing"> </span>python<span class="heti-spacing"> </span></span>有版本限制，或<span><span class="heti-spacing"> </span>python2</span>，<span>3<span class="heti-spacing"> </span></span>版本会得到不同结果（如在<span class="heti-skip"><span class="heti-spacing"> </span>flask<span class="heti-spacing"> </span></span>框架的<span class="heti-skip"><span class="heti-spacing"> </span>SSTI<span class="heti-spacing"> </span></span>漏洞中<span class="heti-skip"><span class="heti-spacing"> </span>python2<span class="heti-spacing"> </span></span>与<span class="heti-skip"><span class="heti-spacing"> </span>python3<span class="heti-spacing"> </span></span>内置的索引值不同）
+目前，Python3和Python2互相并不完全兼容，这就造成了很多Python代码或者是脚本在版本不对应的情况下无法执行，所以说，在一台电脑上同时拥有Python2和Python3是很有必要的，也能更高效的处理工作，节省时间。
+其实要解决Python2和Python3共存也很简单，提供如下方案：</p>
+<h3 id="1python2python3">1、下载<span class="heti-skip"><span class="heti-spacing"> </span>Python2<span class="heti-spacing"> </span></span>和<span class="heti-skip"><span class="heti-spacing"> </span>Python3<span class="heti-spacing"> </span></span>的安装包<span class="heti-skip"><span class="heti-spacing"> </span>(<span class="heti-spacing"> </span></span>或者叫解释器<span><span class="heti-spacing"> </span>)</span></h3>
+<p>下载地址：<a href="https://www.python.org/downloads/windows/">https://www.python.org/downloads/windows/</a>
+根据自己需要的版本下载即可，安装包都比较小。
+<img alt="image.png" src="../../images/web/%E5%9F%BA%E7%A1%80%E7%AF%87/894139284c6b370f96df69544d71c6c0.png"/>
+下载后，直接安装即可。
+安装过程注意安装路径，默认是安装到C盘，可以根据需要进行更改安装路径。
+<img alt="image.png" src="../../images/web/%E5%9F%BA%E7%A1%80%E7%AF%87/f2876bd6a5e701434a7d100539f13aa7.png"/></p>
+<h3 id="2_1">2、设置环境变量</h3>
+<p>由于我们安装了两个版本的<span><span class="heti-spacing"> </span>Python</span>，因此为了方便系统能够准确识别到指定的<span class="heti-skip"><span class="heti-spacing"> </span>Python<span class="heti-spacing"> </span></span>版本，所以我们需要设置环境变量。
+将Python安装路径及其安装路径下的Scripts设置到Path变量里。
+这里设置Scripts文件夹的目的是为了方便识别pip。
+<img alt="image.png" src="../../images/web/%E5%9F%BA%E7%A1%80%E7%AF%87/cef97c22c3d453a17e8a180c09ef90b8.png"/> </p>
+<h3 id="3python">3、修改<span class="heti-skip"><span class="heti-spacing"> </span>Python<span class="heti-spacing"> </span></span>编译器的名字</h3>
+<p>为了能够准确定位<span class="heti-skip"><span class="heti-spacing"> </span>Python2<span class="heti-spacing"> </span></span>和<span><span class="heti-spacing"> </span>Python3</span>，我们需要将默认的<span class="heti-skip"><span class="heti-spacing"> </span>Python<span class="heti-spacing"> </span></span>编辑器的名称进行修改。
+<strong>NO.1. </strong>修改<span class="heti-skip"><span class="heti-spacing"> </span>Python2<span class="heti-spacing"> </span></span>安装目录下：<span>python.exe<span class="heti-spacing"> </span></span>修改为<span><span class="heti-spacing"> </span>python2.exe</span>，<span>pythonw.exe<span class="heti-spacing"> </span></span>修改为<span><span class="heti-spacing"> </span>pythonw2.exe</span>
+<strong>NO.2. </strong>修改<span class="heti-skip"><span class="heti-spacing"> </span>Python3<span class="heti-spacing"> </span></span>安装目录下：<span>python.exe<span class="heti-spacing"> </span></span>修改为<span><span class="heti-spacing"> </span>python3.exe</span>，<span>pythonw.exe<span class="heti-spacing"> </span></span>修改为<span><span class="heti-spacing"> </span>pythonw3.exe</span>
+修改完成后，在cmd命令行下分别输入python2和python3就可以进入对应版本的python环境。</p>
+<h3 id="4pip">4、设置<span><span class="heti-spacing"> </span>pip</span></h3>
+<p><span>python<span class="heti-spacing"> </span></span>环境在安装包的时候需要使用到包管理工具——pip，而<span class="heti-skip"><span class="heti-spacing"> </span>pip<span class="heti-spacing"> </span></span>也是需要对应版本的。在<span class="heti-skip"><span class="heti-spacing"> </span>python<span class="heti-spacing"> </span></span>的安装目录<span class="heti-skip"><span class="heti-spacing"> </span>Scripts<span class="heti-spacing"> </span></span>下可以看到 默认是存在<span class="heti-skip"><span class="heti-spacing"> </span>pip<span class="heti-spacing"> </span></span>的，但是在命令行下，并不能直接定位到，因此需要重新分别安装两个版本对应的<span><span class="heti-spacing"> </span>pip</span>，使得两个<span class="heti-skip"><span class="heti-spacing"> </span>python<span class="heti-spacing"> </span></span>版本的<span class="heti-skip"><span class="heti-spacing"> </span>pip<span class="heti-spacing"> </span></span>也能够共存。</p>
+<h4 id="python2">python2：</h4>
+<p><code>python2 -m pip install --upgrade pip</code></p>
+<h4 id="python3">python3:</h4>
+<p><code>python3 -m pip install --upgrade pip</code>
+安装完成之后，可以使用pip2 -V 或者pip3 -V查看对应的pip版本了。</p>
+<h2 id="6"><span>6.<span class="heti-spacing"> </span></span>关于靶场环境搭建</h2>
+<p><span>web<span class="heti-spacing"> </span></span>的十大漏洞当中有很多漏洞在<span class="heti-skip"><span class="heti-spacing"> </span>github<span class="heti-spacing"> </span></span>上都能找到大师傅制作出来供学习用的靶场，这里针对一些可能出现的问题供大家参考
+首先大家需要了解LAMP和LNMP，也就是linux，apache/nginx，mysql，php
+这里Linux环境的实现需要用到虚拟机，也就是VMware，大家使用社团给的kali镜像，自行百度一下安装教程配置即可
+<img alt="image.png" src="../../images/web/%E5%9F%BA%E7%A1%80%E7%AF%87/5d83150ed02af830acf601fe74b4ad3c.png"/>
+mysql是数据库的一种，对于专业开发人员可以使用navicat去管理数据库，这里仅作了解，对于环境搭建，使用PHPstudy即可满足我们全部的需求
+phpstudy集成了php，mysql和apache、nginx两个web中间件（不知道什么是中间件的自己去百度），需要使用时按需求随时启停即可
+<img alt="image.png" src="../../images/web/%E5%9F%BA%E7%A1%80%E7%AF%87/77d782b23349a094f3a7e62bfd3b23f8.png"/>
+那么如何搭建一个新环境呢
+<img alt="image.png" src="../../images/web/%E5%9F%BA%E7%A1%80%E7%AF%87/9e4c17662e56a0122d72f93422f8726e.png"/>
+phpstudy的目录下默认有一个WWW目录，下有一个localhost，即本地网站
+想要创建新网站，遵照图中的几个步骤即可
+域名设置起来除了不要有中文和符号之外非常自由，其实质就是在根目录下创建一个可以访问目录下资源的文件夹，这一点很好理解
+端口设置为默认即可，若想改变端口，记得避开其他服务占用的端口，phpstudy提供了端口检测的功能，能够方便地测试和查看端口是否被占用，避免冲突
+<img alt="image.png" src="../../images/web/%E5%9F%BA%E7%A1%80%E7%AF%87/7c2c9cdc4ea7c2a6cf5f17c1fa3433f4.png"/>
+根目录可以自定义，默认会设定为软件安装路径的WWW目录下，比如我这里的目录是D:/phpstudy_pro/WWW/，设在E盘F盘也都是可以的（就是别放C盘）
+建议不同漏洞的靶场
+至于php版本问题，是一个非常值得说的点，这里暂不展开说，在后面的漏洞学习当中还会分别提到，在网站使用过程中，也可以对版本进行修改
+<img alt="image.png" src="../../images/web/%E5%9F%BA%E7%A1%80%E7%AF%87/db6a2e520fefcef284812aa972b1fc9f.png"/>
+除了php版本，其他软件的版本管理可以在下面找到
+<img alt="image.png" src="../../images/web/%E5%9F%BA%E7%A1%80%E7%AF%87/ec03a7dac3b2c3e959aaf1cc7a70fc01.png"/>
+需要注意的是，无论更改了哪一项服务的版本，都需要重新启动才能生效
+一些情况下还需要修改php的配置文件，每个版本对应一个ini文件，用txt打开即可
+<img alt="image.png" src="../../images/web/%E5%9F%BA%E7%A1%80%E7%AF%87/e43b3b137a1e89fa0f6ab8147fd282c4.png"/></p>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="最后更新">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年5月22日 19:00:52">2025年5月22日 19:00:52</span>
+</span>
+<span class="md-source-file__fact">
+<span class="md-icon" title="创建日期">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2023年1月29日 15:26:37">2023年1月29日 15:26:37</span>
+</span>
+<span class="md-source-file__fact">
+<span class="md-icon" title="贡献者">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9 3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3 3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3 3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.54 5.54 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13zM0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9-.59.68-.95 1.62-.95 2.65V20zm24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65 2.56.34 4.45 1.51 4.45 2.9z"></path></svg>
+</span>
+<nav>
+<a href="mailto:131164348+cg-jue@users.noreply.github.com">CGJUE</a>, 
+        <a href="mailto:1308357113@qq.com">shenghuo2</a>
+</nav>
+</span>
+</aside>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  回到页面顶部
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Made by © 2023 <a href="https://github.com/QLNU-Sec-Team" rel="noopener" target="_blank">QLNU-Sec-Team</a>
+</div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://github.com/QLNU-Sec-Team" rel="noopener" target="_blank" title="github">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</a>
+<a class="md-social__link" href="/rss.xml" rel="noopener" target="_blank" title="RSS">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M0 64c0-17.7 14.3-32 32-32 229.8 0 416 186.2 416 416 0 17.7-14.3 32-32 32s-32-14.3-32-32C384 253.6 226.4 96 32 96 14.3 96 0 81.7 0 64m0 352a64 64 0 1 1 128 0 64 64 0 1 1-128 0m32-256c159.1 0 288 128.9 288 288 0 17.7-14.3 32-32 32s-32-14.3-32-32c0-123.7-100.3-224-224-224-17.7 0-32-14.3-32-32s14.3-32 32-32"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "header.autohide", "search.share", "search.suggest", "search.highlight", "content.tabs", "content.action.edit", "content.action.view"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+<script src="https://cdn.statically.io/gh/stevewithington/imagezoomjs/master/dist/imagezoom.min.js"></script>
+<script src="../../js/mathjax.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>

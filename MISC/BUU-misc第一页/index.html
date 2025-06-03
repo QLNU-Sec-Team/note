@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="QLNU-Sec-Team" name="author"/>
+<link href="http://note.qlnu-sec.cn/MISC/BUU-misc%E7%AC%AC%E4%B8%80%E9%A1%B5/" rel="canonical"/>
+<link href="../%E9%A2%98%E5%9E%8B/" rel="prev"/>
+<link href="../../python/" rel="next"/>
+<link href="../../feed_rss_created.xml" rel="alternate" title="RSS 订阅" type="application/rss+xml"/>
+<link href="../../feed_rss_updated.xml" rel="alternate" title="已更新内容的 RSS 订阅" type="application/rss+xml"/>
+<link href="../../images/qlnu_sec_icon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.14" name="generator"/>
+<title>BUU-misc第一页WP - QLNU-Sec 学习笔记</title>
+<link href="../../assets/stylesheets/main.342714a4.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Noto Sans";--md-code-font:"Source Code Pro"}</style>
+<link href="../../css/heti.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-2734SL9W6Y"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-2734SL9W6Y",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-2734SL9W6Y",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+<script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="blue-grey" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#_1">
+          跳转至
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="页眉" class="md-header__inner md-grid">
+<a aria-label="QLNU-Sec 学习笔记" class="md-header__button md-logo" data-md-component="logo" href="../.." title="QLNU-Sec 学习笔记">
+<img alt="logo" src="../../images/qlnu_sec_icon.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            QLNU-Sec 学习笔记
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              BUU-misc第一页WP
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="blue-grey" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="搜索" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="搜索" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="查找" class="md-search__options">
+<a aria-label="分享" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="分享">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+</a>
+<button aria-label="清空当前内容" class="md-search__icon md-icon" tabindex="-1" title="清空当前内容" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/QLNU-Sec-Team/note/" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+</div>
+<div class="md-source__repository">
+    QLNU-Sec-Team/note
+  </div>
+</a>
+</div>
+</nav>
+<nav aria-label="标签" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+  
+    
+  
+  文档介绍
+
+      </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../learn/">
+          
+  
+  
+    
+  
+  MISC学习
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../python/">
+          
+  
+  
+    
+  
+  Python
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../WEB/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84Web%E4%B9%8B%E8%B7%AF-%E5%9F%BA%E7%A1%80%E7%AF%87/">
+          
+  
+  
+    
+  
+  WEB
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../PWN/pwn%E6%96%B9%E5%90%91%E5%AF%92%E5%81%87%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/">
+          
+  
+  
+    
+  
+  PWN
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/">
+          
+  
+  
+    
+  
+  现代密码学
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../NWST/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/">
+          
+  
+  
+    
+  
+  内网渗透
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航栏" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="QLNU-Sec 学习笔记" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="QLNU-Sec 学习笔记">
+<img alt="logo" src="../../images/qlnu_sec_icon.png"/>
+</a>
+    QLNU-Sec 学习笔记
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/QLNU-Sec-Team/note/" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+</div>
+<div class="md-source__repository">
+    QLNU-Sec-Team/note
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    文档介绍
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-ellipsis">
+    MISC学习
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            MISC学习
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="">
+<span class="md-ellipsis">
+    学习方法
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_1">
+<span class="md-nav__icon md-icon"></span>
+            学习方法
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../learn/">
+<span class="md-ellipsis">
+    如何去学
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%E9%A2%98%E5%9E%8B/">
+<span class="md-ellipsis">
+    题型概览
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    BUU-misc第一页WP
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    BUU-misc第一页WP
+    
+  </span>
+</a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      大白
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      乌镇峰会种图
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      文件中的秘密
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#wireshark">
+<span class="md-ellipsis">
+      wireshark
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lsb">
+<span class="md-ellipsis">
+      LSB
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rar">
+<span class="md-ellipsis">
+      rar
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#zip">
+<span class="md-ellipsis">
+      zip伪加密
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#qr">
+<span class="md-ellipsis">
+      qr
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      被嗅探的流量
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      镜子里面的世界
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ningen">
+<span class="md-ellipsis">
+      ningen
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+<span class="md-ellipsis">
+      小明的保险箱
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+<span class="md-ellipsis">
+      爱因斯坦
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#easycap">
+<span class="md-ellipsis">
+      easycap
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+<span class="md-ellipsis">
+      隐藏的钥匙
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_9">
+<span class="md-ellipsis">
+      另外一个世界
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#flag">
+<span class="md-ellipsis">
+      FLAG
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_10">
+<span class="md-ellipsis">
+      假如给我三天光明
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_11">
+<span class="md-ellipsis">
+      神秘龙卷风
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_12">
+<span class="md-ellipsis">
+      后门查杀
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_13">
+<span class="md-ellipsis">
+      数据包中的线索
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_14">
+<span class="md-ellipsis">
+      荷兰宽带数据泄露
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_15">
+<span class="md-ellipsis">
+      来首歌吧
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#webshell">
+<span class="md-ellipsis">
+      webshell后门
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#flag_1">
+<span class="md-ellipsis">
+      面具下的flag
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_16">
+<span class="md-ellipsis">
+      九连环
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_17">
+<span class="md-ellipsis">
+      被劫持的神秘礼物
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_18">
+<span class="md-ellipsis">
+      刷新过的图片
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Python
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3_1" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../python/">
+<span class="md-ellipsis">
+    学习方式
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_1">
+<span class="md-nav__icon md-icon"></span>
+            学习方式
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../python/install/">
+<span class="md-ellipsis">
+    学习前的准备
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../python/How%20to%20Learn/">
+<span class="md-ellipsis">
+    如何学习
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../python/practice/">
+<span class="md-ellipsis">
+    来做点练习题吧
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    WEB
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            WEB
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_4_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+<span class="md-ellipsis">
+    从零开始的Web之路
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_1">
+<span class="md-nav__icon md-icon"></span>
+            从零开始的Web之路
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../WEB/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84Web%E4%B9%8B%E8%B7%AF-%E5%9F%BA%E7%A1%80%E7%AF%87/">
+<span class="md-ellipsis">
+    基础篇✅
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../WEB/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84Web%E4%B9%8B%E8%B7%AF-PHP%E7%AF%87/">
+<span class="md-ellipsis">
+    PHP篇✅
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../WEB/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84Web%E4%B9%8B%E8%B7%AF-SQL%E7%AF%87/">
+<span class="md-ellipsis">
+    SQL篇✅
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../WEB/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84Web%E4%B9%8B%E8%B7%AF-XSS%E7%AF%87/">
+<span class="md-ellipsis">
+    XSS篇
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../WEB/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84Web%E4%B9%8B%E8%B7%AF-SSTI%E7%AF%87/">
+<span class="md-ellipsis">
+    SSTI篇✅
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../WEB/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84Web%E4%B9%8B%E8%B7%AF-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%AF%87/">
+<span class="md-ellipsis">
+    文件上传篇✅
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../WEB/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84Web%E4%B9%8B%E8%B7%AF-%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E7%AF%87/">
+<span class="md-ellipsis">
+    文件包含篇✅
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../WEB/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84Web%E4%B9%8B%E8%B7%AF-%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E7%AF%87/">
+<span class="md-ellipsis">
+    反序列化篇✅
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-ellipsis">
+    PWN
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            PWN
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../PWN/pwn%E6%96%B9%E5%90%91%E5%AF%92%E5%81%87%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/">
+<span class="md-ellipsis">
+    PWN方向寒假学习计划
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-ellipsis">
+    现代密码学
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            现代密码学
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_6_1" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/">
+<span class="md-ellipsis">
+    RSA基础知识
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_6_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_1">
+<span class="md-nav__icon md-icon"></span>
+            RSA基础知识
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P00%20%E5%A4%A7%E7%BA%B2%E5%8F%8A%E5%8F%82%E8%80%83%E7%BD%91%E9%A1%B5/">
+<span class="md-ellipsis">
+    P00 大纲及参考网页
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P01.python%E5%AE%89%E8%A3%85%E5%8F%8Apycharm%E9%85%8D%E7%BD%AE/">
+<span class="md-ellipsis">
+    P01.python安装及pycharm配置
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P02.gmpy2%E5%8F%8A%E7%9B%B8%E5%85%B3%E5%BA%93%E5%AE%89%E8%A3%85/">
+<span class="md-ellipsis">
+    P02.gmpy2及相关库安装
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P03.RSA%E7%AE%97%E6%B3%95%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%8E%9F%E7%90%86/">
+<span class="md-ellipsis">
+    P03.RSA算法简介及原理
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P04.RSA%E5%9F%BA%E7%A1%80%E9%A2%98%E7%9B%AE%E5%8F%8A%E8%84%9A%E6%9C%AC/">
+<span class="md-ellipsis">
+    P04.RSA基础题目及脚本
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P05.%E5%9F%BA%E4%BA%8EN%E5%88%86%E8%A7%A3%E7%9A%84%E9%A2%98%E7%9B%AE/">
+<span class="md-ellipsis">
+    P05.基于N分解的题目
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P06.RSA%E5%AF%86%E9%92%A5%E7%94%9F%E6%88%90%E4%B8%8E%E8%AF%BB%E5%8F%96/">
+<span class="md-ellipsis">
+    P06.RSA密钥生成与读取
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P07.%E5%85%B1%E6%A8%A1%E6%94%BB%E5%87%BB/">
+<span class="md-ellipsis">
+    P07.共模攻击
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P08.wiener%28%E7%BB%B4%E7%BA%B3%29%E6%94%BB%E5%87%BB/">
+<span class="md-ellipsis">
+    P08.wiener(维纳)攻击
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P09.%E4%BD%8E%E5%8A%A0%E5%AF%86%E6%8C%87%E6%95%B0%E6%94%BB%E5%87%BB/">
+<span class="md-ellipsis">
+    P09.低加密指数攻击
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P10.%E4%BD%8E%E5%8A%A0%E5%AF%86%E6%8C%87%E6%95%B0%E5%B9%BF%E6%92%AD%E6%94%BB%E5%87%BB/">
+<span class="md-ellipsis">
+    P10.低加密指数广播攻击
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P11.%E5%85%B1%E4%BA%AB%E7%B4%A0%E6%95%B0-N%E4%B8%8D%E4%BA%92%E7%B4%A0/">
+<span class="md-ellipsis">
+    P11.共享素数-N不互素
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P12.dp%E6%B3%84%E9%9C%B2/">
+<span class="md-ellipsis">
+    P12.dp泄露
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P13.%20dp%2Cdq/">
+<span class="md-ellipsis">
+    P13. dp,dq
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P14.n%E6%98%AFp%E7%9A%84r%E6%AC%A1%E6%96%B9/">
+<span class="md-ellipsis">
+    P14.n是p的r次方
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P15.%E5%B7%B2%E7%9F%A5e%20_d%20n%20%E6%B1%82p%20q/">
+<span class="md-ellipsis">
+    P15.已知e _d n 求p q
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P16.N%E5%88%86%E8%A7%A3%E4%B8%89%E4%B8%AA%E7%B4%A0%E6%95%B0/">
+<span class="md-ellipsis">
+    P16.N分解三个素数
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P17.e%E5%92%8Cphi_n%E4%B8%8D%E4%BA%92%E7%B4%A0/">
+<span class="md-ellipsis">
+    P17.e和phi_n不互素
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P18.RSA%E5%B8%B8%E7%94%A8%E8%A7%A3%E5%AF%86%E4%BB%A3%E7%A0%81%E5%9D%97%EF%BC%88%E7%BD%91%E4%B8%8A%E6%94%B6%E9%9B%86%EF%BC%89/">
+<span class="md-ellipsis">
+    P18.RSA常用解密代码块（网上收集）
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P19.Franklin-Reiter%E6%94%BB%E5%87%BB%E8%84%9A%E6%9C%AC/">
+<span class="md-ellipsis">
+    P19.Franklin-Reiter攻击脚本
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01RSA%E5%9F%BA%E7%A1%80%E7%AF%87/P99%20%E9%9B%B6%E6%95%A3%E7%9F%A5%E8%AF%86%E7%82%B9/">
+<span class="md-ellipsis">
+    P99 零散知识点
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_6_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../02RSA/">
+<span class="md-ellipsis">
+    RSA稍微进阶知识
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_6_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_2">
+<span class="md-nav__icon md-icon"></span>
+            RSA稍微进阶知识
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../02RSA/knowledge_record/">
+<span class="md-ellipsis">
+    一些知识的记录
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../02RSA/ti_record/">
+<span class="md-ellipsis">
+    一些题的记录
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-ellipsis">
+    内网渗透
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            内网渗透
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../NWST/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/">
+<span class="md-ellipsis">
+    内网渗透学习总结
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      大白
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      乌镇峰会种图
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      文件中的秘密
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#wireshark">
+<span class="md-ellipsis">
+      wireshark
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lsb">
+<span class="md-ellipsis">
+      LSB
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rar">
+<span class="md-ellipsis">
+      rar
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#zip">
+<span class="md-ellipsis">
+      zip伪加密
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#qr">
+<span class="md-ellipsis">
+      qr
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      被嗅探的流量
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      镜子里面的世界
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ningen">
+<span class="md-ellipsis">
+      ningen
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+<span class="md-ellipsis">
+      小明的保险箱
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+<span class="md-ellipsis">
+      爱因斯坦
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#easycap">
+<span class="md-ellipsis">
+      easycap
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+<span class="md-ellipsis">
+      隐藏的钥匙
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_9">
+<span class="md-ellipsis">
+      另外一个世界
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#flag">
+<span class="md-ellipsis">
+      FLAG
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_10">
+<span class="md-ellipsis">
+      假如给我三天光明
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_11">
+<span class="md-ellipsis">
+      神秘龙卷风
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_12">
+<span class="md-ellipsis">
+      后门查杀
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_13">
+<span class="md-ellipsis">
+      数据包中的线索
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_14">
+<span class="md-ellipsis">
+      荷兰宽带数据泄露
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_15">
+<span class="md-ellipsis">
+      来首歌吧
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#webshell">
+<span class="md-ellipsis">
+      webshell后门
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#flag_1">
+<span class="md-ellipsis">
+      面具下的flag
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_16">
+<span class="md-ellipsis">
+      九连环
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_17">
+<span class="md-ellipsis">
+      被劫持的神秘礼物
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_18">
+<span class="md-ellipsis">
+      刷新过的图片
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/QLNU-Sec-Team/note/tree/main/docs/MISC/BUU-misc第一页.md" title="编辑此页">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://github.com/QLNU-Sec-Team/note/tree/main/docs/MISC/BUU-misc第一页.md" title="查看本页的源代码">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg>
+</a>
+<h1><span>BUU-misc<span class="heti-spacing"> </span></span>第一页<span><span class="heti-spacing"> </span>WP</span></h1>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约<span class="heti-skip"><span class="heti-spacing"> </span>1583<span class="heti-spacing"> </span></span>个字 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"></path></svg></span> <span>35<span class="heti-spacing"> </span></span>张图片 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间<span class="heti-skip"><span class="heti-spacing"> </span>5<span class="heti-spacing"> </span></span>分钟</p>
+</div>
+<div class="admonition 提示">
+<p class="admonition-title">提示</p>
+<p>本文用于<span class="heti-skip"><span class="heti-spacing"> </span>buu<span class="heti-spacing"> </span></span>的<span class="heti-skip"><span class="heti-spacing"> </span>misc<span class="heti-spacing"> </span></span>分类第一页解题思路参考</p>
+</div>
+<h2 id="_1">大白</h2>
+<blockquote>
+<p>看不到图？ 是不是屏幕太小了 </p>
+<p>注意：得到的<span class="heti-skip"><span class="heti-spacing"> </span>flag<span class="heti-spacing"> </span></span>请包上<span class="heti-skip"><span class="heti-spacing"> </span>flag{}<span class="heti-spacing"> </span></span>提交</p>
+</blockquote>
+<p>提示改图片分辨率</p>
+<p>用<span class="heti-skip"><span class="heti-spacing"> </span>010<span class="heti-spacing"> </span></span>把分辨率改成<span class="heti-skip"><span class="heti-spacing"> </span>512<span class="heti-spacing"> </span></span>画图强行打开</p>
+<p><img alt="image-20220411210721872" src="https://jingneifile.oss-cn-qingdao.aliyuncs.com/typecho/202204112107927.png"/></p>
+<p>flag{He1l0_d4_ba1}</p>
+<h2 id="_2">乌镇峰会种图</h2>
+<p><span>010<span class="heti-spacing"> </span></span>打开<span class="heti-skip"><span class="heti-spacing"> </span>flag<span class="heti-spacing"> </span></span>在文件尾</p>
+<p><img alt="image-20220411210925584" src="https://jingneifile.oss-cn-qingdao.aliyuncs.com/typecho/202204112109629.png"/></p>
+<p>flag{97314e7864a8f62627b26f3f998c37f1}</p>
+<h2 id="_3">文件中的秘密</h2>
+<p>​   </p>
+<p><img alt="image-20220411213107396" src="https://jingneifile.oss-cn-qingdao.aliyuncs.com/typecho/202204112131543.png"/></p>
+<p>在文件信息里</p>
+<p>flag{870c5a72806115cb5439345d8b014396}</p>
+<h2 id="wireshark">wireshark</h2>
+<blockquote>
+<p>黑客通过<span class="heti-skip"><span class="heti-spacing"> </span>wireshark<span class="heti-spacing"> </span></span>抓到管理员登陆网站的一段流量包（管理员的密码即是答案<span><span class="heti-spacing"> </span>)</span> </p>
+<p>注意：得到的<span class="heti-skip"><span class="heti-spacing"> </span>flag<span class="heti-spacing"> </span></span>请包上<span class="heti-skip"><span class="heti-spacing"> </span>flag{}<span class="heti-spacing"> </span></span>提交</p>
+</blockquote>
+<p>直接搜字符串<span><span class="heti-spacing"> </span>flag</span></p>
+<p><img alt="image-20220411213338822" src="https://jingneifile.oss-cn-qingdao.aliyuncs.com/typecho/202204112133919.png"/></p>
+<p>flag{ffb7567a1d4f4abdffdb54e022f8facd}</p>
+<h2 id="lsb">LSB</h2>
+<p><span>stegslove<span class="heti-spacing"> </span></span>查看<span class="heti-skip"><span class="heti-spacing"> </span>LSB RGB<span class="heti-spacing"> </span></span>三个的<span class="heti-skip"><span class="heti-spacing"> </span>0<span class="heti-spacing"> </span></span>层是<span class="heti-skip"><span class="heti-spacing"> </span>PNG<span class="heti-spacing"> </span></span>头</p>
+<p><img alt="image-20220411213951804" src="https://jingneifile.oss-cn-qingdao.aliyuncs.com/typecho/202204112139856.png"/></p>
+<p>保存为<span><span class="heti-spacing"> </span>flag.png</span></p>
+<p><img alt="image-20220411214016108" src="https://jingneifile.oss-cn-qingdao.aliyuncs.com/typecho/202204112140133.png"/></p>
+<p>是一个二维码 扫码得到<span><span class="heti-spacing"> </span>flag</span></p>
+<p>cumtctf{1sb_i4_s0_Ea4y}</p>
+<p>包上<span><span class="heti-spacing"> </span>flag{1sb_i4_s0_Ea4y}</span></p>
+<h2 id="rar">rar</h2>
+<blockquote>
+<p>这个是一个<span class="heti-skip"><span class="heti-spacing"> </span>rar<span class="heti-spacing"> </span></span>文件，里面好像隐藏着什么秘密，但是压缩包被加密了，毫无保留的告诉你，<span>rar<span class="heti-spacing"> </span></span>的密码是<span class="heti-skip"><span class="heti-spacing"> </span>4<span class="heti-spacing"> </span></span>位纯数字。 </p>
+<p>注意：得到的<span class="heti-skip"><span class="heti-spacing"> </span>flag<span class="heti-spacing"> </span></span>请包上<span class="heti-skip"><span class="heti-spacing"> </span>flag{}<span class="heti-spacing"> </span></span>提交</p>
+</blockquote>
+<p>用<span class="heti-skip"><span class="heti-spacing"> </span>ARCHPR<span class="heti-spacing"> </span></span>爆破</p>
+<p><img alt="image-20220411214408241" src="https://jingneifile.oss-cn-qingdao.aliyuncs.com/typecho/202204112144283.png"/></p>
+<p><img alt="image-20220411214415787" src="https://jingneifile.oss-cn-qingdao.aliyuncs.com/typecho/202204112144824.png"/></p>
+<p>flag{1773c5da790bd3caff38e3decd180eb7}</p>
+<h2 id="zip"><span>zip<span class="heti-spacing"> </span></span>伪加密</h2>
+<p><img alt="image-20220411215759556" src="https://jingneifile.oss-cn-qingdao.aliyuncs.com/typecho/202204112157597.png"/></p>
+<p>两个全局标记位全是<span class="heti-skip"><span class="heti-spacing"> </span>09 00<span class="heti-spacing"> </span></span>还以为是我记错了</p>
+<p>都改成<span class="heti-skip"><span class="heti-spacing"> </span>00<span class="heti-spacing"> </span></span>就能解压了</p>
+<p><img alt="image-20220411215907890" src="https://jingneifile.oss-cn-qingdao.aliyuncs.com/typecho/202204112159920.png"/></p>
+<p>flag{Adm1N-B2G-kU-SZIP}</p>
+<h2 id="qr">qr</h2>
+<p>一个签到题，扫二维码就有<span><span class="heti-spacing"> </span>flag</span></p>
+<p>Flag{878865ce73370a4ce607d21ca01b5e59}</p>
+<h2 id="_4">被嗅探的流量</h2>
+<blockquote>
+<p>某黑客潜入到某公司内网通过嗅探抓取了一段文件传输的数据，该数据也被该公司截获，你能帮该公司分析他抓取的到底是什么文件的数据吗？ </p>
+<p>注意：得到的<span class="heti-skip"><span class="heti-spacing"> </span>flag<span class="heti-spacing"> </span></span>请包上<span class="heti-skip"><span class="heti-spacing"> </span>flag{}<span class="heti-spacing"> </span></span>提交</p>
+</blockquote>
+<p><span>wireshark<span class="heti-spacing"> </span></span>打开 跟踪<span class="heti-skip"><span class="heti-spacing"> </span>tcp<span class="heti-spacing"> </span></span>流</p>
+<p>能看到传输过一个<span><span class="heti-spacing"> </span>flag.jpg</span></p>
+<p><span>flag<span class="heti-spacing"> </span></span>在图片尾<img alt="" src="https://jingneifile.oss-cn-qingdao.aliyuncs.com/typecho/202204121312911.png"/></p>
+<h2 id="_5">镜子里面的世界</h2>
+<p>文件名是<span class="heti-skip"><span class="heti-spacing"> </span>steg<span class="heti-spacing"> </span></span>用<span class="heti-skip"><span class="heti-spacing"> </span>zsteg<span class="heti-spacing"> </span></span>跑一下</p>
+<p><img alt="image-20220412131907224" src="https://jingneifile.oss-cn-qingdao.aliyuncs.com/typecho/202204121319263.png"/></p>
+<p>得到<span><span class="heti-spacing"> </span>flag{st3g0_saurus_wr3cks}</span></p>
+<h2 id="ningen">ningen</h2>
+<blockquote>
+<p>人类的科学日益发展，对自然的研究依然无法满足，传闻日本科学家秋明重组了基因序列，造出了名为<span class="heti-skip"><span class="heti-spacing"> </span>ningen<span class="heti-spacing"> </span></span>的超自然生物。某天特工小明偶然截获了日本与俄罗斯的秘密通信，文件就是一张<span class="heti-skip"><span class="heti-spacing"> </span>ningen<span class="heti-spacing"> </span></span>的特写，小明通过社工，知道了秋明特别讨厌中国的六位银行密码，喜欢四位数。你能找出黑暗科学家秋明的秘密么？ </p>
+<p>注意：得到的<span class="heti-skip"><span class="heti-spacing"> </span>flag<span class="heti-spacing"> </span></span>请包上<span class="heti-skip"><span class="heti-spacing"> </span>flag{}<span class="heti-spacing"> </span></span>提交</p>
+</blockquote>
+<p>用<span class="heti-skip"><span class="heti-spacing"> </span>binwalk<span class="heti-spacing"> </span></span>解出来一个压缩包 带密码</p>
+<p>四位数字密码爆破</p>
+<p><img alt="image-20220412132305714" src="https://jingneifile.oss-cn-qingdao.aliyuncs.com/typecho/202204121323741.png"/></p>
+<p>解压得到<span><span class="heti-spacing"> </span>flag</span></p>
+<h2 id="_6">小明的保险箱</h2>
+<blockquote>
+<p>小明有一个保险箱，里面珍藏了小明的日记本，他记录了什么秘密呢？。。。告诉你，其实保险箱的密码四位纯数字密码<heti-adjacent class="heti-adjacent-half">。</heti-adjacent>（答案格式：flag｛答案<heti-adjacent class="heti-adjacent-half">｝</heti-adjacent>，只需提交答案） </p>
+<p>注意：得到的<span class="heti-skip"><span class="heti-spacing"> </span>flag<span class="heti-spacing"> </span></span>请包上<span class="heti-skip"><span class="heti-spacing"> </span>flag{}<span class="heti-spacing"> </span></span>提交</p>
+</blockquote>
+<p><span>binwalk<span class="heti-spacing"> </span></span>跑出来一个<span><span class="heti-spacing"> </span>rar</span></p>
+<p>四位数字爆破</p>
+<p><img alt="image-20220412132611110" src="https://jingneifile.oss-cn-qingdao.aliyuncs.com/typecho/202204121326134.png"/></p>
+<p>得到<span><span class="heti-spacing"> </span>flag</span></p>
+<h2 id="_7">爱因斯坦</h2>
+<p>一个<span><span class="heti-spacing"> </span>jpg</span></p>
+<p>用<span class="heti-skip"><span class="heti-spacing"> </span>binwalk<span class="heti-spacing"> </span></span>跑出来一个带密码的<span><span class="heti-spacing"> </span>zip</span></p>
+<p><img alt="" src="https://jingneifile.oss-cn-qingdao.aliyuncs.com/typecho/202204121331500.png"/></p>
+<p>没有密码提示</p>
+<p>用<span class="heti-skip"><span class="heti-spacing"> </span>exiftools<span class="heti-spacing"> </span></span>看一下信息</p>
+<p><img alt="image-20220412133231762" src="https://jingneifile.oss-cn-qingdao.aliyuncs.com/typecho/202204121332807.png"/></p>
+<p>得到密码</p>
+<p>解压得<span><span class="heti-spacing"> </span>flag</span></p>
+<h2 id="easycap">easycap</h2>
+<p>直接追踪<span class="heti-skip"><span class="heti-spacing"> </span>tcp<span class="heti-spacing"> </span></span>流就能得到<span><span class="heti-spacing"> </span>flag</span></p>
+<p><img alt="image-20220412133458263" src="https://jingneifile.oss-cn-qingdao.aliyuncs.com/typecho/202204121334289.png"/></p>
+<h2 id="_8">隐藏的钥匙</h2>
+<blockquote>
+<p>路飞一行人千辛万苦来到了伟大航道的终点，找到了传说中的<span><span class="heti-spacing"> </span>One piece</span>，但是需要钥匙才能打开<span class="heti-skip"><span class="heti-spacing"> </span>One Piece<span class="heti-spacing"> </span></span>大门，钥匙就隐藏在下面的图片中，聪明的你能帮路飞拿到钥匙，打开<span class="heti-skip"><span class="heti-spacing"> </span>One Piece<span class="heti-spacing"> </span></span>的大门吗？ </p>
+<p>注意：得到的<span class="heti-skip"><span class="heti-spacing"> </span>flag<span class="heti-spacing"> </span></span>请包上<span class="heti-skip"><span class="heti-spacing"> </span>flag{}<span class="heti-spacing"> </span></span>提交</p>
+</blockquote>
+<p>直接<span class="heti-skip"><span class="heti-spacing"> </span>010<span class="heti-spacing"> </span></span>打开 搜<span><span class="heti-spacing"> </span>flag</span></p>
+<p><img alt="image-20220412135623898" src="https://jingneifile.oss-cn-qingdao.aliyuncs.com/typecho/202204121356925.png"/></p>
+<p><span>base64<span class="heti-spacing"> </span></span>解密</p>
+<h2 id="_9">另外一个世界</h2>
+<p><span>010<span class="heti-spacing"> </span></span>查看文件尾</p>
+<p><img alt="image-20220412140445879" src="https://jingneifile.oss-cn-qingdao.aliyuncs.com/typecho/202204121404907.png"/></p>
+<p>有一串二进制数 是<span class="heti-skip"><span class="heti-spacing"> </span>8<span class="heti-spacing"> </span></span>的倍数</p>
+<p><span>8<span class="heti-spacing"> </span></span>位一组转<span class="heti-skip"><span class="heti-spacing"> </span>ASCII<span class="heti-spacing"> </span></span>码</p>
+<p><code>koekj3s</code></p>
+<p>flag{koekj3s}</p>
+<h2 id="flag">FLAG</h2>
+<p><span>png stegslove<span class="heti-spacing"> </span></span>查看<span class="heti-skip"><span class="heti-spacing"> </span>rgb<span class="heti-spacing"> </span></span>第<span class="heti-skip"><span class="heti-spacing"> </span>0<span class="heti-spacing"> </span></span>层数据</p>
+<p><img alt="image-20220412144615802" src="https://jingneifile.oss-cn-qingdao.aliyuncs.com/typecho/202204121446844.png"/></p>
+<p><span>PK<span class="heti-spacing"> </span></span>头  保存为<span><span class="heti-spacing"> </span>zip</span></p>
+<p>解压得到一个<span class="heti-skip"><span class="heti-spacing"> </span>ELF<span class="heti-spacing"> </span></span>文件</p>
+<p>运行得<span><span class="heti-spacing"> </span>flag</span></p>
+<p><img alt="image-20220412144724831" src="https://jingneifile.oss-cn-qingdao.aliyuncs.com/typecho/202204121447858.png"/></p>
+<blockquote>
+<p>注意：请将<span class="heti-skip"><span class="heti-spacing"> </span>hctf<span class="heti-spacing"> </span></span>替换为<span class="heti-skip"><span class="heti-spacing"> </span>flag<span class="heti-spacing"> </span></span>提交，格式<span><span class="heti-spacing"> </span>flag{}</span></p>
+</blockquote>
+<h2 id="_10">假如给我三天光明</h2>
+<p>两个文件 一个图片一个压缩包 压缩包带密码</p>
+<p><img alt="pic" src="https://jingneifile.oss-cn-qingdao.aliyuncs.com/typecho/202204101456360.jpg"/></p>
+<p>盲文解密 <code>kmdonowg</code>  是压缩包密码</p>
+<p><img alt="image-20220410150825905" src="https://jingneifile.oss-cn-qingdao.aliyuncs.com/typecho/202204101508949.png"/></p>
+<p>morse</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>-.-./-/..-./.--/.--././../-----/---../--.../...--/..---/..--../..---/...--/-../--../
+</code></pre></div>
+<p>解出来是<span><span class="heti-spacing"> </span>ctfwpei08732?23dz</span></p>
+<p>套上<span class="heti-skip"><span class="heti-spacing"> </span>flag{}<span class="heti-spacing"> </span></span>删<span><span class="heti-spacing"> </span>ctf</span></p>
+<p>flag{wpei08732?23dz}</p>
+<h2 id="_11">神秘龙卷风</h2>
+<blockquote>
+<p>神秘龙卷风转转转，科学家用四位数字为它命名，但是发现解密后居然是一串外星人代码！！好可怕！ </p>
+<p>注意：得到的<span class="heti-skip"><span class="heti-spacing"> </span>flag<span class="heti-spacing"> </span></span>请包上<span class="heti-skip"><span class="heti-spacing"> </span>flag{}<span class="heti-spacing"> </span></span>提交</p>
+</blockquote>
+<p>一个<span class="heti-skip"><span class="heti-spacing"> </span>rar 4<span class="heti-spacing"> </span></span>位数字爆破</p>
+<p><img alt="image-20220412151059308" src="https://jingneifile.oss-cn-qingdao.aliyuncs.com/typecho/202204121510338.png"/></p>
+<p><img alt="image-20220412151210560" src="https://jingneifile.oss-cn-qingdao.aliyuncs.com/typecho/202204121512610.png"/></p>
+<p><span>brainfuck<span class="heti-spacing"> </span></span>解密</p>
+<p><code>flag{e4bbef8bdf9743f8bf5b727a9f6332a8}</code></p>
+<h2 id="_12">后门查杀</h2>
+<blockquote>
+<p>小白的网站被小黑攻击了，并且上传了<span><span class="heti-spacing"> </span>Webshell</span>，你能帮小白找到这个后门么？<span>(Webshell<span class="heti-spacing"> </span></span>中的密码<span class="heti-skip"><span class="heti-spacing"> </span>(md5)<span class="heti-spacing"> </span></span>即为答案<span><span class="heti-spacing"> </span>)</span>。 </p>
+<p>注意：得到的<span class="heti-skip"><span class="heti-spacing"> </span>flag<span class="heti-spacing"> </span></span>请包上<span class="heti-skip"><span class="heti-spacing"> </span>flag{}<span class="heti-spacing"> </span></span>提交</p>
+</blockquote>
+<p>新思路 卷宝提供的</p>
+<p>直接拖进火绒扫描</p>
+<p><img alt="image-20220412151707541" src="https://jingneifile.oss-cn-qingdao.aliyuncs.com/typecho/202204121517580.png"/></p>
+<p><img alt="image-20220412151714363" src="https://jingneifile.oss-cn-qingdao.aliyuncs.com/typecho/202204121517388.png"/></p>
+<h2 id="_13">数据包中的线索</h2>
+<blockquote>
+<p>公安机关近期截获到某网络犯罪团伙在线交流的数据包，但无法分析出具体的交流内容，聪明的你能帮公安机关找到线索吗？ </p>
+<p>注意：得到的<span class="heti-skip"><span class="heti-spacing"> </span>flag<span class="heti-spacing"> </span></span>请包上<span class="heti-skip"><span class="heti-spacing"> </span>flag{}<span class="heti-spacing"> </span></span>提交</p>
+</blockquote>
+<p>跟踪<span class="heti-skip"><span class="heti-spacing"> </span>TCP<span class="heti-spacing"> </span></span>流  第<span class="heti-skip"><span class="heti-spacing"> </span>7<span class="heti-spacing"> </span></span>个</p>
+<p><img alt="image-20220412153035383" src="https://jingneifile.oss-cn-qingdao.aliyuncs.com/typecho/202204121530460.png"/></p>
+<p>再跟踪<span class="heti-skip"><span class="heti-spacing"> </span>http<span class="heti-spacing"> </span></span>流</p>
+<p>把数据<span class="heti-skip"><span class="heti-spacing"> </span>base64<span class="heti-spacing"> </span></span>解密后再存为图片</p>
+<p><img alt="image-20220412153335033" src="https://jingneifile.oss-cn-qingdao.aliyuncs.com/typecho/202204121533160.png"/></p>
+<p>flag{209acebf6324a09671abc31c869de72c}</p>
+<h2 id="_14">荷兰宽带数据泄露</h2>
+<p>conf.bin</p>
+<p>用<span class="heti-skip"><span class="heti-spacing"> </span>RouterPassView<span class="heti-spacing"> </span></span>打开</p>
+<p>搜索<span><span class="heti-spacing"> </span>username</span></p>
+<p>就是<span><span class="heti-spacing"> </span>flag{053700357621}</span></p>
+<h2 id="_15">来首歌吧</h2>
+<p>一个<span><span class="heti-spacing"> </span>mp3</span></p>
+<p>看声道<span class="heti-skip"><span class="heti-spacing"> </span>morse<span class="heti-spacing"> </span></span>电码</p>
+<p>...../-.../-.-./----./..---/...../-..../....-/----./-.-./-.../-----/.----/---../---../..-./...../..---/./-..../.----/--.../-../--.../-----/----./..---/----./.----/----./.----/-.-./</p>
+<p>5bc925649cb0188f52e617d70929191c</p>
+<p>换成大写</p>
+<p>解出来<span><span class="heti-spacing"> </span>flag{5BC925649CB0188F52E617D70929191C}</span></p>
+<h2 id="webshell"><span>webshell<span class="heti-spacing"> </span></span>后门</h2>
+<p>火绒扫一下</p>
+<p><img alt="image-20220412163653424" src="https://jingneifile.oss-cn-qingdao.aliyuncs.com/typecho/202204121636477.png"/></p>
+<p>搜<span><span class="heti-spacing"> </span>pass</span></p>
+<p><img alt="image-20220412163704238" src="https://jingneifile.oss-cn-qingdao.aliyuncs.com/typecho/202204121637269.png"/></p>
+<p>flag{ba8e6c6f35a53933b871480bb9a9545c}</p>
+<h2 id="flag_1">面具下的<span><span class="heti-spacing"> </span>flag</span></h2>
+<p>一个<span><span class="heti-spacing"> </span>jpg</span></p>
+<p>用<span class="heti-skip"><span class="heti-spacing"> </span>binwalk<span class="heti-spacing"> </span></span>分离出来<span><span class="heti-spacing"> </span>flag.vmdk</span></p>
+<p>用<span class="heti-skip"><span class="heti-spacing"> </span>7z<span class="heti-spacing"> </span></span>解压出来 </p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>7z x flag.vmdk
+</code></pre></div>
+<p><img alt="image-20220412165634950" src="https://jingneifile.oss-cn-qingdao.aliyuncs.com/typecho/202204121656997.png"/></p>
+<p><span>flag<span class="heti-spacing"> </span></span>分为两部分</p>
+<p>第一部分是<span><span class="heti-spacing"> </span>brainfuck</span></p>
+<p>flag{N7F5_AD5</p>
+<p>第二部分是<span><span class="heti-spacing"> </span>ook!</span></p>
+<p>_i5_funny!}</p>
+<p>合起来<span><span class="heti-spacing"> </span>flag{N7F5_AD5_i5_funny!}</span></p>
+<h2 id="_16">九连环</h2>
+<p><span>binwalk<span class="heti-spacing"> </span></span>分离出来一个<span class="heti-skip"><span class="heti-spacing"> </span>jpg<span class="heti-spacing"> </span></span>和一个带密码的<span><span class="heti-spacing"> </span>zip</span></p>
+<p>密码应该在图片里  试了一圈是<span><span class="heti-spacing"> </span>steghide</span></p>
+<p><img alt="image-20220412171212908" src="https://jingneifile.oss-cn-qingdao.aliyuncs.com/typecho/202204121712938.png"/></p>
+<p>分类出一个<span class="heti-skip"><span class="heti-spacing"> </span>txt<span class="heti-spacing"> </span></span>里面是压缩包密码</p>
+<p>flag{1RTo8w@&amp;4nK@z*XL}</p>
+<h2 id="_17">被劫持的神秘礼物</h2>
+<blockquote>
+<p>某天小明收到了一件很特别的礼物，有奇怪的后缀，奇怪的名字和格式。小明找到了知心姐姐度娘，度娘好像知道这是啥，但是度娘也不知道里面是啥。。。你帮帮小明？找到帐号密码，串在一起，用<span class="heti-skip"><span class="heti-spacing"> </span>32<span class="heti-spacing"> </span></span>位小写<span class="heti-skip"><span class="heti-spacing"> </span>MD5<span class="heti-spacing"> </span></span>哈希一下得到的就是答案。 链接<span class="heti-skip"><span class="heti-spacing"> </span>:<span class="heti-spacing"> </span></span><a href="https://pan.baidu.com/s/1pwVVpA5_WWY8Og6dhCcWRw"><span class="heti-skip"><span class="heti-spacing"> </span>https://pan.baidu.com/s/1pwVVpA5_WWY8Og6dhCcWRw<span class="heti-spacing"> </span></span></a>提取码<span><span class="heti-spacing"> </span>: 31vk</span> </p>
+<p>注意：得到的<span class="heti-skip"><span class="heti-spacing"> </span>flag<span class="heti-spacing"> </span></span>请包上<span class="heti-skip"><span class="heti-spacing"> </span>flag{}<span class="heti-spacing"> </span></span>提交</p>
+</blockquote>
+<p>流量包 查看<span class="heti-skip"><span class="heti-spacing"> </span>tcp<span class="heti-spacing"> </span></span>流</p>
+<p>一眼<span><span class="heti-spacing"> </span>flag</span></p>
+<p><img alt="image-20220412192650059" src="https://jingneifile.oss-cn-qingdao.aliyuncs.com/typecho/202204121926150.png"/></p>
+<p>adminaadminb</p>
+<p>用<span class="heti-skip"><span class="heti-spacing"> </span>md5<span class="heti-spacing"> </span></span>转一下 加上<span><span class="heti-spacing"> </span>flag{</span></p>
+<p>flag{1d240aafe21a86afc11f38a45b541a49}</p>
+<h2 id="_18">刷新过的图片</h2>
+<blockquote>
+<p>浏览图片的时候刷新键有没有用呢 </p>
+<p>注意：得到的<span class="heti-skip"><span class="heti-spacing"> </span>flag<span class="heti-spacing"> </span></span>请包上<span class="heti-skip"><span class="heti-spacing"> </span>flag{}<span class="heti-spacing"> </span></span>提交</p>
+</blockquote>
+<p>刷新提示就是<span class="heti-skip"><span class="heti-spacing"> </span>F5<span class="heti-spacing"> </span></span>隐写</p>
+<p>用<span class="heti-skip"><span class="heti-spacing"> </span>F5-steganography<span class="heti-spacing"> </span></span>解出来 </p>
+<p><img alt="image-20220412193420967" src="https://jingneifile.oss-cn-qingdao.aliyuncs.com/typecho/202204121934043.png"/></p>
+<p>是一个<span class="heti-skip"><span class="heti-spacing"> </span>pk<span class="heti-spacing"> </span></span>头 改成<span class="heti-skip"><span class="heti-spacing"> </span>zip<span class="heti-spacing"> </span></span>解压</p>
+<p>有伪加密<span class="heti-skip"><span class="heti-spacing"> </span>binwalk<span class="heti-spacing"> </span></span>跑出来<span><span class="heti-spacing"> </span>flag.txt</span></p>
+<p>flag{96efd0a2037d06f34199e921079778ee}</p>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="最后更新">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2023年1月29日 15:26:37">2023年1月29日 15:26:37</span>
+</span>
+<span class="md-source-file__fact">
+<span class="md-icon" title="创建日期">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2023年1月29日 15:26:37">2023年1月29日 15:26:37</span>
+</span>
+<span class="md-source-file__fact">
+<span class="md-icon" title="贡献者">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4"></path></svg>
+</span>
+<nav>
+<a href="mailto:1308357113@qq.com">shenghuo2</a>
+</nav>
+</span>
+</aside>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  回到页面顶部
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Made by © 2023 <a href="https://github.com/QLNU-Sec-Team" rel="noopener" target="_blank">QLNU-Sec-Team</a>
+</div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://github.com/QLNU-Sec-Team" rel="noopener" target="_blank" title="github">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</a>
+<a class="md-social__link" href="/rss.xml" rel="noopener" target="_blank" title="RSS">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M0 64c0-17.7 14.3-32 32-32 229.8 0 416 186.2 416 416 0 17.7-14.3 32-32 32s-32-14.3-32-32C384 253.6 226.4 96 32 96 14.3 96 0 81.7 0 64m0 352a64 64 0 1 1 128 0 64 64 0 1 1-128 0m32-256c159.1 0 288 128.9 288 288 0 17.7-14.3 32-32 32s-32-14.3-32-32c0-123.7-100.3-224-224-224-17.7 0-32-14.3-32-32s14.3-32 32-32"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "header.autohide", "search.share", "search.suggest", "search.highlight", "content.tabs", "content.action.edit", "content.action.view"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+<script src="https://cdn.statically.io/gh/stevewithington/imagezoomjs/master/dist/imagezoom.min.js"></script>
+<script src="../../js/mathjax.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>
