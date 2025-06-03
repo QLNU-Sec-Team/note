@@ -154,10 +154,10 @@ nav:
             - PHP篇✅: 'WEB/从零开始的Web之路-PHP篇.md'
             - SQL篇✅: 'WEB/从零开始的Web之路-SQL篇.md'
             - XSS篇: 'WEB/从零开始的Web之路-XSS篇.md'
-            - SSTI篇: 'WEB/从零开始的Web之路-SSTI篇.md'
+            - SSTI篇✅: 'WEB/从零开始的Web之路-SSTI篇.md'
             - 文件上传篇✅: 'WEB/从零开始的Web之路-文件上传篇.md'
-            - 文件包含篇: 'WEB/从零开始的Web之路-文件包含篇.md'
-            - 反序列化篇: 'WEB/从零开始的Web之路-反序列化篇.md'
+            - 文件包含篇✅: 'WEB/从零开始的Web之路-文件包含篇.md'
+            - 反序列化篇✅: 'WEB/从零开始的Web之路-反序列化篇.md'
     - PWN:
             - PWN方向寒假学习计划: 'PWN/pwn方向寒假学习计划.md'
     - '现代密码学':
