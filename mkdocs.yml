@@ -4,7 +4,7 @@ site_author: QLNU-Sec-Team
 repo_name: QLNU-Sec-Team/note
 repo_url: https://github.com/QLNU-Sec-Team/note/
 edit_uri: tree/main/docs
-copyright: Made by &copy; 2023 <a href="https://github.com/QLNU-Sec-Team" target="_blank" rel="noopener">QLNU-Sec-Team</a>
+copyright: Made by &copy; 2025 <a href="https://github.com/QLNU-Sec-Team" target="_blank" rel="noopener">QLNU-Sec-Team</a>
 theme: 
     name: material
     language: zh
@@ -64,6 +64,12 @@ plugins:
             rss_created: rss.xml
     - git-authors
     - statistics
+    - macros:
+        module_name: docs/macros
+        j2_block_start_string: '[[%'
+        j2_block_end_string: '%]]'
+        j2_variable_start_string: '[['
+        j2_variable_end_string: ']]'
 
 # 扩展
 markdown_extensions:
@@ -192,5 +198,7 @@ nav:
         
         - '内网渗透学习总结': 'NWST/内网渗透学习总结.md'
          
+    - 工具合集:
 
-    
+        - '工具合集-CTF': 'Tools/工具合集-CTF.md'
+

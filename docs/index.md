@@ -36,6 +36,8 @@ statistics: True
 
 python对网安，对CTF还是蛮合适的
 
+补充一点，这是一个比较通俗易懂的语言，不需要太复杂就可以满足需求
+
 https://www.bilibili.com/video/BV1hf4y1u7CH
 
 这边推荐一个非常基础，简单易懂的入门教程
@@ -61,3 +63,11 @@ https://www.bilibili.com/video/BV1hf4y1u7CH
 建议是都要对owasp top 10漏洞有一定的了解
 
 [跳转Web](./WEB/从零开始的Web之路-基础篇.md){ .md-button .md-button--primary }
+
+## **工具集合**
+
+顾名思义，这里是一些从网上搜集来的工具合集
+
+也推荐大家分享自己的妙妙小工具
+
+[跳转工具集](./Tools/工具合集-CTF.md){ .md-button .md-button--primary }
